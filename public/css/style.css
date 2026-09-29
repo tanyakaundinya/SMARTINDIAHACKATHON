@@ -2125,15 +2125,15 @@ input[type="range"]::-webkit-slider-thumb:hover {
   font-weight: 800;
   letter-spacing: -1.4px;
   line-height: 1.12;
-  color: #ffffff;
+  color: #ffffff !important;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9), 0 1px 3px rgba(0, 0, 0, 0.95);
-  -webkit-text-fill-color: initial;
-  background: none;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
 }
 
 .landing-ref-hero-subtitle {
   font-size: 16.5px;
-  color: #e2e8f0;
+  color: #cbd5e1;
   line-height: 1.65;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
   font-weight: 400;

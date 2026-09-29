@@ -5,14 +5,14 @@
 
 ---
 
-## 📌 Executive Overview
+## Executive Overview
 Land acquisition delays account for over **55% of all national infrastructure time and cost overruns in India**, locking over **₹4.5 Lakh Crore ($55 Billion)** in public exchequer capital.
 
 **BHU-DRISHTI** shifts infrastructure monitoring from **reactive reporting to proactive, explainable, and prescriptive decision-making**, providing **Policymakers** (Ministers, Central Secretaries) and **Administrators** (District Collectors/DMs, CALA, State Revenue Officers) with **6 to 12 months of early warning** to resolve friction points before statutory deadlines lapse.
 
 ---
 
-## 🏛️ Statutory Domain Alignment (RFCTLARR Act 2013)
+##  Statutory Domain Alignment (RFCTLARR Act 2013)
 The platform models the full multi-stage legal and administrative acquisition pipeline:
 1. **Stage 1:** Preliminary Notification & Proposal (Sec 4 / Sec 11)
 2. **Stage 2:** Social Impact Assessment (SIA) & Objections Hearing (Sec 15)
@@ -24,7 +24,7 @@ The platform models the full multi-stage legal and administrative acquisition pi
 
 ---
 
-## ⚡ Core Platform Capabilities
+##  Core Platform Capabilities
 
 1. **AI/ML Predictive Risk Engine:**
    - Multi-stage delay classifier computing **Composite Risk Score (0–100)** and **Delay Probability %**.
@@ -54,7 +54,7 @@ The platform models the full multi-stage legal and administrative acquisition pi
 
 ---
 
-## 🚀 How to Run the Platform
+##  How to Run the Platform
 
 ### 1. Prerequisites
 - Node.js (v18+)

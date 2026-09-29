@@ -9,6 +9,7 @@ let corridorsLayer = null;
 let cadastralParcelsLayer = null;
 let encroachmentLayer = null;
 let darkTileLayer = null;
+let lightTileLayer = null;
 let satelliteTileLayer = null;
 
 let allProjectsData = [];
@@ -34,7 +35,23 @@ function initGisMap() {
     maxZoom: 16
   });
   darkTileLayer = L.layerGroup([darkBase, darkLabels]);
-  darkTileLayer.addTo(mapInstance);
+
+  // Free Government-grade Esri Light Gray Canvas (No API Key Required)
+  const lightBase = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 16
+  });
+  const lightLabels = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 16
+  });
+  lightTileLayer = L.layerGroup([lightBase, lightLabels]);
+
+  // Initial Basemap based on active theme
+  const initialTheme = localStorage.getItem('bhuDrishtiTheme') || 'dark';
+  if (initialTheme === 'light') {
+    lightTileLayer.addTo(mapInstance);
+  } else {
+    darkTileLayer.addTo(mapInstance);
+  }
 
   // Esri World Imagery Satellite Basemap (100% Free, No API Key Required)
   satelliteTileLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -50,19 +67,34 @@ function initGisMap() {
   loadEncroachmentHotspots();
 }
 
+function updateGisMapTheme(theme) {
+  if (!mapInstance || satelliteActive) return;
+  if (theme === 'light') {
+    if (darkTileLayer && mapInstance.hasLayer(darkTileLayer)) mapInstance.removeLayer(darkTileLayer);
+    if (lightTileLayer && !mapInstance.hasLayer(lightTileLayer)) mapInstance.addLayer(lightTileLayer);
+  } else {
+    if (lightTileLayer && mapInstance.hasLayer(lightTileLayer)) mapInstance.removeLayer(lightTileLayer);
+    if (darkTileLayer && !mapInstance.hasLayer(darkTileLayer)) mapInstance.addLayer(darkTileLayer);
+  }
+}
+
 function toggleSatelliteView() {
   const btn = document.getElementById('btnMapSatellite');
+  const currentActiveTheme = localStorage.getItem('bhuDrishtiTheme') || 'dark';
+  const targetBaseLayer = currentActiveTheme === 'light' ? lightTileLayer : darkTileLayer;
+
   if (satelliteActive) {
     mapInstance.removeLayer(satelliteTileLayer);
-    mapInstance.addLayer(darkTileLayer);
+    mapInstance.addLayer(targetBaseLayer);
     btn.classList.remove('active');
     btn.textContent = 'Satellite View';
     satelliteActive = false;
   } else {
-    mapInstance.removeLayer(darkTileLayer);
+    if (mapInstance.hasLayer(darkTileLayer)) mapInstance.removeLayer(darkTileLayer);
+    if (mapInstance.hasLayer(lightTileLayer)) mapInstance.removeLayer(lightTileLayer);
     mapInstance.addLayer(satelliteTileLayer);
     btn.classList.add('active');
-    btn.textContent = 'Dark Map';
+    btn.textContent = currentActiveTheme === 'light' ? 'Light Map' : 'Dark Map';
     satelliteActive = true;
   }
 }

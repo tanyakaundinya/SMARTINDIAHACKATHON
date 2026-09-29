@@ -7,6 +7,7 @@
 let allProjects = [];
 let currentRole = 'COLLECTOR_CALA';
 let currentLang = 'en';
+let currentTheme = localStorage.getItem('bhuDrishtiTheme') || 'dark';
 let batchProjectsData = [];
 
 // Official Government Stakeholder Profiles (PS 25017 Role-Based Access Control)
@@ -50,6 +51,7 @@ const STAKEHOLDER_PROFILES = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   initAuthSession();
   initGisMap();
   loadKpiMetrics();
@@ -58,6 +60,42 @@ document.addEventListener('DOMContentLoaded', () => {
   loadModelHubData();
   loadAuditLogs();
 });
+
+function initTheme() {
+  applyTheme(currentTheme);
+}
+
+function toggleTheme() {
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  applyTheme(newTheme);
+}
+
+function applyTheme(theme) {
+  currentTheme = theme;
+  localStorage.setItem('bhuDrishtiTheme', theme);
+  document.documentElement.setAttribute('data-theme', theme);
+
+  const iconEl = document.getElementById('themeIcon');
+  const textEl = document.getElementById('themeText');
+  const toggleBtn = document.getElementById('themeToggleBtn');
+
+  if (iconEl && textEl) {
+    if (theme === 'light') {
+      iconEl.textContent = '🌙';
+      textEl.textContent = 'DARK';
+      if (toggleBtn) toggleBtn.classList.add('light-active');
+    } else {
+      iconEl.textContent = '☀️';
+      textEl.textContent = 'LIGHT';
+      if (toggleBtn) toggleBtn.classList.remove('light-active');
+    }
+  }
+
+  // Synchronize GIS Map Tiles with active theme
+  if (typeof updateGisMapTheme === 'function') {
+    updateGisMapTheme(theme);
+  }
+}
 
 function initAuthSession() {
   const savedRole = localStorage.getItem('bhuDrishtiActiveRole') || 'COLLECTOR_CALA';

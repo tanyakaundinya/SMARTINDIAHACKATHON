@@ -103,8 +103,8 @@ function renderXaiDetails(project) {
         <span style="font-size: 11px; color: #34d399; font-weight: 600;">-${rec.expected_risk_reduction_pct}% Risk Impact</span>
       </div>
 
-      <h4 style="font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 6px;">${rec.title}</h4>
-      <p style="font-size: 11px; color: #94a3b8; margin-bottom: 8px; line-height: 1.4;">${rec.description}</p>
+      <h4 style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px;">${rec.title}</h4>
+      <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.4;">${rec.description}</p>
 
       <div style="font-size: 10px; color: #64748b; margin-bottom: 10px;">
         <b>Statutory Authority:</b> ${rec.statutory_reference} | <b>Target Role:</b> ${rec.target_role}

@@ -1763,4 +1763,109 @@ input[type="range"]::-webkit-slider-thumb:hover {
   background: #e2e8f0 !important;
 }
 
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] .section-title {
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .kpi-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .kpi-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .kpi-value {
+  color: #0f172a;
+}
+
+[data-theme="light"] .kpi-label {
+  color: #64748b;
+}
+
+[data-theme="light"] .control-btn {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #334155;
+}
+
+[data-theme="light"] .control-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+[data-theme="light"] .control-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #1d4ed8;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+[data-theme="light"] .slider-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+[data-theme="light"] .slider-label-row {
+  color: #334155;
+}
+
+[data-theme="light"] .slider-val {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+[data-theme="light"] .ground-hud-panel {
+  background: rgba(255, 255, 255, 0.97) !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12) !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .btn-secondary {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+}
+
+[data-theme="light"] .btn-secondary:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+[data-theme="light"] .user-name-text {
+  color: #0f172a;
+}
+
+[data-theme="light"] .user-role-text {
+  color: #64748b;
+}
+
+[data-theme="light"] .btn-auth-switch {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #2563eb;
+}
+
+[data-theme="light"] .btn-auth-switch:hover {
+  background: #e2e8f0;
+}
+
+[data-theme="light"] input[type="range"] {
+  background: #e2e8f0;
+}
+
+
 

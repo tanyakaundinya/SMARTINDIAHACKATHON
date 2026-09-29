@@ -1893,28 +1893,32 @@ input[type="range"]::-webkit-slider-thumb:hover {
   padding-bottom: 40px;
 }
 
-/* Floating Pill-Shaped Top Navbar (Reference 1 & 2) */
+/* Floating Pill-Shaped Top Navbar (Fixed at top of Viewport across scrolling) */
 .landing-nav-wrapper {
-  position: sticky;
+  position: fixed;
   top: 16px;
-  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
   padding: 0 20px;
+  box-sizing: border-box;
+  pointer-events: none;
 }
 
 .landing-floating-navbar {
+  pointer-events: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(18, 20, 26, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(14, 17, 24, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 9999px;
   padding: 8px 14px 8px 22px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(16, 185, 129, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 20px rgba(16, 185, 129, 0.08);
 }
 
 .landing-nav-brand {
@@ -1923,8 +1927,15 @@ input[type="range"]::-webkit-slider-thumb:hover {
   gap: 12px;
 }
 
-.landing-brand-logo {
-  font-size: 22px;
+.landing-brand-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .landing-brand-names {
@@ -2051,12 +2062,12 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .landing-ref-hero-fullwidth {
   position: relative;
   width: 100%;
-  min-height: 560px;
+  min-height: 580px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background: #14171d;
+  justify-content: center;
+  background: #0b0f17;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
 }
 
@@ -2068,14 +2079,14 @@ input[type="range"]::-webkit-slider-thumb:hover {
   height: 100%;
   object-fit: cover;
   object-position: center 50%;
-  filter: brightness(0.96) contrast(1.06) saturate(1.18);
+  filter: brightness(0.92) contrast(1.08) saturate(1.15);
   transform: scale(1.01);
   transition: transform 0.8s ease, filter 0.8s ease;
 }
 
 .landing-ref-hero-fullwidth:hover .landing-ref-hero-img {
   transform: scale(1.03);
-  filter: brightness(1.0) contrast(1.08) saturate(1.22);
+  filter: brightness(0.96) contrast(1.1) saturate(1.2);
 }
 
 .landing-ref-hero-overlay {
@@ -2085,8 +2096,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
   width: 100%;
   height: 100%;
   background: 
-    linear-gradient(90deg, rgba(9, 10, 13, 0.62) 0%, rgba(9, 10, 13, 0.28) 50%, rgba(9, 10, 13, 0.05) 100%),
-    linear-gradient(180deg, rgba(9, 10, 13, 0.35) 0%, rgba(9, 10, 13, 0.02) 40%, rgba(9, 10, 13, 0.55) 100%);
+    linear-gradient(90deg, rgba(7, 10, 15, 0.82) 0%, rgba(7, 10, 15, 0.52) 50%, rgba(7, 10, 15, 0.18) 100%),
+    linear-gradient(180deg, rgba(7, 10, 15, 0.55) 0%, rgba(7, 10, 15, 0.1) 45%, rgba(7, 10, 15, 0.75) 100%);
   pointer-events: none;
 }
 
@@ -2094,7 +2105,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 30px 24px 60px 24px;
+  padding: 130px 24px 75px 24px;
   position: relative;
   z-index: 10;
   display: flex;
@@ -2102,99 +2113,82 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 .landing-ref-hero-content {
-  max-width: 640px;
+  max-width: 680px;
   text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-}
-
-.landing-ref-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(6, 78, 59, 0.65);
-  border: 1px solid rgba(52, 211, 153, 0.6);
-  color: #a7f3d0;
-  padding: 6px 16px;
-  border-radius: 9999px;
-  font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  align-self: flex-start;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  gap: 20px;
 }
 
 .landing-ref-hero-title {
-  font-size: 46px;
+  font-size: 50px;
   font-weight: 800;
-  letter-spacing: -1.2px;
+  letter-spacing: -1.4px;
   line-height: 1.12;
   color: #ffffff;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.9), 0 0 2px rgba(0, 0, 0, 0.8);
-  background: linear-gradient(180deg, #ffffff 0%, #ffffff 80%, #f4f4f5 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9), 0 1px 3px rgba(0, 0, 0, 0.95);
+  -webkit-text-fill-color: initial;
+  background: none;
 }
 
 .landing-ref-hero-subtitle {
-  font-size: 16px;
-  color: #ffffff;
-  line-height: 1.6;
+  font-size: 16.5px;
+  color: #e2e8f0;
+  line-height: 1.65;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
-  font-weight: 500;
+  font-weight: 400;
+  max-width: 600px;
 }
 
 .landing-ref-hero-actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 /* Floating Overlapping Quick Gateway Control Bar (Signature Element from Reference 1) */
 .landing-overlapping-bar-container {
   width: 100%;
-  max-width: 1040px;
-  margin: -36px auto 0 auto;
+  max-width: 1100px;
+  margin: -40px auto 0 auto;
   position: relative;
   z-index: 25;
-  padding: 0 12px;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .landing-overlapping-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(16, 18, 24, 0.94);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(15, 20, 29, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 9999px;
-  padding: 12px 14px 12px 28px;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.85), 0 0 24px rgba(16, 185, 129, 0.15);
-  gap: 16px;
+  padding: 14px 18px 14px 32px;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.75), 0 0 24px rgba(16, 185, 129, 0.12);
+  gap: 20px;
 }
 
 .overlapping-bar-field {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   text-align: left;
 }
 
 .overlapping-bar-label {
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 800;
-  color: #10b981;
-  letter-spacing: 0.6px;
+  color: #34d399;
+  letter-spacing: 0.8px;
 }
 
 .overlapping-bar-value {
-  font-size: 13px;
+  font-size: 13.5px;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -2213,9 +2207,9 @@ input[type="range"]::-webkit-slider-thumb:hover {
   background: #10b981;
   color: #062419;
   border: none;
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 800;
-  padding: 11px 22px;
+  padding: 12px 24px;
   border-radius: 9999px;
   cursor: pointer;
   transition: all 0.25s ease;

@@ -27,57 +27,59 @@
        ========================================================================== -->
   <div id="landingPortalView" class="landing-portal-wrapper">
     
+    <!-- Floating Pill-Shaped Top Navbar (Fixed at top of Viewport) -->
+    <div class="landing-nav-wrapper">
+      <header class="landing-floating-navbar">
+        <div class="landing-nav-brand">
+          <div class="landing-brand-icon-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: #34d399;">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <div class="landing-brand-names">
+            <span class="landing-brand-main">BHU-DRISHTI</span>
+            <span class="landing-brand-sub">भू-दृष्टि &bull; GOVTECH APEX</span>
+          </div>
+        </div>
+
+        <nav class="landing-nav-links">
+          <a href="#hero-section" class="landing-nav-link active">Home</a>
+          <a href="#overview-section" class="landing-nav-link">Intelligence</a>
+          <a href="#portals-section" class="landing-nav-link">Authority Portals</a>
+          <a href="#process-section" class="landing-nav-link">Statutory Process</a>
+        </nav>
+
+        <div class="landing-nav-right">
+          <!-- Dark / Light Theme Toggle -->
+          <button class="theme-toggle-btn landing-pill-theme" onclick="toggleTheme()" title="Switch Theme" aria-label="Toggle Theme">
+            <span class="theme-icon">☀️</span>
+            <span class="theme-btn-label">LIGHT</span>
+          </button>
+
+          <!-- Language Toggle -->
+          <div class="lang-toggle-box landing-pill-lang">
+            <button class="lang-btn active" onclick="setLanguage('en')">ENG</button>
+            <button class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
+          </div>
+
+          <!-- Primary Launch Button -->
+          <button class="landing-pill-btn" onclick="enterMissionControl('COLLECTOR_CALA')">
+            <span>Launch Mission Control</span>
+          </button>
+        </div>
+      </header>
+    </div>
+
     <!-- Full-Width Panoramic Hero Section (100% Width Edge-to-Edge) -->
     <section class="landing-ref-hero-fullwidth" id="hero-section">
       <img src="img/green_terrain_hero.jpg" alt="National Infrastructure Terrain Corridor" class="landing-ref-hero-img">
       <div class="landing-ref-hero-overlay"></div>
 
-      <!-- Floating Pill-Shaped Top Navbar (Overlaid at top of Hero) -->
-      <div class="landing-nav-wrapper">
-        <header class="landing-floating-navbar">
-          <div class="landing-nav-brand">
-            <span class="landing-brand-logo">🏛️</span>
-            <div class="landing-brand-names">
-              <span class="landing-brand-main">BHU-DRISHTI</span>
-              <span class="landing-brand-sub">भू-दृष्टि &bull; GOVTECH APEX</span>
-            </div>
-          </div>
-
-          <nav class="landing-nav-links">
-            <a href="#hero-section" class="landing-nav-link active">Home</a>
-            <a href="#overview-section" class="landing-nav-link">Intelligence</a>
-            <a href="#portals-section" class="landing-nav-link">Authority Portals</a>
-            <a href="#process-section" class="landing-nav-link">Statutory Process</a>
-          </nav>
-
-          <div class="landing-nav-right">
-            <!-- Dark / Light Theme Toggle -->
-            <button class="theme-toggle-btn landing-pill-theme" onclick="toggleTheme()" title="Switch Theme" aria-label="Toggle Theme">
-              <span class="theme-icon">☀️</span>
-              <span class="theme-btn-label">LIGHT</span>
-            </button>
-
-            <!-- Language Toggle -->
-            <div class="lang-toggle-box landing-pill-lang">
-              <button class="lang-btn active" onclick="setLanguage('en')">ENG</button>
-              <button class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
-            </div>
-
-            <!-- Primary Launch Button -->
-            <button class="landing-pill-btn" onclick="enterMissionControl('COLLECTOR_CALA')">
-              <span>🚀 Launch Mission Control</span>
-            </button>
-          </div>
-        </header>
-      </div>
-
       <!-- Hero Text Content (Left-Aligned with generous spacing) -->
       <div class="landing-ref-hero-content-wrap">
         <div class="landing-ref-hero-content">
-          <div class="landing-ref-badge">
-            <span>🇮🇳 NATIONAL GOVTECH &bull; PM GATISHAKTI 2.0</span>
-          </div>
-
           <h1 class="landing-ref-hero-title">
             Predictive Land Acquisition Intelligence
           </h1>
@@ -88,10 +90,10 @@
 
           <div class="landing-ref-hero-actions">
             <a href="#portals-section" class="landing-pill-btn large">
-              <span>🔐 Select Authority Portal &darr;</span>
+              <span>Select Authority Portal &darr;</span>
             </a>
             <button class="landing-pill-btn-outline" onclick="enterMissionControl('COLLECTOR_CALA')">
-              <span>⚡ Explore Live Demo &rarr;</span>
+              <span>Explore Live Demo &rarr;</span>
             </button>
           </div>
         </div>
@@ -101,34 +103,34 @@
     <!-- Main Landing Body (Centered Container for rest of sections) -->
     <main class="landing-body-container">
 
-      <!-- Floating Overlapping Quick Gateway Control Bar (Signature Element from Reference 1) -->
+      <!-- Floating Overlapping Quick Gateway Control Bar (Signature Clean Layout) -->
       <div class="landing-overlapping-bar-container">
         <div class="landing-overlapping-bar">
           <div class="overlapping-bar-field">
-            <label class="overlapping-bar-label">📍 MONITORED CORRIDOR</label>
+            <label class="overlapping-bar-label">MONITORED CORRIDOR</label>
             <div class="overlapping-bar-value">
               <span style="color: #34d399; font-weight: 700;">Delhi-Mumbai Expressway</span>
-              <span style="font-size: 11px; color: var(--text-secondary);">&bull; 15 Mega Corridors</span>
+              <span style="font-size: 11.5px; color: var(--text-secondary);">&bull; 15 Mega Corridors</span>
             </div>
           </div>
 
           <div class="overlapping-bar-divider"></div>
 
           <div class="overlapping-bar-field">
-            <label class="overlapping-bar-label">🏛️ STAKEHOLDER HIERARCHY</label>
+            <label class="overlapping-bar-label">STAKEHOLDER HIERARCHY</label>
             <div class="overlapping-bar-value">
-              <span style="color: #ffffff; font-weight: 700;">Level 3: District CALA</span>
-              <span style="font-size: 11px; color: var(--text-secondary);">&bull; 4 Access Levels</span>
+              <span style="color: #ffffff; font-weight: 700;">District Magistrate / CALA</span>
+              <span style="font-size: 11.5px; color: var(--text-secondary);">&bull; Level 3</span>
             </div>
           </div>
 
           <div class="overlapping-bar-divider"></div>
 
           <div class="overlapping-bar-field">
-            <label class="overlapping-bar-label">⚡ AI RISK PRECISION</label>
+            <label class="overlapping-bar-label">AI RISK PRECISION</label>
             <div class="overlapping-bar-value">
-              <span style="color: #fbbf24; font-weight: 800;">89.4% Delay Precision</span>
-              <span style="font-size: 11px; color: #a7f3d0;">&bull; Zero Sec 25 Lapses</span>
+              <span style="color: #fbbf24; font-weight: 800;">89.4% Warning Accuracy</span>
+              <span style="font-size: 11.5px; color: #a7f3d0;">&bull; Zero Sec 25 Lapses</span>
             </div>
           </div>
 
@@ -138,12 +140,16 @@
         </div>
       </div>
 
-      <!-- Split Section: Left Visual with Floating Badge + Right Stats (Reference: Welcome on Treopps / Our Philosophy) -->
+      <!-- Split Section: Left Visual with Floating Badge + Right Stats -->
       <section class="landing-split-section" id="overview-section">
         <div class="landing-split-visual-box">
           <img src="img/green_cadastral.jpg" alt="Lush Green Cadastral Land Parcels" class="landing-split-img">
           <div class="landing-floating-badge-tag">
-            <span class="badge-tag-icon">🌿</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #34d399;">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
             <div class="badge-tag-text">
               <div style="font-size: 11px; font-weight: 800; color: #ffffff;">Cadastral GIS Mesh</div>
               <div style="font-size: 10px; color: #a7f3d0;">DILRMP & BhoomiRashi 2.0 Synced</div>
@@ -261,7 +267,7 @@
         </div>
       </section>
 
-      <!-- 4-Step Statutory Process Flow (Reference: Our Design Process / The Process in Images 3 & 4) -->
+      <!-- 4-Step Statutory Process Flow -->
       <section class="landing-process-section" id="process-section">
         <div class="landing-section-header-centered">
           <span class="landing-section-kicker">END-TO-END STATUTORY CLEARANCE</span>
@@ -293,12 +299,16 @@
         </div>
       </section>
 
-      <!-- Clean Aesthetic Footer (Reference: Luxe Interiors & Aura Studio) -->
+      <!-- Clean Aesthetic Footer -->
       <footer class="landing-ref-footer">
         <div class="landing-footer-top">
           <div class="footer-brand-col">
             <div class="footer-logo">
-              <span style="font-size: 20px;">🏛️</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: #34d399;">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
               <span style="font-size: 17px; font-weight: 800; color: #ffffff;">BHU-DRISHTI</span>
             </div>
             <p style="font-size: 12.5px; color: var(--text-secondary); max-width: 380px; margin-top: 8px; line-height: 1.5;">

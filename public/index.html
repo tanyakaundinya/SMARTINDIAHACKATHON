@@ -60,42 +60,55 @@
 
     <!-- Landing Hero Container -->
     <div class="landing-hero-container">
-      <div class="landing-hero-badge">
-        <span>🇮🇳 NATIONAL GOVTECH APEX &bull; PM GATISHAKTI & BHOOMIRASHI 2.0</span>
-      </div>
-
-      <h1 class="landing-hero-title">
-        National Land Acquisition Predictive Intelligence Platform
-      </h1>
-
-      <p class="landing-hero-subtitle">
-        Transforming linear infrastructure land clearance from reactive dispute firefighting into proactive, AI-powered statutory risk governance. Synchronized with BhoomiRashi 2.0 gazettes, DILRMP cadastral surveys, and RFCTLARR 2013 Section 25 lapse prevention.
-      </p>
-
-      <!-- Aesthetic Green Terrain & Corridor Showcase Hero Frame -->
-      <div class="landing-hero-image-frame">
-        <img src="img/green_terrain_hero.jpg" alt="Lush Green Indian Terrain & Infrastructure Corridor" class="landing-hero-img">
-        <div class="landing-hero-img-overlay"></div>
-        <div class="landing-hero-img-hud">
-          <div class="landing-hud-chip">
-            <span style="font-size: 14px;">🛰️</span>
-            <div>
-              <div style="font-size: 11px; font-weight: 800; color: #ffffff;">PM GatiShakti Spatial Mesh</div>
-              <div style="font-size: 10px; color: #a7f3d0;">Synchronized with BhoomiRashi 2.0</div>
-            </div>
+      <!-- Aesthetic Green Terrain Hero Banner with Text Overlay -->
+      <div class="landing-hero-backdrop-banner">
+        <img src="img/green_terrain_hero.jpg" alt="Lush Green Indian Terrain & Infrastructure Corridor" class="landing-hero-backdrop-img">
+        <div class="landing-hero-backdrop-overlay"></div>
+        
+        <div class="landing-hero-content-over">
+          <div class="landing-hero-badge">
+            <span>🇮🇳 NATIONAL GOVTECH APEX &bull; PM GATISHAKTI & BHOOMIRASHI 2.0</span>
           </div>
-          <div class="landing-hud-chip">
-            <span style="font-size: 14px;">🌿</span>
-            <div>
-              <div style="font-size: 11px; font-weight: 800; color: #34d399;">Eco-Sensitivity & Forest Check</div>
-              <div style="font-size: 10px; color: #e2e8f0;">Zero Statutory Clearance Violations</div>
-            </div>
+
+          <h1 class="landing-hero-title">
+            National Land Acquisition Predictive Intelligence Platform
+          </h1>
+
+          <p class="landing-hero-subtitle">
+            Transforming linear infrastructure land clearance from reactive dispute firefighting into proactive, AI-powered statutory risk governance. Synchronized with BhoomiRashi 2.0 gazettes, DILRMP cadastral surveys, and RFCTLARR 2013 Section 25 lapse prevention.
+          </p>
+
+          <div class="landing-hero-cta-row">
+            <a href="#role-grid-section" class="btn-primary" style="padding: 12px 24px; font-size: 13px; text-decoration: none; border-radius: 8px; box-shadow: 0 8px 25px rgba(255,255,255,0.25);">
+              <span>🔐 Select Authority Tier ↓</span>
+            </a>
+            <button class="btn-secondary" style="padding: 12px 24px; font-size: 13px; border-radius: 8px; background: rgba(20,22,28,0.7); backdrop-filter: blur(10px); border-color: rgba(255,255,255,0.25); color: #ffffff;" onclick="enterMissionControl('COLLECTOR_CALA')">
+              <span>🚀 Explore Mission Control Directly →</span>
+            </button>
           </div>
-          <div class="landing-hud-chip">
-            <span style="font-size: 14px;">⚡</span>
-            <div>
-              <div style="font-size: 11px; font-weight: 800; color: #ffffff;">14.8 Months Avg Velocity</div>
-              <div style="font-size: 10px; color: #fde68a;">Across 15 Mega Corridors</div>
+
+          <!-- Hero Floating HUD Chips Overlay -->
+          <div class="landing-hero-hud-strip">
+            <div class="landing-hud-chip">
+              <span style="font-size: 14px;">🛰️</span>
+              <div>
+                <div style="font-size: 11px; font-weight: 800; color: #ffffff;">PM GatiShakti Spatial Mesh</div>
+                <div style="font-size: 10px; color: #a7f3d0;">Synchronized with BhoomiRashi 2.0</div>
+              </div>
+            </div>
+            <div class="landing-hud-chip">
+              <span style="font-size: 14px;">🌿</span>
+              <div>
+                <div style="font-size: 11px; font-weight: 800; color: #34d399;">Eco-Sensitivity & Forest Check</div>
+                <div style="font-size: 10px; color: #e2e8f0;">Zero Statutory Clearance Violations</div>
+              </div>
+            </div>
+            <div class="landing-hud-chip">
+              <span style="font-size: 14px;">⚡</span>
+              <div>
+                <div style="font-size: 11px; font-weight: 800; color: #ffffff;">14.8 Months Avg Velocity</div>
+                <div style="font-size: 10px; color: #fde68a;">Across 15 Mega Corridors</div>
+              </div>
             </div>
           </div>
         </div>
@@ -122,7 +135,7 @@
       </div>
 
       <!-- 4-Tier Role Selection Grid Header -->
-      <div class="landing-grid-header">
+      <div class="landing-grid-header" id="role-grid-section">
         <h2>Select Authority Tier to Authenticate & Enter</h2>
         <p>Role-Based Access Control (RBAC) customized for ministerial apex, state revenue, CALA magistrates, and executing agencies.</p>
       </div>

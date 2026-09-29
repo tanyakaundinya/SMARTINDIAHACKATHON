@@ -2184,10 +2184,15 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 /* Light Mode Overrides for Landing Page */
-[data-theme="light"] .landing-hero-title {
-  background: linear-gradient(180deg, #0f172a 0%, #1e293b 70%, #475569 100%);
+[data-theme="light"] .landing-hero-content-over .landing-hero-title {
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 75%, #e2e8f0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: #ffffff;
+}
+
+[data-theme="light"] .landing-hero-content-over .landing-hero-subtitle {
+  color: #f1f5f9;
 }
 
 [data-theme="light"] .landing-metric-item {
@@ -2244,56 +2249,103 @@ input[type="range"]::-webkit-slider-thumb:hover {
 }
 
 /* ==========================================================================
-   Cinematic Greenery & Topography Imagery Showcase
+   Cinematic Greenery & Topography Imagery Showcase (Text Overlaid on Hero Image)
    ========================================================================== */
-.landing-hero-image-frame {
+.landing-hero-backdrop-banner {
   width: 100%;
   max-width: 1180px;
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(16, 185, 129, 0.12);
-  margin: 6px 0 10px 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.85), 0 0 40px rgba(16, 185, 129, 0.15);
   background: #090a0d;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
 }
 
-.landing-hero-img {
-  width: 100%;
-  height: 460px;
-  object-fit: cover;
-  object-position: center 60%;
-  display: block;
-  filter: brightness(0.95) contrast(1.08);
-  transition: transform 0.6s ease, filter 0.6s ease;
-}
-
-.landing-hero-image-frame:hover .landing-hero-img {
-  transform: scale(1.02);
-  filter: brightness(1) contrast(1.1);
-}
-
-.landing-hero-img-overlay {
+.landing-hero-backdrop-img {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(180deg, rgba(9, 10, 13, 0.15) 0%, rgba(9, 10, 13, 0) 40%, rgba(9, 10, 13, 0.88) 100%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  filter: brightness(0.68) contrast(1.15) saturate(1.1);
+  transform: scale(1.02);
+  transition: transform 0.8s ease, filter 0.8s ease;
+}
+
+.landing-hero-backdrop-banner:hover .landing-hero-backdrop-img {
+  transform: scale(1.05);
+  filter: brightness(0.74) contrast(1.18) saturate(1.15);
+}
+
+.landing-hero-backdrop-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(180deg, rgba(9, 10, 13, 0.82) 0%, rgba(9, 10, 13, 0.42) 45%, rgba(9, 10, 13, 0.92) 100%),
+    radial-gradient(circle at center, rgba(9, 10, 13, 0.2) 0%, rgba(9, 10, 13, 0.75) 100%);
   pointer-events: none;
 }
 
-.landing-hero-img-hud {
-  position: absolute;
-  bottom: 20px;
-  left: 24px;
-  right: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 16px;
-  flex-wrap: wrap;
+.landing-hero-content-over {
+  position: relative;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 56px 34px;
+  gap: 20px;
+  max-width: 960px;
+}
+
+.landing-hero-content-over .landing-hero-title {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  line-height: 1.16;
+  color: #ffffff;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.85);
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 70%, #d4d4d8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.landing-hero-content-over .landing-hero-subtitle {
+  font-size: 15.5px;
+  color: #f1f5f9;
+  max-width: 780px;
+  line-height: 1.6;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+  font-weight: 400;
+}
+
+.landing-hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.landing-hero-hud-strip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 14px;
 }
 
 .landing-hud-chip {
@@ -2360,8 +2412,29 @@ input[type="range"]::-webkit-slider-thumb:hover {
   .landing-cadastral-strip {
     grid-template-columns: 1fr;
   }
-  .landing-hero-img {
-    height: 280px;
+}
+
+@media (max-width: 768px) {
+  .landing-hero-backdrop-banner {
+    min-height: auto;
+  }
+  .landing-hero-content-over {
+    padding: 38px 18px;
+    gap: 16px;
+  }
+  .landing-hero-content-over .landing-hero-title {
+    font-size: 28px;
+  }
+  .landing-hero-content-over .landing-hero-subtitle {
+    font-size: 13.5px;
+  }
+  .landing-hero-hud-strip {
+    flex-direction: column;
+    width: 100%;
+  }
+  .landing-hud-chip {
+    width: 100%;
+    justify-content: flex-start;
   }
 }
 

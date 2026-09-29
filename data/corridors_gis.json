@@ -1,0 +1,100 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "CORR-DME-01",
+        "name": "Delhi-Mumbai Expressway (NE-4)",
+        "length_km": 1386,
+        "status": "Under Construction",
+        "risk_level": "Medium Risk",
+        "color": "#f59e0b"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [77.1025, 28.7041],
+          [77.0655, 28.2486],
+          [76.3533, 27.5530],
+          [75.8362, 25.1800],
+          [75.0367, 23.3315],
+          [73.1812, 22.3072],
+          [73.0033, 21.6264],
+          [72.8777, 19.0760]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "CORR-WDFC-02",
+        "name": "Western Dedicated Freight Corridor",
+        "length_km": 1504,
+        "status": "Partially Operational",
+        "risk_level": "Low Risk",
+        "color": "#10b981"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [77.5340, 28.5355],
+          [76.6173, 28.1920],
+          [75.5412, 27.1234],
+          [74.6399, 26.4499],
+          [73.3088, 25.1234],
+          [72.5714, 23.0225],
+          [72.9982, 20.3893],
+          [72.9500, 18.9500]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "CORR-MAHSR-03",
+        "name": "Mumbai-Ahmedabad High Speed Rail (Bullet Train)",
+        "length_km": 508,
+        "status": "Under Execution",
+        "risk_level": "Medium-High Risk",
+        "color": "#ef4444"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [72.5714, 23.0225],
+          [72.9289, 22.5645],
+          [73.1812, 22.3072],
+          [72.9982, 21.1702],
+          [72.9342, 20.6128],
+          [72.7314, 19.9720],
+          [72.8258, 19.1136],
+          [72.8656, 19.0657]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "corridor_id": "CORR-VKE-04",
+        "name": "Varanasi-Ranchi-Kolkata Expressway",
+        "length_km": 610,
+        "status": "Land Acquisition Phase",
+        "risk_level": "High Risk",
+        "color": "#dc2626"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [82.9739, 25.3176],
+          [83.6144, 25.0450],
+          [84.3422, 24.7539],
+          [85.3096, 23.3441],
+          [86.4304, 23.7957],
+          [87.8550, 22.9868],
+          [88.3639, 22.5726]
+        ]
+      }
+    }
+  ]
+}

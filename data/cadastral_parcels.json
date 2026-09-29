@@ -1,0 +1,86 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "khasra_no": "KH-142/A",
+        "survey_no": "78-B",
+        "village": "Ankleshwar Rural",
+        "district": "Bharuch",
+        "owner_name": "Rameshwarbhai Mohan Patel",
+        "area_acres": 4.25,
+        "compensation_amount_lakhs": 142.5,
+        "disbursement_status": "Paid (DBT Confirmed)",
+        "encumbrance_status": "Clean (Ready for Possession)",
+        "color": "#10b981"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [73.0010, 21.6250],
+            [73.0035, 21.6250],
+            [73.0035, 21.6275],
+            [73.0010, 21.6275],
+            [73.0010, 21.6250]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "khasra_no": "KH-143/C",
+        "survey_no": "79-A",
+        "village": "Ankleshwar Rural",
+        "district": "Bharuch",
+        "owner_name": "Hasmukh V. Desai & 4 Co-sharers",
+        "area_acres": 6.80,
+        "compensation_amount_lakhs": 228.0,
+        "disbursement_status": "Escrow Deposited (Pending Partition)",
+        "encumbrance_status": "Disputed (Civil Suit No. 42/2023)",
+        "color": "#ef4444"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [73.0040, 21.6250],
+            [73.0070, 21.6250],
+            [73.0070, 21.6275],
+            [73.0040, 21.6275],
+            [73.0040, 21.6250]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "khasra_no": "KH-144/B",
+        "survey_no": "80-C",
+        "village": "Ankleshwar Rural",
+        "district": "Bharuch",
+        "owner_name": "Gram Panchayat Common Grazing Land",
+        "area_acres": 12.10,
+        "compensation_amount_lakhs": 310.0,
+        "disbursement_status": "SIA Consent In Progress",
+        "encumbrance_status": "R&R Resettlement Hearing Pending",
+        "color": "#f59e0b"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [73.0075, 21.6250],
+            [73.0110, 21.6250],
+            [73.0110, 21.6280],
+            [73.0075, 21.6280],
+            [73.0075, 21.6250]
+          ]
+        ]
+      }
+    }
+  ]
+}

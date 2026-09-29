@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BHU-DRISHTI | National Land Acquisition Predictive Intelligence & Decision Support System</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet GIS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- National Tricolor Brand Strip -->
+  <div class="gov-tricolor-bar"></div>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="top-navbar">
+    <div class="brand-section">
+      <div class="brand-logo-emblem" style="font-weight: 800; font-size: 15px; letter-spacing: 0.5px; color: #fff;">GOI</div>
+      <div class="brand-text">
+        <h1 id="brandHeaderTitle">BHU-DRISHTI &bull; भू-दृष्टि</h1>
+        <p id="brandHeaderSubtitle">National Land Acquisition Predictive Intelligence & Decision Support System (RFCTLARR Act 2013)</p>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <!-- AI Assistant Button -->
+      <button class="btn-primary" style="background: linear-gradient(135deg, #6366f1, #4f46e5); padding: 7px 14px; font-size: 11.5px;" onclick="toggleBhuBot()">
+        Ask BHU-BOT AI
+      </button>
+
+      <!-- Language Toggle -->
+      <div class="lang-toggle-box">
+        <button id="langEngBtn" class="lang-btn active" onclick="setLanguage('en')">ENG</button>
+        <button id="langHinBtn" class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
+      </div>
+
+      <!-- Role Switcher -->
+      <div class="role-badge-container">
+        <span style="font-size: 11px; color: var(--text-muted); font-weight: 700;" id="roleLabelText">VIEW AS:</span>
+        <select id="roleSwitcher" class="role-select" onchange="handleRoleChange(this.value)">
+          <option value="MINISTRY">Central Ministry Secretary (MoRTH / Railways)</option>
+          <option value="STATE_SEC">State Revenue Secretary (Infrastructure Cell)</option>
+          <option value="COLLECTOR_CALA" selected>District Collector / Magistrate (CALA)</option>
+          <option value="AGENCY_DIRECTOR">Project Implementing Agency (NHAI / DFCCIL)</option>
+        </select>
+      </div>
+
+      <!-- Live Indicator -->
+      <div class="live-badge">
+        <div class="pulse-dot"></div>
+        <span id="liveStatusText">AI ENGINE ACTIVE</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-container">
+    
+    <!-- Strategic KPI Row -->
+    <section class="kpi-grid">
+      <div class="kpi-card blue">
+        <div class="kpi-header-row">
+          <div class="kpi-title" id="kpiLabelTotalCap">Monitored Infrastructure Capital</div>
+          <span style="font-size: 10px; font-weight: 700; color: #38bdf8; background: rgba(56,189,248,0.12); padding: 2px 6px; border-radius: 4px;">PORTFOLIO</span>
+        </div>
+        <div class="kpi-value" id="kpiTotalCapital">₹56,684 <span style="font-size: 14px; font-weight: normal; color: var(--text-secondary);">Cr</span></div>
+        <div class="kpi-sub" id="kpiTotalProjects">Across 15 Mega Projects & Corridors</div>
+      </div>
+
+      <div class="kpi-card red">
+        <div class="kpi-header-row">
+          <div class="kpi-title" id="kpiLabelRiskCap">Capital at High Delay Risk</div>
+          <span style="font-size: 10px; font-weight: 700; color: #f43f5e; background: rgba(244,63,94,0.12); padding: 2px 6px; border-radius: 4px;">HIGH RISK</span>
+        </div>
+        <div class="kpi-value" id="kpiCapitalAtRisk">₹25,190 <span style="font-size: 14px; font-weight: normal; color: var(--text-secondary);">Cr</span></div>
+        <div class="kpi-sub" id="kpiHighRiskCount">6 Projects Flagged High Risk (>75%)</div>
+      </div>
+
+      <div class="kpi-card amber">
+        <div class="kpi-header-row">
+          <div class="kpi-title" id="kpiLabelLapseAlert">Sec 25 Statutory Lapse Alerts</div>
+          <span style="font-size: 10px; font-weight: 700; color: #f59e0b; background: rgba(245,158,11,0.12); padding: 2px 6px; border-radius: 4px;">CRITICAL</span>
+        </div>
+        <div class="kpi-value" id="kpiLapseAlerts">4 <span style="font-size: 14px; font-weight: normal; color: var(--text-secondary);">Packages</span></div>
+        <div class="kpi-sub">>300 Days Post Sec 19 Declaration</div>
+      </div>
+
+      <div class="kpi-card green">
+        <div class="kpi-header-row">
+          <div class="kpi-title" id="kpiLabelVelocity">Avg Land Clearance Velocity</div>
+          <span style="font-size: 10px; font-weight: 700; color: #10b981; background: rgba(16,185,129,0.12); padding: 2px 6px; border-radius: 4px;">BENCHMARK</span>
+        </div>
+        <div class="kpi-value">14.8 <span style="font-size: 14px; font-weight: normal; color: var(--text-secondary);">Months</span></div>
+        <div class="kpi-sub">National Statutory Benchmark: 12.0 Mo</div>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs (7 Evenly Divided Options) -->
+    <nav class="tab-navigation">
+      <button class="nav-tab active" onclick="switchTab('tab-command')">Executive Command & GIS Map</button>
+      <button class="nav-tab" onclick="switchTab('tab-xai')">Explainable AI & Statutory Funnels</button>
+      <button class="nav-tab" onclick="switchTab('tab-whatif')">"What-If" Policy Simulation Studio</button>
+      <button class="nav-tab" onclick="switchTab('tab-bulk')">Bulk Ingestion & Batch Predictor</button>
+      <button class="nav-tab" onclick="switchTab('tab-analytics')">State & District Velocity Matrix</button>
+      <button class="nav-tab" onclick="switchTab('tab-memos')">Directives & Alert Dispatcher</button>
+      <button class="nav-tab" onclick="switchTab('tab-audit')">Statutory Compliance & Audit Trail</button>
+    </nav>
+
+    <!-- ================= TAB 1: COMMAND & GIS MAP ================= -->
+    <section id="tab-command" class="tab-content active">
+      
+      <!-- Quick Context Guidance Banner -->
+      <div class="info-guide-banner">
+        <div>
+          <b>Operational Intelligence:</b> Real-time geospatial corridor visualization synchronized with BhoomiRashi 2.0 gazette notifications, cadastral Khasra survey polygons, and early warning risk scoring.
+        </div>
+        <div class="info-guide-chips">
+          <span class="guide-chip" style="color: #fda4af; border-color: rgba(244,63,94,0.4);">High Risk (>75%)</span>
+          <span class="guide-chip" style="color: #fde68a; border-color: rgba(245,158,11,0.4);">Moderate Risk (40-74%)</span>
+          <span class="guide-chip" style="color: #a7f3d0; border-color: rgba(16,185,129,0.4);">On-Track (&lt;40%)</span>
+          <span class="guide-chip" style="color: #38bdf8; border-color: rgba(56,189,248,0.4);">Sec 25 Horizon</span>
+        </div>
+      </div>
+
+      <div class="dashboard-view">
+        
+        <!-- GIS Map Panel -->
+        <div class="glass-panel map-section">
+          <div class="section-header">
+            <div class="section-title">
+              <span>National Geospatial Acquisition Map (PM GatiShakti Layer)</span>
+            </div>
+            <div class="map-controls">
+              <button class="control-btn active" id="btnMapAll" onclick="filterMapRisk('ALL')">All Corridors</button>
+              <button class="control-btn" id="btnMapHigh" onclick="filterMapRisk('HIGH')">High Risk</button>
+              <button class="control-btn" id="btnMapCorridors" onclick="toggleCorridors()">Mega Corridors</button>
+              <button class="control-btn" id="btnMapParcels" onclick="toggleCadastralParcels()">Cadastral Parcels</button>
+              <button class="control-btn" id="btnMapEncroach" onclick="toggleEncroachmentLayer()">GeoAI Encroachment</button>
+              <button class="control-btn" id="btnMapSatellite" onclick="toggleSatelliteView()">Satellite View</button>
+            </div>
+          </div>
+          <div id="leafletMap"></div>
+        </div>
+
+        <!-- Prioritized Project Grid -->
+        <div class="glass-panel project-list-section">
+          <div class="section-header">
+            <div class="section-title">
+              <span>Early Warning Project Risk Triage</span>
+            </div>
+            <span style="font-size: 11.5px; color: var(--accent-sky); font-weight: 700;" id="projectCountDisplay">15 Projects Found</span>
+          </div>
+
+          <!-- Filter Bar -->
+          <div class="filter-bar">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search project, district, state, NHAI/DFC..." oninput="handleFilterChange()">
+            
+            <select id="stateFilter" class="filter-select" onchange="handleFilterChange()">
+              <option value="All">All States</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Assam">Assam</option>
+              <option value="Odisha">Odisha</option>
+            </select>
+
+            <select id="riskFilter" class="filter-select" onchange="handleFilterChange()">
+              <option value="All">All Risk Tiers</option>
+              <option value="High Risk">High Risk (>75%)</option>
+              <option value="Medium Risk">Medium Risk (40-74%)</option>
+              <option value="Low Risk">Low Risk (&lt;40%)</option>
+            </select>
+
+            <select id="sortFilter" class="filter-select" onchange="handleFilterChange()">
+              <option value="risk_desc">Sort: Risk (High to Low)</option>
+              <option value="cost_desc">Sort: Budget (High to Low)</option>
+              <option value="delay_days_desc">Sort: Delay Days (High to Low)</option>
+            </select>
+          </div>
+
+          <!-- Scrollable Project List -->
+          <div class="project-scroll-list" id="projectListContainer">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= TAB 2: EXPLAINABLE AI & FUNNELS ================= -->
+    <section id="tab-xai" class="tab-content" style="display: none;">
+      
+      <!-- Selection Bar -->
+      <div class="glass-panel" style="padding: 16px 20px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center; border-left: 4px solid var(--accent-sky);">
+        <div>
+          <span style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Active Deep-Dive Project:</span>
+          <h2 id="xaiSelectedProjectName" style="font-size: 17px; font-weight: 800; color: #ffffff; margin-top: 2px;">Loading...</h2>
+        </div>
+        <div>
+          <select id="xaiProjectSelect" class="filter-select" style="font-size: 13px; padding: 8px 14px; min-width: 320px;" onchange="loadXaiForProject(this.value)">
+            <!-- Populated dynamically -->
+          </select>
+        </div>
+      </div>
+
+      <!-- Statutory Timeline Horizon Countdown Card -->
+      <div class="glass-panel" style="padding: 18px 22px; margin-bottom: 20px; border-left: 4px solid #f59e0b;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div style="font-size: 13.5px; font-weight: 800; color: #ffffff;">RFCTLARR Statutory Timeline Countdown Horizon (Section 25 Compliance)</div>
+          <span id="statutoryCountdownBadge" style="background: rgba(244, 63, 94, 0.18); color: #fda4af; border: 1px solid rgba(244,63,94,0.4); padding: 4px 10px; border-radius: 6px; font-size: 11.5px; font-weight: 800;">
+            47 Days Remaining Until Sec 25 Lapse
+          </span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; font-size: 12px;">
+          <div style="background: rgba(22,36,65,0.6); padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border-color);">
+            <div style="color: var(--text-secondary); font-size: 11px;">Sec 11 Preliminary Notice:</div>
+            <div id="statSec11Date" style="font-weight: 700; color: #ffffff; margin-top: 3px; font-family: var(--font-mono);">2023-04-10</div>
+          </div>
+          <div style="background: rgba(22,36,65,0.6); padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border-color);">
+            <div style="color: var(--text-secondary); font-size: 11px;">Sec 19 Declaration:</div>
+            <div id="statSec19Date" style="font-weight: 700; color: #ffffff; margin-top: 3px; font-family: var(--font-mono);">2023-11-15</div>
+          </div>
+          <div style="background: rgba(22,36,65,0.6); padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border-color);">
+            <div style="color: var(--text-secondary); font-size: 11px;">Sec 25 Mandatory Lapse Date:</div>
+            <div id="statSec25Date" style="font-weight: 700; color: #f43f5e; margin-top: 3px; font-family: var(--font-mono);">2024-11-14</div>
+          </div>
+          <div style="background: rgba(22,36,65,0.6); padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border-color);">
+            <div style="color: var(--text-secondary); font-size: 11px;">Elapsed Time Post-Sec 19:</div>
+            <div id="statDaysElapsed" style="font-weight: 700; color: #f59e0b; margin-top: 3px; font-family: var(--font-mono);">318 / 365 Days</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="analytics-grid">
+        
+        <!-- Left: Statutory Lifecycle Funnel -->
+        <div class="glass-panel xai-panel">
+          <div class="section-title">
+            <span>RFCTLARR Act 2013 Statutory Milestone Funnel</span>
+          </div>
+          <p style="font-size: 11.5px; color: var(--text-secondary);">
+            Evaluates stage-specific delay risk to prevent statutory lapses before Section 25 (12-month award window). Bars animate from left to right.
+          </p>
+          <div class="chart-box" style="height: 320px;">
+            <canvas id="stageFunnelChart"></canvas>
+          </div>
+          <div id="statutoryLapseAlertBox" style="background: rgba(244, 63, 94, 0.15); border: 1px solid rgba(244, 63, 94, 0.4); padding: 12px; border-radius: var(--radius-sm); font-size: 12px; color: #fda4af;">
+            <!-- Statutory warning message -->
+          </div>
+        </div>
+
+        <!-- Right: SHAP Feature Attribution Breakdown -->
+        <div class="glass-panel xai-panel">
+          <div class="section-title">
+            <span>Explainable AI (SHAP) Factor Attribution</span>
+          </div>
+          <p style="font-size: 11.5px; color: var(--text-secondary);" id="xaiExecutiveSummary">
+            Decomposes exact mathematical percentage contributions of each legal, financial, and administrative driver.
+          </p>
+          
+          <div id="xaiAttributionList">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Prescriptive Action Playbooks -->
+      <div class="glass-panel" style="margin-top: 20px; padding: 22px;">
+        <div class="section-title" style="margin-bottom: 14px;">
+          <span>Prescriptive Administrative Decision Playbook ("Next Best Action")</span>
+        </div>
+        <div id="playbookContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TAB 3: "WHAT-IF" POLICY SIMULATION ================= -->
+    <section id="tab-whatif" class="tab-content" style="display: none;">
+      <div class="glass-panel" style="padding: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; border-bottom: 1px solid var(--border-color); padding-bottom: 14px;">
+          <div>
+            <h2 style="font-size: 17px; font-weight: 800; color: #ffffff;">Interactive Policy Scenario Simulation Studio & Financial ROI Engine</h2>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
+              Simulate the direct impact of administrative unblocking (Lok Adalats, Escrow DBT, additional surveyors) on delay risk, timelines, and public funds saved.
+            </p>
+          </div>
+          <div>
+            <select id="whatIfProjectSelect" class="filter-select" style="font-size: 13px; padding: 8px 14px; min-width: 320px;" onchange="initWhatIfSimulator(this.value)">
+              <!-- Populated dynamically -->
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px;">
+          
+          <!-- Simulation Sliders -->
+          <div class="glass-panel" style="padding: 22px; background: rgba(15, 23, 42, 0.65);">
+            <div class="section-title" style="margin-bottom: 18px;">Adjust Administrative & Policy Levers</div>
+            
+            <div class="slider-group">
+              <div class="slider-item">
+                <div class="slider-label-row">
+                  <span>Expedite Compensation Escrow Disbursement:</span>
+                  <span id="sliderCompVal" class="slider-val">+0%</span>
+                </div>
+                <input type="range" id="sliderComp" min="0" max="60" value="0" step="5" oninput="runLiveSimulation()">
+              </div>
+
+              <div class="slider-item">
+                <div class="slider-label-row">
+                  <span>Resolve Court Cases via Revenue Lok Adalat:</span>
+                  <span id="sliderCourtVal" class="slider-val">0 Cases</span>
+                </div>
+                <input type="range" id="sliderCourt" min="0" max="15" value="0" step="1" oninput="runLiveSimulation()">
+              </div>
+
+              <div class="slider-item">
+                <div class="slider-label-row">
+                  <span>Vacate Active High Court Stay Orders:</span>
+                  <span id="sliderStayVal" class="slider-val">0 Stays</span>
+                </div>
+                <input type="range" id="sliderStay" min="0" max="4" value="0" step="1" oninput="runLiveSimulation()">
+              </div>
+
+              <div class="slider-item">
+                <div class="slider-label-row">
+                  <span>Deploy Additional Joint Measurement Teams (JMS):</span>
+                  <span id="sliderSurveyVal" class="slider-val">+0 Teams</span>
+                </div>
+                <input type="range" id="sliderSurvey" min="0" max="3" value="0" step="1" oninput="runLiveSimulation()">
+              </div>
+
+              <div style="display: flex; gap: 18px; margin-top: 10px;">
+                <label style="font-size: 12.5px; color: var(--text-light); display: flex; align-items: center; gap: 7px; cursor: pointer;">
+                  <input type="checkbox" id="checkForestFasttrack" onchange="runLiveSimulation()"> Fast-track SLEC Forest Clearance
+                </label>
+                <label style="font-size: 12.5px; color: var(--text-light); display: flex; align-items: center; gap: 7px; cursor: pointer;">
+                  <input type="checkbox" id="checkMutationDrive" onchange="runLiveSimulation()"> Special Tehsil Mutation Camp
+                </label>
+              </div>
+            </div>
+
+            <div style="margin-top: 22px; display: flex; gap: 12px;">
+              <button class="btn-primary" onclick="resetSimulation()">Reset Levers</button>
+              <button class="btn-secondary" onclick="applySimulatedPlan()">Save Mitigation Strategy</button>
+            </div>
+          </div>
+
+          <!-- Simulation Live Outcome -->
+          <div class="glass-panel" style="padding: 22px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div class="section-title">Simulated Risk Impact & Timeline Recovery</div>
+              
+              <div class="simulation-outcome-box">
+                <div class="outcome-item">
+                  <div style="font-size: 11px; color: var(--text-secondary); font-weight: 700;">BASELINE RISK</div>
+                  <div id="simBaselineRisk" class="outcome-val" style="color: #fda4af;">84/100</div>
+                </div>
+                <div class="outcome-item">
+                  <div style="font-size: 11px; color: var(--text-secondary); font-weight: 700;">SIMULATED RISK</div>
+                  <div id="simSimulatedRisk" class="outcome-val" style="color: #34d399;">46/100</div>
+                </div>
+                <div class="outcome-item">
+                  <div style="font-size: 11px; color: var(--text-secondary); font-weight: 700;">RISK REDUCTION</div>
+                  <div id="simRiskReduction" class="outcome-val" style="color: #38bdf8;">-45%</div>
+                </div>
+              </div>
+
+              <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: flex; justify-content: space-between; font-size: 12.5px;">
+                  <span style="color: var(--text-light);">Estimated Delay Days Saved:</span>
+                  <span id="simDaysSaved" style="font-weight: 800; color: #10b981;">110 Days (3.6 Months)</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 12.5px;">
+                  <span style="color: var(--text-light);">Statutory Compliance Status:</span>
+                  <span id="simComplianceStatus" style="font-weight: 800; color: #38bdf8;">Optimal (Sec 25 Safe)</span>
+                </div>
+              </div>
+
+              <!-- Financial ROI Box -->
+              <div id="simFinancialRoiBox"></div>
+            </div>
+
+            <div class="chart-box" style="height: 160px; margin-top: 14px;">
+              <canvas id="simComparisonChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TAB 4: BULK INGESTION & BATCH PREDICTOR ================= -->
+    <section id="tab-bulk" class="tab-content" style="display: none;">
+      <div class="glass-panel" style="padding: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; border-bottom: 1px solid var(--border-color); padding-bottom: 14px;">
+          <div>
+            <h2 style="font-size: 17px; font-weight: 800; color: #ffffff;">Bulk Dataset Ingestion & Batch Risk Predictor Studio</h2>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
+              Upload project records via CSV to immediately calculate delay risk scores, SHAP factors, and export annotated datasets.
+            </p>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <button class="btn-secondary" onclick="loadSampleCsvData()">Load Sample 20-Project CSV</button>
+            <button class="btn-primary" onclick="exportBatchCsvResults()">Export Annotated CSV Report</button>
+          </div>
+        </div>
+
+        <div style="border: 2px dashed var(--border-highlight); padding: 26px; border-radius: var(--radius-sm); text-align: center; background: rgba(15,23,42,0.45); margin-bottom: 20px;">
+          <div style="font-size: 14px; font-weight: 700; color: #ffffff;">Drag and drop BhoomiRashi / State Land Acquisition CSV file here</div>
+          <div style="font-size: 12px; color: #94a3b8; margin: 4px 0 14px 0;">Supports project metadata, survey dates, compensation %, and litigation counts</div>
+          <input type="file" id="csvFileInput" accept=".csv" style="display: none;" onchange="handleCsvUpload(this)">
+          <button class="btn-primary" onclick="document.getElementById('csvFileInput').click()">Choose CSV File</button>
+        </div>
+
+        <div>
+          <div style="font-size: 13.5px; font-weight: 700; margin-bottom: 10px;">Batch Processed Predictions Preview (<span id="batchCount">15 Projects</span>)</div>
+          <div style="max-height: 290px; overflow-y: auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Project ID</th>
+                  <th>Project Name</th>
+                  <th>State & District</th>
+                  <th>Comp Paid %</th>
+                  <th>Litigations</th>
+                  <th>AI Risk Score</th>
+                  <th>Delay Probability</th>
+                  <th>Est. Delay</th>
+                </tr>
+              </thead>
+              <tbody id="batchPredictionBody">
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TAB 5: STATE & DISTRICT VELOCITY MATRIX ================= -->
+    <section id="tab-analytics" class="tab-content" style="display: none;">
+      <div class="glass-panel" style="padding: 24px;">
+        <div class="section-title" style="margin-bottom: 18px;">
+          <span>State & District Land Acquisition Clearance Velocity Benchmarking</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div class="glass-panel" style="padding: 18px;">
+            <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px; color: #ffffff;">Average Land Clearance Velocity by State (Months)</div>
+            <div class="chart-box">
+              <canvas id="stateVelocityChart"></canvas>
+            </div>
+          </div>
+
+          <div class="glass-panel" style="padding: 18px;">
+            <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px; color: #ffffff;">DILRMP Land Record Digitization vs Delay Risk Correlation</div>
+            <div class="chart-box">
+              <canvas id="dilrmpCorrelationChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- District Leaderboard Table -->
+        <div style="margin-top: 24px;">
+          <div style="font-size: 13.5px; font-weight: 700; margin-bottom: 10px;">District Land Acquisition Governance Scorecard</div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>District</th>
+                <th>State</th>
+                <th>Risk Index (0-100)</th>
+                <th>Avg Acquisition Months</th>
+                <th>DILRMP Digitization %</th>
+                <th>Governance Tier</th>
+              </tr>
+            </thead>
+            <tbody id="districtScorecardBody">
+              <!-- Populated dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TAB 6: MEMOS & DIRECTIVES ================= -->
+    <section id="tab-memos" class="tab-content" style="display: none;">
+      <div class="glass-panel" style="padding: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; border-bottom: 1px solid var(--border-color); padding-bottom: 14px;">
+          <div>
+            <h2 style="font-size: 17px; font-weight: 800; color: #ffffff;">Official Ministerial Directive & Gazette Generator Center</h2>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
+              Generate statutory D.O. letters, draft e-Gazette notifications, and dispatch real-time SMS & WhatsApp alerts.
+            </p>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <select id="memoProjectSelect" class="filter-select" style="font-size: 13px; padding: 8px 12px; min-width: 280px;">
+              <!-- Populated dynamically -->
+            </select>
+            <button class="btn-primary" onclick="generateOfficialMemo()">Generate Official Memo</button>
+            <button class="btn-primary" style="background: #0284c7;" onclick="generateGazetteNotification()">Draft e-Gazette Notice</button>
+            <button class="btn-secondary" onclick="printMemo()">Print / Export PDF</button>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px;">
+          <!-- Official Memo Paper Container -->
+          <div id="officialMemoContainer" class="official-memo-sheet">
+            <div style="text-align: center; color: var(--text-muted); padding: 50px 0; font-family: var(--font-main);">
+              Select a project and click "Generate Official Memo" or "Draft e-Gazette Notice" to preview the formal documents.
+            </div>
+          </div>
+
+          <!-- Multi-Channel Citizen & Officer Alert Simulator -->
+          <div class="glass-panel" style="padding: 20px;">
+            <div style="font-size: 13.5px; font-weight: 800; margin-bottom: 14px; color: #ffffff;">Citizen & DM Dispatch Simulator</div>
+            
+            <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid #10b981; border-radius: var(--radius-sm); padding: 14px; margin-bottom: 14px;">
+              <div style="font-size: 11px; color: #34d399; font-weight: 800; margin-bottom: 4px;">WHATSAPP DIRECTIVE DISPATCH (DM / CALA)</div>
+              <div style="font-size: 12px; color: #e2e8f0; line-height: 1.45;">
+                <b>[BHU-DRISHTI ALERT]</b>: Project <b>NH-48 Vadodara-Kim</b> has entered HIGH RISK (89% probability). Section 25 lapse window has only 47 days left. Special Revenue Lok Adalat scheduled for 14 disputed Khasra survey numbers.
+              </div>
+            </div>
+
+            <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid #38bdf8; border-radius: var(--radius-sm); padding: 14px; margin-bottom: 16px;">
+              <div style="font-size: 11px; color: #38bdf8; font-weight: 800; margin-bottom: 4px;">CITIZEN SMS (LANDOWNER COMPENSATION NOTICE)</div>
+              <div style="font-size: 12px; color: #e2e8f0; line-height: 1.45;">
+                <b>Govt of India (CALA Office)</b>: Award approved for Survey No. 78-B. ₹1.42 Cr solatium deposited in Treasury Escrow. Submit bank Aadhaar KYC to receive Direct Benefit Transfer within 7 days.
+              </div>
+            </div>
+
+            <button class="btn-primary" style="width: 100%; padding: 10px;" onclick="simulateBroadcastAlerts()">
+              Broadcast Multi-Channel Alert to CALA & Landowners
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= TAB 7: STATUTORY COMPLIANCE & AUDIT TRAIL ================= -->
+    <section id="tab-audit" class="tab-content" style="display: none;">
+      <div class="glass-panel" style="padding: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 14px;">
+          <div>
+            <h2 style="font-size: 17px; font-weight: 800; color: #ffffff;">Immutable Statutory Compliance & Governance Audit Trail</h2>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
+              Cryptographically verified SHA-256 log recording all ministerial directives, CALA notifications, What-If policy simulations, and statutory milestone transitions.
+            </p>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <button class="btn-secondary" style="font-size: 12px; padding: 6px 14px;" onclick="loadAuditLogs()">Refresh Live Logs</button>
+          </div>
+        </div>
+
+        <div class="glass-panel" style="padding: 20px;">
+          <div style="font-size: 13.5px; font-weight: 700; margin-bottom: 14px; color: #38bdf8;">
+            Administrative Action Log (RFCTLARR Act 2013 Statutory Records)
+          </div>
+          
+          <div id="auditLogList" style="display: flex; flex-direction: column; gap: 10px; max-height: 520px; overflow-y: auto;">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BHU-BOT Floating AI Assistant Drawer -->
+  <div id="bhuBotDrawer" class="glass-panel" style="position: fixed; bottom: 20px; right: 20px; width: 390px; height: 520px; z-index: 3000; display: none; flex-direction: column; box-shadow: 0 20px 50px rgba(0,0,0,0.85); border: 1px solid #6366f1; border-radius: var(--radius-md); overflow: hidden;">
+    <div style="padding: 14px 18px; background: linear-gradient(135deg, #4f46e5, #3b82f6); display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <div style="font-size: 13.5px; font-weight: 800; color: #ffffff;">BHU-BOT AI Governance Copilot</div>
+        <div style="font-size: 10.5px; color: #e0e7ff;">Land Acquisition Intelligence Assistant</div>
+      </div>
+      <button style="background: transparent; border: none; color: #ffffff; font-size: 20px; cursor: pointer; line-height: 1;" onclick="toggleBhuBot()">&times;</button>
+    </div>
+
+    <!-- Quick Chips -->
+    <div style="padding: 8px 12px; background: rgba(11,20,38,0.9); border-bottom: 1px solid var(--border-color); display: flex; gap: 6px; overflow-x: auto;">
+      <button class="control-btn" style="white-space: nowrap; font-size: 10.5px;" onclick="askBhuBot('Show all packages facing Section 25 lapse')">Sec 25 Lapse</button>
+      <button class="control-btn" style="white-space: nowrap; font-size: 10.5px;" onclick="askBhuBot('Which district in Bihar has the highest delay risk?')">Bihar Districts</button>
+      <button class="control-btn" style="white-space: nowrap; font-size: 10.5px;" onclick="askBhuBot('What is the prescriptive solution for Vadodara-Kim package?')">Prescriptions</button>
+    </div>
+
+    <!-- Chat Messages Container -->
+    <div id="bhuBotMessages" style="flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 12px; background: rgba(6,11,23,0.95);">
+      <div style="background: rgba(30,41,59,0.85); padding: 12px; border-radius: 8px; border-left: 3px solid #6366f1; line-height: 1.45;">
+        Greetings! I am <b>BHU-BOT</b>, your AI Copilot for land acquisition governance. Ask me about high-risk corridors, pending court stays, statutory lapse deadlines, or administrative playbooks.
+      </div>
+    </div>
+
+    <!-- Chat Input -->
+    <div style="padding: 12px; background: rgba(11,20,38,0.95); border-top: 1px solid var(--border-color); display: flex; gap: 8px;">
+      <input type="text" id="bhuBotInput" class="search-input" style="font-size: 12px;" placeholder="Ask BHU-BOT in English / Hindi..." onkeypress="if(event.key==='Enter') sendBhuBotMessage()">
+      <button class="btn-primary" style="padding: 6px 14px;" onclick="sendBhuBotMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- Project Detail Modal -->
+  <div id="projectDetailModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span style="font-size: 11.5px; color: var(--text-secondary); font-weight: 700;" id="modalProjectAgency">NHAI</span>
+          <h2 id="modalProjectTitle" style="font-size: 18px; font-weight: 800; color: #ffffff;">Project Title</h2>
+        </div>
+        <button class="close-modal-btn" onclick="closeProjectModal()">&times;</button>
+      </div>
+
+      <div id="modalBodyContent">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script src="js/gis_map.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/xai_viewer.js"></script>
+  <script src="js/what_if_studio.js"></script>
+  <script src="js/alert_memo_center.js"></script>
+  <script src="js/model_hub.js"></script>
+  <script src="js/api_explorer.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

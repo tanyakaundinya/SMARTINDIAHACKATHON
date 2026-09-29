@@ -450,7 +450,7 @@ function loadStateDistrictMetrics() {
           <td>${d.state}</td>
           <td><b>${d.risk_index}/100</b></td>
           <td>${d.avg_months} Months</td>
-          <td><span style="color: #38bdf8; font-weight: bold;">${d.dilrmp}%</span></td>
+          <td><span style="color: #ffffff; font-weight: bold;">${d.dilrmp}%</span></td>
           <td><span style="background: ${badgeClass}; color: ${badgeColor}; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">${tierLabel}</span></td>
         `;
         tbody.appendChild(tr);
@@ -476,7 +476,7 @@ function openProjectModal(projectId) {
           </div>
           <div class="glass-panel" style="padding: 14px;">
             <div style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase;">DELAY PROBABILITY</div>
-            <div style="font-size: 22px; font-weight: 800; color: #38bdf8; margin-top: 4px;">${p.delay_probability_pct}%</div>
+            <div style="font-size: 22px; font-weight: 800; color: #ffffff; margin-top: 4px;">${p.delay_probability_pct}%</div>
           </div>
           <div class="glass-panel" style="padding: 14px;">
             <div style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase;">ESTIMATED DELAY</div>
@@ -490,7 +490,7 @@ function openProjectModal(projectId) {
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
           <div class="glass-panel" style="padding: 16px;">
-            <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px; color: #38bdf8;">Statutory Details (RFCTLARR Act 2013)</div>
+            <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px; color: #ffffff;">Statutory Details (RFCTLARR Act 2013)</div>
             <div style="font-size: 12px; display: flex; flex-direction: column; gap: 6px; color: #cbd5e1;">
               <div>Current Milestone: <b>${p.statutory_stage}</b></div>
               <div>Section 11 Notification: <b>${p.sec11_notification_date}</b></div>
@@ -514,13 +514,13 @@ function openProjectModal(projectId) {
           <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px;">Prescriptive Mitigation Action Playbook</div>
           <div style="display: flex; flex-direction: column; gap: 8px;">
             ${(p.prescriptive_recommendations || []).map(r => `
-              <div style="background: rgba(30,41,59,0.55); padding: 12px 14px; border-radius: 8px; border-left: 4px solid #3b82f6; font-size: 12px;">
+              <div style="background: rgba(30,41,59,0.55); padding: 12px 14px; border-radius: 8px; border-left: 4px solid #ffffff; font-size: 12px;">
                 <div style="font-weight: 700; color: #fff; display: flex; justify-content: space-between;">
                   <span>${r.title} (Priority: ${r.priority})</span>
                   <span style="color: #34d399; font-weight: 700;">-${r.expected_risk_reduction_pct}% Risk</span>
                 </div>
                 <div style="color: #94a3b8; margin: 4px 0;">${r.description}</div>
-                <div style="color: #38bdf8; font-size: 11px;">Statutory Ref: <b>${r.statutory_reference}</b> | Timeline: <b>${r.timeline_days} days</b></div>
+                <div style="color: #ffffff; font-size: 11px;">Statutory Ref: <b>${r.statutory_reference}</b> | Timeline: <b>${r.timeline_days} days</b></div>
               </div>
             `).join('')}
           </div>

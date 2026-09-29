@@ -111,7 +111,7 @@ function renderXaiDetails(project) {
       </div>
 
       <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-size: 11px; color: #38bdf8;">Timeline: <b>${rec.timeline_days} Days</b></span>
+        <span style="font-size: 11px; color: #ffffff;">Timeline: <b>${rec.timeline_days} Days</b></span>
         <button class="btn-primary" style="padding: 4px 10px; font-size: 11px;" onclick="dispatchPlaybookAction('${project.id}', '${rec.id}')">
           Issue Directive
         </button>

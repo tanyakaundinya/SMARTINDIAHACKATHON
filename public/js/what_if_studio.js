@@ -91,8 +91,8 @@ function runLiveSimulation() {
           <div style="font-size: 11px; color: #34d399; font-weight: bold; margin-bottom: 4px;">[ EXCHEQUER SAVINGS & ROI ANALYSIS ]</div>
           <div style="font-size: 12px; color: #f8fafc; line-height: 1.5;">
             By saving <b>${daysSaved} Days</b>, the National Exchequer averts:<br>
-            • Contractor Idling Claims: <b style="color: #38bdf8;">₹${idlingSaved} Cr</b><br>
-            • Interest During Construction (IDC): <b style="color: #38bdf8;">₹${idcSaved} Cr</b><br>
+            • Contractor Idling Claims: <b style="color: #ffffff;">₹${idlingSaved} Cr</b><br>
+            • Interest During Construction (IDC): <b style="color: #ffffff;">₹${idcSaved} Cr</b><br>
             <span style="font-size: 13px; color: #10b981; font-weight: bold; display: block; margin-top: 4px;">
               Net Public Fund Protected: ₹${totalExchequerBenefit} Crore
             </span>

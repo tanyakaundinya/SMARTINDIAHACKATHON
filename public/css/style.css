@@ -27,9 +27,9 @@
   --text-light: #e4e4e7;
 
   /* Accents */
-  --accent-blue: #38bdf8;
-  --accent-cyan: #06b6d4;
-  --accent-sky: #38bdf8;
+  --accent-blue: #ffffff;
+  --accent-cyan: #ffffff;
+  --accent-sky: #ffffff;
   --accent-indigo: #818cf8;
   --accent-purple: #a855f7;
 
@@ -174,14 +174,14 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 12px 30px;
-  background: rgba(12, 13, 18, 0.96);
+  background: #000000 !important;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.9);
 }
 
 .brand-section {
@@ -208,9 +208,9 @@ body {
   font-size: 19px;
   font-weight: 800;
   letter-spacing: 0.3px;
-  background: linear-gradient(90deg, #ffffff 0%, #f4f4f5 60%, #a1a1aa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -2415,7 +2415,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .landing-ref-card-tag.l1 { background: rgba(15, 23, 42, 0.85); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.3); }
 .landing-ref-card-tag.l2 { background: rgba(6, 78, 59, 0.85); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.5); }
 .landing-ref-card-tag.l3 { background: rgba(120, 53, 15, 0.85); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.5); }
-.landing-ref-card-tag.l4 { background: rgba(12, 74, 110, 0.85); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.5); }
+.landing-ref-card-tag.l4 { background: rgba(12, 74, 110, 0.85); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); }
 
 .landing-ref-card-body {
   padding: 20px;

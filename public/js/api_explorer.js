@@ -61,7 +61,7 @@ function loadAuditLogs() {
 
         item.innerHTML = `
           <div style="display: flex; justify-content: space-between; margin-bottom: 2px;">
-            <span style="color: #38bdf8; font-weight: 600;">${log.action}</span>
+            <span style="color: #ffffff; font-weight: 600;">${log.action}</span>
             <span style="color: #64748b;">${timeStr}</span>
           </div>
           <div style="color: #cbd5e1; margin-bottom: 4px;">${log.details}</div>

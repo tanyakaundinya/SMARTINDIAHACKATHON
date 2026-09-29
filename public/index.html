@@ -27,275 +27,309 @@
   <div class="gov-tricolor-bar"></div>
 
   <!-- ==========================================================================
-       LANDING GATEWAY PORTAL (Entry View)
+       LANDING GATEWAY PORTAL (Entry View - Reference Layout)
        ========================================================================== -->
   <div id="landingPortalView" class="landing-portal-wrapper">
-    <!-- Landing Top Navbar -->
-    <header class="top-navbar" style="padding: 14px 32px;">
-      <div class="brand-section">
-        <div class="brand-text">
-          <h1 style="font-size: 20px;">BHU-DRISHTI &bull; भू-दृष्टि</h1>
-          <p>National Land Acquisition Predictive Intelligence & Decision Support System</p>
-        </div>
-      </div>
-
-      <div class="nav-actions">
-        <!-- Dark / Light Theme Toggle -->
-        <button class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Dark / Light Theme" aria-label="Toggle Theme">
-          <span class="theme-icon">☀️</span>
-          <span class="theme-btn-label">LIGHT</span>
-        </button>
-
-        <!-- Language Toggle -->
-        <div class="lang-toggle-box">
-          <button class="lang-btn active" onclick="setLanguage('en')">ENG</button>
-          <button class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
+    
+    <!-- Floating Pill-Shaped Top Navbar (Reference: Poulls / InteriorStudio) -->
+    <div class="landing-nav-wrapper">
+      <header class="landing-floating-navbar">
+        <div class="landing-nav-brand">
+          <span class="landing-brand-logo">🏛️</span>
+          <div class="landing-brand-names">
+            <span class="landing-brand-main">BHU-DRISHTI</span>
+            <span class="landing-brand-sub">भू-दृष्टि &bull; GOVTECH APEX</span>
+          </div>
         </div>
 
-        <button class="btn-primary" style="padding: 7px 16px; font-size: 11.5px;" onclick="enterMissionControl('COLLECTOR_CALA')">
-          <span>🚀 Explore Mission Control</span>
-        </button>
-      </div>
-    </header>
+        <nav class="landing-nav-links">
+          <a href="#hero-section" class="landing-nav-link active">Home</a>
+          <a href="#overview-section" class="landing-nav-link">Intelligence</a>
+          <a href="#portals-section" class="landing-nav-link">Authority Portals</a>
+          <a href="#process-section" class="landing-nav-link">Statutory Process</a>
+        </nav>
 
-    <!-- Landing Hero Container -->
-    <div class="landing-hero-container">
-      <!-- Aesthetic Green Terrain Hero Banner with Text Overlay -->
-      <div class="landing-hero-backdrop-banner">
-        <img src="img/green_terrain_hero.jpg" alt="Lush Green Indian Terrain & Infrastructure Corridor" class="landing-hero-backdrop-img">
-        <div class="landing-hero-backdrop-overlay"></div>
-        
-        <div class="landing-hero-content-over">
-          <div class="landing-hero-badge">
-            <span>🇮🇳 NATIONAL GOVTECH APEX &bull; PM GATISHAKTI & BHOOMIRASHI 2.0</span>
+        <div class="landing-nav-right">
+          <!-- Dark / Light Theme Toggle -->
+          <button class="theme-toggle-btn landing-pill-theme" onclick="toggleTheme()" title="Switch Theme" aria-label="Toggle Theme">
+            <span class="theme-icon">☀️</span>
+            <span class="theme-btn-label">LIGHT</span>
+          </button>
+
+          <!-- Language Toggle -->
+          <div class="lang-toggle-box landing-pill-lang">
+            <button class="lang-btn active" onclick="setLanguage('en')">ENG</button>
+            <button class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
           </div>
 
-          <h1 class="landing-hero-title">
-            National Land Acquisition Predictive Intelligence Platform
+          <!-- Primary Launch Button -->
+          <button class="landing-pill-btn" onclick="enterMissionControl('COLLECTOR_CALA')">
+            <span>🚀 Launch Mission Control</span>
+          </button>
+        </div>
+      </header>
+    </div>
+
+    <!-- Main Landing Body -->
+    <main class="landing-body-container" id="hero-section">
+      
+      <!-- Panoramic Hero Section with Left-Aligned Overlay (Reference: Poulls) -->
+      <section class="landing-ref-hero-banner">
+        <img src="img/green_terrain_hero.jpg" alt="National Infrastructure Terrain Corridor" class="landing-ref-hero-img">
+        <div class="landing-ref-hero-overlay"></div>
+
+        <div class="landing-ref-hero-content">
+          <div class="landing-ref-badge">
+            <span>🇮🇳 NATIONAL GOVTECH &bull; PM GATISHAKTI 2.0</span>
+          </div>
+
+          <h1 class="landing-ref-hero-title">
+            Predictive Land Acquisition Intelligence
           </h1>
 
-          <p class="landing-hero-subtitle">
-            Transforming linear infrastructure land clearance from reactive dispute firefighting into proactive, AI-powered statutory risk governance. Synchronized with BhoomiRashi 2.0 gazettes, DILRMP cadastral surveys, and RFCTLARR 2013 Section 25 lapse prevention.
+          <p class="landing-ref-hero-subtitle">
+            AI-powered statutory risk forecasting, GIS corridor surveillance, and Section 25 lapse prevention across India's mega linear infrastructure networks.
           </p>
 
-          <div class="landing-hero-cta-row">
-            <a href="#role-grid-section" class="btn-primary" style="padding: 12px 24px; font-size: 13px; text-decoration: none; border-radius: 8px; box-shadow: 0 8px 25px rgba(255,255,255,0.25);">
-              <span>🔐 Select Authority Tier ↓</span>
+          <div class="landing-ref-hero-actions">
+            <a href="#portals-section" class="landing-pill-btn large">
+              <span>🔐 Select Authority Portal &darr;</span>
             </a>
-            <button class="btn-secondary" style="padding: 12px 24px; font-size: 13px; border-radius: 8px; background: rgba(20,22,28,0.7); backdrop-filter: blur(10px); border-color: rgba(255,255,255,0.25); color: #ffffff;" onclick="enterMissionControl('COLLECTOR_CALA')">
-              <span>🚀 Explore Mission Control Directly →</span>
+            <button class="landing-pill-btn-outline" onclick="enterMissionControl('COLLECTOR_CALA')">
+              <span>⚡ Explore Live Demo &rarr;</span>
             </button>
           </div>
+        </div>
+      </section>
 
-          <!-- Hero Floating HUD Chips Overlay -->
-          <div class="landing-hero-hud-strip">
-            <div class="landing-hud-chip">
-              <span style="font-size: 14px;">🛰️</span>
-              <div>
-                <div style="font-size: 11px; font-weight: 800; color: #ffffff;">PM GatiShakti Spatial Mesh</div>
-                <div style="font-size: 10px; color: #a7f3d0;">Synchronized with BhoomiRashi 2.0</div>
-              </div>
-            </div>
-            <div class="landing-hud-chip">
-              <span style="font-size: 14px;">🌿</span>
-              <div>
-                <div style="font-size: 11px; font-weight: 800; color: #34d399;">Eco-Sensitivity & Forest Check</div>
-                <div style="font-size: 10px; color: #e2e8f0;">Zero Statutory Clearance Violations</div>
-              </div>
-            </div>
-            <div class="landing-hud-chip">
-              <span style="font-size: 14px;">⚡</span>
-              <div>
-                <div style="font-size: 11px; font-weight: 800; color: #ffffff;">14.8 Months Avg Velocity</div>
-                <div style="font-size: 10px; color: #fde68a;">Across 15 Mega Corridors</div>
-              </div>
+      <!-- Floating Overlapping Quick Gateway Control Bar (Signature Element from Reference 1) -->
+      <div class="landing-overlapping-bar-container">
+        <div class="landing-overlapping-bar">
+          <div class="overlapping-bar-field">
+            <label class="overlapping-bar-label">📍 MONITORED CORRIDOR</label>
+            <div class="overlapping-bar-value">
+              <span style="color: #34d399; font-weight: 700;">Delhi-Mumbai Expressway</span>
+              <span style="font-size: 11px; color: var(--text-secondary);">&bull; 15 Mega Corridors</span>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Key National Impact Metrics Strip -->
-      <div class="landing-metrics-strip">
-        <div class="landing-metric-item">
-          <div class="landing-metric-val">₹56,684 Cr</div>
-          <div class="landing-metric-label">Monitored Capital</div>
-        </div>
-        <div class="landing-metric-item">
-          <div class="landing-metric-val">15 Mega Corridors</div>
-          <div class="landing-metric-label">National Footprint</div>
-        </div>
-        <div class="landing-metric-item">
-          <div class="landing-metric-val">89.4% Precision</div>
-          <div class="landing-metric-label">ML Delay Warning</div>
-        </div>
-        <div class="landing-metric-item">
-          <div class="landing-metric-val">0 Section 25 Lapses</div>
-          <div class="landing-metric-label">Statutory Compliance</div>
-        </div>
-      </div>
+          <div class="overlapping-bar-divider"></div>
 
-      <!-- 4-Tier Role Selection Grid Header -->
-      <div class="landing-grid-header" id="role-grid-section">
-        <h2>Select Authority Tier to Authenticate & Enter</h2>
-        <p>Role-Based Access Control (RBAC) customized for ministerial apex, state revenue, CALA magistrates, and executing agencies.</p>
-      </div>
+          <div class="overlapping-bar-field">
+            <label class="overlapping-bar-label">🏛️ STAKEHOLDER HIERARCHY</label>
+            <div class="overlapping-bar-value">
+              <span style="color: #ffffff; font-weight: 700;">Level 3: District CALA</span>
+              <span style="font-size: 11px; color: var(--text-secondary);">&bull; 4 Access Levels</span>
+            </div>
+          </div>
 
-      <!-- 4-Tier Interactive Level Cards with Visual Imagery Accents -->
-      <div class="landing-levels-grid">
-        <!-- Level 1: National Apex Authority -->
-        <div class="landing-role-card" onclick="enterMissionControl('MINISTRY')">
-          <div class="landing-card-thumb-box">
-            <img src="img/green_terrain_hero.jpg" alt="National Apex Highway Corridor" class="landing-card-thumb-img">
-            <div class="landing-card-thumb-overlay"></div>
-          </div>
-          <div>
-            <div class="landing-role-header">
-              <span class="landing-level-tag l1">LEVEL 1: NATIONAL APEX</span>
-              <span style="font-size: 11px; font-weight: 700; color: #a1a1aa;">MoRTH / GatiShakti</span>
-            </div>
-            <div class="landing-officer-box" style="margin-top: 12px;">
-              <div class="landing-officer-avatar">RK</div>
-              <div class="landing-officer-details">
-                <h3>Shri Rajesh Kumar, IAS</h3>
-                <p>Joint Secretary (Land Acquisition), MoRTH</p>
-              </div>
-            </div>
-          </div>
-          <ul class="landing-capabilities-list">
-            <li>Macro portfolio capital risk triage across all 15 corridors</li>
-            <li>Inter-ministerial gazette directive & D.O. letter dispatch</li>
-            <li>High-level escalation matrix & PM GatiShakti sync</li>
-          </ul>
-          <button class="btn-primary landing-card-btn" onclick="event.stopPropagation(); enterMissionControl('MINISTRY');">
-            Enter Apex Portal &rarr;
-          </button>
-        </div>
+          <div class="overlapping-bar-divider"></div>
 
-        <!-- Level 2: State Revenue Department -->
-        <div class="landing-role-card" onclick="enterMissionControl('STATE_SEC')">
-          <div class="landing-card-thumb-box">
-            <img src="img/green_cadastral.jpg" alt="State Cadastral Farmland Survey" class="landing-card-thumb-img">
-            <div class="landing-card-thumb-overlay"></div>
-          </div>
-          <div>
-            <div class="landing-role-header">
-              <span class="landing-level-tag l2">LEVEL 2: STATE REVENUE</span>
-              <span style="font-size: 11px; font-weight: 700; color: #34d399;">State Dept. of Revenue</span>
-            </div>
-            <div class="landing-officer-box" style="margin-top: 12px;">
-              <div class="landing-officer-avatar">AS</div>
-              <div class="landing-officer-details">
-                <h3>Smt. Ananya Sen, IAS</h3>
-                <p>Principal Secretary (Revenue & Land Records)</p>
-              </div>
+          <div class="overlapping-bar-field">
+            <label class="overlapping-bar-label">⚡ AI RISK PRECISION</label>
+            <div class="overlapping-bar-value">
+              <span style="color: #fbbf24; font-weight: 800;">89.4% Delay Precision</span>
+              <span style="font-size: 11px; color: #a7f3d0;">&bull; Zero Sec 25 Lapses</span>
             </div>
           </div>
-          <ul class="landing-capabilities-list">
-            <li>State-wide district clearance velocity & benchmark matrix</li>
-            <li>DILRMP cadastral digitization vs delay risk correlation</li>
-            <li>Special Revenue Lok Adalat dispute settlement mobilization</li>
-          </ul>
-          <button class="btn-primary landing-card-btn" onclick="event.stopPropagation(); enterMissionControl('STATE_SEC');">
-            Enter State Portal &rarr;
-          </button>
-        </div>
 
-        <!-- Level 3: District CALA Authority -->
-        <div class="landing-role-card" onclick="enterMissionControl('COLLECTOR_CALA')">
-          <div class="landing-card-thumb-box">
-            <img src="img/land_plots_sunset.jpg" alt="Cadastral Khasra Boundary Survey" class="landing-card-thumb-img">
-            <div class="landing-card-thumb-overlay"></div>
-          </div>
-          <div>
-            <div class="landing-role-header">
-              <span class="landing-level-tag l3">LEVEL 3: DISTRICT CALA</span>
-              <span style="font-size: 11px; font-weight: 700; color: #fbbf24;">District Magistrate</span>
-            </div>
-            <div class="landing-officer-box" style="margin-top: 12px;">
-              <div class="landing-officer-avatar">VS</div>
-              <div class="landing-officer-details">
-                <h3>Dr. Vikramaditya Solanki, IAS</h3>
-                <p>District Magistrate & CALA (District Administration)</p>
-              </div>
-            </div>
-          </div>
-          <ul class="landing-capabilities-list">
-            <li>Cadastral Khasra survey & geo-encroachment HUD inspector</li>
-            <li>RFCTLARR Section 25 mandatory 1-year lapse countdown</li>
-            <li>Interactive "What-If" Policy Simulation Studio & ROI</li>
-          </ul>
-          <button class="btn-primary landing-card-btn" onclick="event.stopPropagation(); enterMissionControl('COLLECTOR_CALA');">
-            Enter District Portal &rarr;
-          </button>
-        </div>
-
-        <!-- Level 4: Project Implementing Agency -->
-        <div class="landing-role-card" onclick="enterMissionControl('AGENCY_DIRECTOR')">
-          <div class="landing-card-thumb-box">
-            <img src="img/green_terrain_hero.jpg" alt="Linear Corridor Execution" class="landing-card-thumb-img">
-            <div class="landing-card-thumb-overlay"></div>
-          </div>
-          <div>
-            <div class="landing-role-header">
-              <span class="landing-level-tag l4">LEVEL 4: EXECUTING AGENCY</span>
-              <span style="font-size: 11px; font-weight: 700; color: #38bdf8;">NHAI / DFCCIL / MoR</span>
-            </div>
-            <div class="landing-officer-box" style="margin-top: 12px;">
-              <div class="landing-officer-avatar">AG</div>
-              <div class="landing-officer-details">
-                <h3>Er. Amitav Ghosh</h3>
-                <p>Chief General Manager & Project Director, NHAI</p>
-              </div>
-            </div>
-          </div>
-          <ul class="landing-capabilities-list">
-            <li>Linear corridor package milestone & Right of Way (RoW) tracking</li>
-            <li>Bulk BhoomiRashi CSV dataset batch risk ingestion engine</li>
-            <li>Escrow compensation DBT disbursement velocity monitoring</li>
-          </ul>
-          <button class="btn-primary landing-card-btn" onclick="event.stopPropagation(); enterMissionControl('AGENCY_DIRECTOR');">
-            Enter Agency Portal &rarr;
+          <button class="overlapping-bar-btn" onclick="enterMissionControl('COLLECTOR_CALA')">
+            <span>Enter Console &rarr;</span>
           </button>
         </div>
       </div>
 
-      <!-- Cadastral Green Land GIS Intelligence Showcase Strip -->
-      <div class="landing-cadastral-strip">
-        <div class="landing-cadastral-visual-box">
-          <img src="img/green_cadastral.jpg" alt="Lush Green Cadastral Agricultural Land Survey" class="landing-cadastral-visual-img">
-          <div class="landing-cadastral-badge-float">
-            🌾 CADASTRAL KHASRA SURVEY MESH
+      <!-- Split Section: Left Visual with Floating Badge + Right Stats (Reference: Welcome on Treopps / Our Philosophy) -->
+      <section class="landing-split-section" id="overview-section">
+        <div class="landing-split-visual-box">
+          <img src="img/green_cadastral.jpg" alt="Lush Green Cadastral Land Parcels" class="landing-split-img">
+          <div class="landing-floating-badge-tag">
+            <span class="badge-tag-icon">🌿</span>
+            <div class="badge-tag-text">
+              <div style="font-size: 11px; font-weight: 800; color: #ffffff;">Cadastral GIS Mesh</div>
+              <div style="font-size: 10px; color: #a7f3d0;">DILRMP & BhoomiRashi 2.0 Synced</div>
+            </div>
           </div>
         </div>
-        <div>
-          <span style="font-size: 10px; font-weight: 800; color: #10b981; letter-spacing: 0.8px; text-transform: uppercase;">
-            GEOSPATIAL GROUND INTELLIGENCE
-          </span>
-          <h3 style="font-size: 20px; font-weight: 800; color: #ffffff; margin-top: 4px;">
-            AI-Synchronized Agricultural & Forest Parcel Surveillance
-          </h3>
-          <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; margin-top: 8px;">
-            Seamlessly correlates high-resolution cadastral boundary data with BhoomiRashi 2.0 gazettes and DILRMP revenue records to eliminate title disputes and prevent physical possession delays.
+
+        <div class="landing-split-content-box">
+          <span class="landing-section-kicker">STATUTORY GOVERNANCE & AI RISK TRIAGE</span>
+          <h2 class="landing-split-title">Accelerating National Linear Infrastructure Clearances</h2>
+          <p class="landing-split-desc">
+            BHU-DRISHTI transforms land acquisition from reactive dispute firefighting into proactive statutory risk governance. Correlating sub-meter cadastral surveys with gazette milestones, the platform mitigates delay probabilities and eliminates capital idle time.
           </p>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px;">
-            <span class="guide-chip" style="color: #a7f3d0; border-color: rgba(16,185,129,0.3);">99.2% Parcel Match</span>
-            <span class="guide-chip" style="color: #fde68a; border-color: rgba(245,158,11,0.3);">Real-Time Encroachment AI</span>
-            <span class="guide-chip" style="color: #ffffff; border-color: rgba(255,255,255,0.2);">DBT Escrow Integration</span>
+
+          <!-- 4-Stat Compact Grid -->
+          <div class="landing-compact-stats-grid">
+            <div class="compact-stat-card">
+              <div class="compact-stat-val">₹56,684 Cr</div>
+              <div class="compact-stat-label">Monitored Capital</div>
+            </div>
+            <div class="compact-stat-card">
+              <div class="compact-stat-val">15 Corridors</div>
+              <div class="compact-stat-label">National Footprint</div>
+            </div>
+            <div class="compact-stat-card">
+              <div class="compact-stat-val">89.4%</div>
+              <div class="compact-stat-label">ML Warning Precision</div>
+            </div>
+            <div class="compact-stat-card">
+              <div class="compact-stat-val">0 Lapses</div>
+              <div class="compact-stat-label">Sec 25 Compliance</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 22px;">
+            <button class="landing-pill-btn" onclick="enterMissionControl('COLLECTOR_CALA')">
+              <span>Simulate Corridor Interventions &rarr;</span>
+            </button>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Quick Bypass Direct Access Box -->
-      <div class="landing-bypass-box">
-        <div class="landing-bypass-text">
-          ⚡ <b>Evaluating Platform Capabilities?</b>
-          <span>Explore all 7 intelligence modules, XAI, and What-If simulator in open guest mode.</span>
+      <!-- 4-Tier Authority Portals Grid (Reference: Featured Collections / Sustainable Homes Grid) -->
+      <section class="landing-portals-section" id="portals-section">
+        <div class="landing-section-header-centered">
+          <span class="landing-section-kicker">ROLE-BASED ACCESS CONTROL</span>
+          <h2 class="landing-section-heading">Select Authority Tier</h2>
+          <p class="landing-section-subheading">Dedicated command consoles tailored for each administrative hierarchy level.</p>
         </div>
-        <button class="btn-secondary" style="font-weight: 800; padding: 9px 18px;" onclick="enterMissionControl('COLLECTOR_CALA')">
-          Open Full Mission Control Directly &rarr;
-        </button>
-      </div>
-    </div>
+
+        <div class="landing-cards-row-grid">
+          <!-- Card 1: Level 1 Apex -->
+          <div class="landing-ref-card" onclick="enterMissionControl('MINISTRY')">
+            <div class="landing-ref-card-img-wrap">
+              <img src="img/green_terrain_hero.jpg" alt="National Apex Highway Corridor" class="landing-ref-card-img">
+              <span class="landing-ref-card-tag l1">LEVEL 1 &bull; APEX</span>
+            </div>
+            <div class="landing-ref-card-body">
+              <h3 class="landing-ref-card-title">National Apex Authority</h3>
+              <p class="landing-ref-card-role">Joint Secretary (Land Acquisition), MoRTH</p>
+              <p class="landing-ref-card-desc">Macro portfolio capital risk triage across all 15 corridors and inter-ministerial gazette directives.</p>
+              <button class="landing-ref-card-btn" onclick="event.stopPropagation(); enterMissionControl('MINISTRY');">
+                Enter Apex Portal &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Level 2 State Revenue -->
+          <div class="landing-ref-card" onclick="enterMissionControl('STATE_SEC')">
+            <div class="landing-ref-card-img-wrap">
+              <img src="img/green_cadastral.jpg" alt="State Cadastral Farmland Survey" class="landing-ref-card-img">
+              <span class="landing-ref-card-tag l2">LEVEL 2 &bull; STATE</span>
+            </div>
+            <div class="landing-ref-card-body">
+              <h3 class="landing-ref-card-title">State Revenue Department</h3>
+              <p class="landing-ref-card-role">Principal Secretary (Revenue & Land Records)</p>
+              <p class="landing-ref-card-desc">State-wide district clearance velocity analytics and DILRMP revenue cadastral digitization index.</p>
+              <button class="landing-ref-card-btn" onclick="event.stopPropagation(); enterMissionControl('STATE_SEC');">
+                Enter State Portal &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Level 3 District CALA -->
+          <div class="landing-ref-card" onclick="enterMissionControl('COLLECTOR_CALA')">
+            <div class="landing-ref-card-img-wrap">
+              <img src="img/land_plots_sunset.jpg" alt="Cadastral Khasra Boundary Survey" class="landing-ref-card-img">
+              <span class="landing-ref-card-tag l3">LEVEL 3 &bull; DISTRICT</span>
+            </div>
+            <div class="landing-ref-card-body">
+              <h3 class="landing-ref-card-title">District CALA & Collector</h3>
+              <p class="landing-ref-card-role">District Magistrate & Competent Authority</p>
+              <p class="landing-ref-card-desc">Cadastral Khasra survey inspector and RFCTLARR Section 25 mandatory 1-year lapse countdown.</p>
+              <button class="landing-ref-card-btn" onclick="event.stopPropagation(); enterMissionControl('COLLECTOR_CALA');">
+                Enter District Portal &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4: Level 4 Executing Agency -->
+          <div class="landing-ref-card" onclick="enterMissionControl('AGENCY_DIRECTOR')">
+            <div class="landing-ref-card-img-wrap">
+              <img src="img/green_terrain_hero.jpg" alt="Linear Corridor Execution" class="landing-ref-card-img">
+              <span class="landing-ref-card-tag l4">LEVEL 4 &bull; AGENCY</span>
+            </div>
+            <div class="landing-ref-card-body">
+              <h3 class="landing-ref-card-title">Project Executing Agency</h3>
+              <p class="landing-ref-card-role">Chief General Manager & Project Director, NHAI</p>
+              <p class="landing-ref-card-desc">Linear corridor package milestone tracking and BhoomiRashi CSV dataset batch ingestion engine.</p>
+              <button class="landing-ref-card-btn" onclick="event.stopPropagation(); enterMissionControl('AGENCY_DIRECTOR');">
+                Enter Agency Portal &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4-Step Statutory Process Flow (Reference: Our Design Process / The Process in Images 3 & 4) -->
+      <section class="landing-process-section" id="process-section">
+        <div class="landing-section-header-centered">
+          <span class="landing-section-kicker">END-TO-END STATUTORY CLEARANCE</span>
+          <h2 class="landing-section-heading">The Statutory Governance Lifecycle</h2>
+          <p class="landing-section-subheading">How BHU-DRISHTI automates risk mitigation from notification to physical possession.</p>
+        </div>
+
+        <div class="landing-process-grid">
+          <div class="landing-process-step">
+            <div class="process-step-num">01</div>
+            <h4 class="process-step-title">Gazette Notification (3A/3D)</h4>
+            <p class="process-step-desc">Automated ingestion of BhoomiRashi 2.0 e-gazette notifications with RoW alignment mesh.</p>
+          </div>
+          <div class="landing-process-step">
+            <div class="process-step-num">02</div>
+            <h4 class="process-step-title">Cadastral GIS Verification</h4>
+            <p class="process-step-desc">Sub-meter Khasra plot matching with state DILRMP digital land maps to identify encumbrances.</p>
+          </div>
+          <div class="landing-process-step">
+            <div class="process-step-num">03</div>
+            <h4 class="process-step-title">XAI Risk & Delay Prediction</h4>
+            <p class="process-step-desc">SHAP-powered machine learning models forecasting title litigation, forest, and compensation risks.</p>
+          </div>
+          <div class="landing-process-step">
+            <div class="process-step-num">04</div>
+            <h4 class="process-step-title">Sec 25 Lapse Prevention</h4>
+            <p class="process-step-desc">Mandatory 1-year award determination timer and DBT escrow disbursement governance.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clean Aesthetic Footer (Reference: Luxe Interiors & Aura Studio) -->
+      <footer class="landing-ref-footer">
+        <div class="landing-footer-top">
+          <div class="footer-brand-col">
+            <div class="footer-logo">
+              <span style="font-size: 20px;">🏛️</span>
+              <span style="font-size: 17px; font-weight: 800; color: #ffffff;">BHU-DRISHTI</span>
+            </div>
+            <p style="font-size: 12.5px; color: var(--text-secondary); max-width: 380px; margin-top: 8px; line-height: 1.5;">
+              National Land Acquisition Predictive Intelligence & Decision Support System. Developed for PM GatiShakti National Master Plan.
+            </p>
+          </div>
+
+          <div class="footer-links-col">
+            <div class="footer-col-title">Authority Portals</div>
+            <a href="javascript:void(0)" onclick="enterMissionControl('MINISTRY')">National Apex (MoRTH)</a>
+            <a href="javascript:void(0)" onclick="enterMissionControl('STATE_SEC')">State Revenue Dept</a>
+            <a href="javascript:void(0)" onclick="enterMissionControl('COLLECTOR_CALA')">District CALA / DM</a>
+            <a href="javascript:void(0)" onclick="enterMissionControl('AGENCY_DIRECTOR')">Executing Agency (NHAI)</a>
+          </div>
+
+          <div class="footer-links-col">
+            <div class="footer-col-title">Statutory Framework</div>
+            <a href="javascript:void(0)" onclick="enterMissionControl('COLLECTOR_CALA')">RFCTLARR Act 2013 Sec 25</a>
+            <a href="javascript:void(0)" onclick="enterMissionControl('COLLECTOR_CALA')">BhoomiRashi 2.0 Sync</a>
+            <a href="javascript:void(0)" onclick="enterMissionControl('COLLECTOR_CALA')">DILRMP Cadastral API</a>
+            <a href="javascript:void(0)" onclick="enterMissionControl('COLLECTOR_CALA')">PM GatiShakti Spatial Mesh</a>
+          </div>
+        </div>
+
+        <div class="landing-footer-bottom">
+          <p>&copy; 2026 Government of India &bull; Ministry of Road Transport & Highways (MoRTH) &bull; Smart India Hackathon</p>
+        </div>
+      </footer>
+
+    </main>
   </div>
 
   <!-- ==========================================================================

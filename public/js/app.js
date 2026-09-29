@@ -75,21 +75,19 @@ function applyTheme(theme) {
   localStorage.setItem('bhuDrishtiTheme', theme);
   document.documentElement.setAttribute('data-theme', theme);
 
-  const iconEl = document.getElementById('themeIcon');
-  const textEl = document.getElementById('themeText');
-  const toggleBtn = document.getElementById('themeToggleBtn');
-
-  if (iconEl && textEl) {
+  document.querySelectorAll('.theme-icon').forEach(iconEl => {
+    iconEl.textContent = theme === 'light' ? '🌙' : '☀️';
+  });
+  document.querySelectorAll('.theme-btn-label').forEach(textEl => {
+    textEl.textContent = theme === 'light' ? 'DARK' : 'LIGHT';
+  });
+  document.querySelectorAll('.theme-toggle-btn').forEach(toggleBtn => {
     if (theme === 'light') {
-      iconEl.textContent = '🌙';
-      textEl.textContent = 'DARK';
-      if (toggleBtn) toggleBtn.classList.add('light-active');
+      toggleBtn.classList.add('light-active');
     } else {
-      iconEl.textContent = '☀️';
-      textEl.textContent = 'LIGHT';
-      if (toggleBtn) toggleBtn.classList.remove('light-active');
+      toggleBtn.classList.remove('light-active');
     }
-  }
+  });
 
   // Synchronize GIS Map Tiles with active theme
   if (typeof updateGisMapTheme === 'function') {
@@ -123,6 +121,33 @@ function loginAsStakeholder(roleKey) {
   if (!STAKEHOLDER_PROFILES[roleKey]) return;
   applyStakeholderProfile(roleKey, true);
   closeAuthModal();
+}
+
+function enterMissionControl(roleKey) {
+  if (roleKey && STAKEHOLDER_PROFILES[roleKey]) {
+    applyStakeholderProfile(roleKey, true);
+  }
+  const landing = document.getElementById('landingPortalView');
+  const dashboard = document.getElementById('dashboardAppView');
+  if (landing) landing.style.display = 'none';
+  if (dashboard) dashboard.style.display = 'block';
+
+  // Invalidate GIS map container size for Leaflet
+  setTimeout(() => {
+    if (typeof mapInstance !== 'undefined' && mapInstance) {
+      mapInstance.invalidateSize();
+    }
+  }, 200);
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showLandingPortal() {
+  const landing = document.getElementById('landingPortalView');
+  const dashboard = document.getElementById('dashboardAppView');
+  if (dashboard) dashboard.style.display = 'none';
+  if (landing) landing.style.display = 'flex';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function applyStakeholderProfile(roleKey, notify) {
@@ -160,10 +185,13 @@ function applyStakeholderProfile(roleKey, notify) {
 
 function setLanguage(lang) {
   currentLang = lang;
-  const engBtn = document.getElementById('langEngBtn');
-  const hinBtn = document.getElementById('langHinBtn');
-  if (engBtn) engBtn.classList.toggle('active', lang === 'en');
-  if (hinBtn) hinBtn.classList.toggle('active', lang === 'hi');
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    if (btn.id === 'langEngBtn' || btn.textContent.trim() === 'ENG') {
+      btn.classList.toggle('active', lang === 'en');
+    } else if (btn.id === 'langHinBtn' || btn.textContent.trim() === 'हिंदी') {
+      btn.classList.toggle('active', lang === 'hi');
+    }
+  });
 
   const t = i18n[lang];
   if (document.getElementById('brandHeaderTitle')) document.getElementById('brandHeaderTitle').textContent = t.title;

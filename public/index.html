@@ -26,43 +26,240 @@
   <!-- National Tricolor Brand Strip -->
   <div class="gov-tricolor-bar"></div>
 
-  <!-- Top Sticky Navigation Bar -->
-  <header class="top-navbar">
-    <div class="brand-section">
-      <!-- <div class="brand-logo-emblem" style="font-weight: 800; font-size: 15px; letter-spacing: 0.5px; color: #fff;">GOI
-      </div> -->
-      <div class="brand-text">
-        <h1 id="brandHeaderTitle">BHU-DRISHTI &bull; भू-दृष्टि</h1>
-        <p id="brandHeaderSubtitle">National Land Acquisition Predictive Intelligence & Decision Support System</p>
-      </div>
-    </div>
-
-    <div class="nav-actions">
-      <!-- Dark / Light Theme Toggle -->
-      <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Dark / Light Theme"
-        aria-label="Toggle Theme">
-        <span id="themeIcon" class="theme-icon">☀️</span>
-        <span id="themeText" class="theme-btn-label">LIGHT</span>
-      </button>
-
-      <!-- Language Toggle -->
-      <div class="lang-toggle-box">
-        <button id="langEngBtn" class="lang-btn active" onclick="setLanguage('en')">ENG</button>
-        <button id="langHinBtn" class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
-      </div>
-
-      <!-- Authenticated Stakeholder Identity Widget -->
-      <div class="role-badge-container" onclick="openAuthModal()"
-        title="Click to Switch Stakeholder / Authenticate Authority Tier">
-        <div class="user-avatar-pill" id="userAvatarBadge">DM</div>
-        <div class="user-meta-info">
-          <div class="user-name-text" id="userProfileName">Dr. Vikramaditya Solanki, IAS</div>
-          <div class="user-role-text" id="userProfileRole">District Magistrate & CALA (Level 3)</div>
+  <!-- ==========================================================================
+       LANDING GATEWAY PORTAL (Entry View)
+       ========================================================================== -->
+  <div id="landingPortalView" class="landing-portal-wrapper">
+    <!-- Landing Top Navbar -->
+    <header class="top-navbar" style="padding: 14px 32px;">
+      <div class="brand-section">
+        <div class="brand-text">
+          <h1 style="font-size: 20px;">BHU-DRISHTI &bull; भू-दृष्टि</h1>
+          <p>National Land Acquisition Predictive Intelligence & Decision Support System</p>
         </div>
-        <button class="btn-auth-switch" onclick="event.stopPropagation(); openAuthModal();">SWITCH ROLE</button>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Dark / Light Theme Toggle -->
+        <button class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Dark / Light Theme" aria-label="Toggle Theme">
+          <span class="theme-icon">☀️</span>
+          <span class="theme-btn-label">LIGHT</span>
+        </button>
+
+        <!-- Language Toggle -->
+        <div class="lang-toggle-box">
+          <button class="lang-btn active" onclick="setLanguage('en')">ENG</button>
+          <button class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
+        </div>
+
+        <button class="btn-primary" style="padding: 7px 16px; font-size: 11.5px;" onclick="enterMissionControl('COLLECTOR_CALA')">
+          <span>🚀 Explore Mission Control</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Landing Hero Container -->
+    <div class="landing-hero-container">
+      <div class="landing-hero-badge">
+        <span>🇮🇳 NATIONAL GOVTECH APEX &bull; PM GATISHAKTI & BHOOMIRASHI 2.0</span>
+      </div>
+
+      <h1 class="landing-hero-title">
+        National Land Acquisition Predictive Intelligence Platform
+      </h1>
+
+      <p class="landing-hero-subtitle">
+        Transforming linear infrastructure land clearance from reactive dispute firefighting into proactive, AI-powered statutory risk governance. Synchronized with BhoomiRashi 2.0 gazettes, DILRMP cadastral surveys, and RFCTLARR 2013 Section 25 lapse prevention.
+      </p>
+
+      <!-- Key National Impact Metrics Strip -->
+      <div class="landing-metrics-strip">
+        <div class="landing-metric-item">
+          <div class="landing-metric-val">₹56,684 Cr</div>
+          <div class="landing-metric-label">Monitored Capital</div>
+        </div>
+        <div class="landing-metric-item">
+          <div class="landing-metric-val">15 Mega Corridors</div>
+          <div class="landing-metric-label">National Footprint</div>
+        </div>
+        <div class="landing-metric-item">
+          <div class="landing-metric-val">89.4% Precision</div>
+          <div class="landing-metric-label">ML Delay Warning</div>
+        </div>
+        <div class="landing-metric-item">
+          <div class="landing-metric-val">0 Section 25 Lapses</div>
+          <div class="landing-metric-label">Statutory Compliance</div>
+        </div>
+      </div>
+
+      <!-- 4-Tier Role Selection Grid Header -->
+      <div class="landing-grid-header">
+        <h2>Select Authority Tier to Authenticate & Enter</h2>
+        <p>Role-Based Access Control (RBAC) customized for ministerial apex, state revenue, CALA magistrates, and executing agencies.</p>
+      </div>
+
+      <!-- 4-Tier Interactive Level Cards -->
+      <div class="landing-levels-grid">
+        <!-- Level 1: National Apex Authority -->
+        <div class="landing-role-card" onclick="enterMissionControl('MINISTRY')">
+          <div>
+            <div class="landing-role-header">
+              <span class="landing-level-tag l1">LEVEL 1: NATIONAL APEX</span>
+              <span style="font-size: 11px; font-weight: 700; color: #a1a1aa;">MoRTH / GatiShakti</span>
+            </div>
+            <div class="landing-officer-box" style="margin-top: 14px;">
+              <div class="landing-officer-avatar">RK</div>
+              <div class="landing-officer-details">
+                <h3>Shri Rajesh Kumar, IAS</h3>
+                <p>Joint Secretary (Land Acquisition), MoRTH</p>
+              </div>
+            </div>
+          </div>
+          <ul class="landing-capabilities-list">
+            <li>Macro portfolio capital risk triage across all 15 corridors</li>
+            <li>Inter-ministerial gazette directive & D.O. letter dispatch</li>
+            <li>High-level escalation matrix & PM GatiShakti sync</li>
+          </ul>
+          <button class="btn-primary landing-card-btn" onclick="event.stopPropagation(); enterMissionControl('MINISTRY');">
+            Enter Apex Portal &rarr;
+          </button>
+        </div>
+
+        <!-- Level 2: State Revenue Department -->
+        <div class="landing-role-card" onclick="enterMissionControl('STATE_SEC')">
+          <div>
+            <div class="landing-role-header">
+              <span class="landing-level-tag l2">LEVEL 2: STATE REVENUE</span>
+              <span style="font-size: 11px; font-weight: 700; color: #34d399;">State Dept. of Revenue</span>
+            </div>
+            <div class="landing-officer-box" style="margin-top: 14px;">
+              <div class="landing-officer-avatar">AS</div>
+              <div class="landing-officer-details">
+                <h3>Smt. Ananya Sen, IAS</h3>
+                <p>Principal Secretary (Revenue & Land Records)</p>
+              </div>
+            </div>
+          </div>
+          <ul class="landing-capabilities-list">
+            <li>State-wide district clearance velocity & benchmark matrix</li>
+            <li>DILRMP cadastral digitization vs delay risk correlation</li>
+            <li>Special Revenue Lok Adalat dispute settlement mobilization</li>
+          </ul>
+          <button class="btn-primary landing-card-btn" onclick="event.stopPropagation(); enterMissionControl('STATE_SEC');">
+            Enter State Portal &rarr;
+          </button>
+        </div>
+
+        <!-- Level 3: District CALA Authority -->
+        <div class="landing-role-card" onclick="enterMissionControl('COLLECTOR_CALA')">
+          <div>
+            <div class="landing-role-header">
+              <span class="landing-level-tag l3">LEVEL 3: DISTRICT CALA</span>
+              <span style="font-size: 11px; font-weight: 700; color: #fbbf24;">District Magistrate</span>
+            </div>
+            <div class="landing-officer-box" style="margin-top: 14px;">
+              <div class="landing-officer-avatar">VS</div>
+              <div class="landing-officer-details">
+                <h3>Dr. Vikramaditya Solanki, IAS</h3>
+                <p>District Magistrate & CALA (District Administration)</p>
+              </div>
+            </div>
+          </div>
+          <ul class="landing-capabilities-list">
+            <li>Cadastral Khasra survey & geo-encroachment HUD inspector</li>
+            <li>RFCTLARR Section 25 mandatory 1-year lapse countdown</li>
+            <li>Interactive "What-If" Policy Simulation Studio & ROI</li>
+          </ul>
+          <button class="btn-primary landing-card-btn" onclick="event.stopPropagation(); enterMissionControl('COLLECTOR_CALA');">
+            Enter District Portal &rarr;
+          </button>
+        </div>
+
+        <!-- Level 4: Project Implementing Agency -->
+        <div class="landing-role-card" onclick="enterMissionControl('AGENCY_DIRECTOR')">
+          <div>
+            <div class="landing-role-header">
+              <span class="landing-level-tag l4">LEVEL 4: EXECUTING AGENCY</span>
+              <span style="font-size: 11px; font-weight: 700; color: #38bdf8;">NHAI / DFCCIL / MoR</span>
+            </div>
+            <div class="landing-officer-box" style="margin-top: 14px;">
+              <div class="landing-officer-avatar">AG</div>
+              <div class="landing-officer-details">
+                <h3>Er. Amitav Ghosh</h3>
+                <p>Chief General Manager & Project Director, NHAI</p>
+              </div>
+            </div>
+          </div>
+          <ul class="landing-capabilities-list">
+            <li>Linear corridor package milestone & Right of Way (RoW) tracking</li>
+            <li>Bulk BhoomiRashi CSV dataset batch risk ingestion engine</li>
+            <li>Escrow compensation DBT disbursement velocity monitoring</li>
+          </ul>
+          <button class="btn-primary landing-card-btn" onclick="event.stopPropagation(); enterMissionControl('AGENCY_DIRECTOR');">
+            Enter Agency Portal &rarr;
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Bypass Direct Access Box -->
+      <div class="landing-bypass-box">
+        <div class="landing-bypass-text">
+          ⚡ <b>Evaluating Platform Capabilities?</b>
+          <span>Explore all 7 intelligence modules, XAI, and What-If simulator in open guest mode.</span>
+        </div>
+        <button class="btn-secondary" style="font-weight: 800; padding: 9px 18px;" onclick="enterMissionControl('COLLECTOR_CALA')">
+          Open Full Mission Control Directly &rarr;
+        </button>
       </div>
     </div>
-  </header>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN DASHBOARD & MISSION CONTROL (Application Workspace)
+       ========================================================================== -->
+  <div id="dashboardAppView" style="display: none;">
+
+    <!-- Top Sticky Navigation Bar -->
+    <header class="top-navbar">
+      <div class="brand-section">
+        <div class="brand-text">
+          <h1 id="brandHeaderTitle">BHU-DRISHTI &bull; भू-दृष्टि</h1>
+          <p id="brandHeaderSubtitle">National Land Acquisition Predictive Intelligence & Decision Support System</p>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Return to Landing Portal Button -->
+        <button class="btn-portal-return" onclick="showLandingPortal()" title="Return to Stakeholder Gateway Portal">
+          <span>🏛️</span>
+          <span>GATEWAY</span>
+        </button>
+
+        <!-- Dark / Light Theme Toggle -->
+        <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Dark / Light Theme"
+          aria-label="Toggle Theme">
+          <span id="themeIcon" class="theme-icon">☀️</span>
+          <span id="themeText" class="theme-btn-label">LIGHT</span>
+        </button>
+
+        <!-- Language Toggle -->
+        <div class="lang-toggle-box">
+          <button id="langEngBtn" class="lang-btn active" onclick="setLanguage('en')">ENG</button>
+          <button id="langHinBtn" class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
+        </div>
+
+        <!-- Authenticated Stakeholder Identity Widget -->
+        <div class="role-badge-container" onclick="openAuthModal()"
+          title="Click to Switch Stakeholder / Authenticate Authority Tier">
+          <div class="user-avatar-pill" id="userAvatarBadge">DM</div>
+          <div class="user-meta-info">
+            <div class="user-name-text" id="userProfileName">Dr. Vikramaditya Solanki, IAS</div>
+            <div class="user-role-text" id="userProfileRole">District Magistrate & CALA (Level 3)</div>
+          </div>
+          <button class="btn-auth-switch" onclick="event.stopPropagation(); openAuthModal();">SWITCH ROLE</button>
+        </div>
+      </div>
+    </header>
 
   <!-- Main Container -->
   <main class="app-container">
@@ -956,6 +1153,8 @@
       </div>
     </div>
   </div>
+
+  </div> <!-- End of #dashboardAppView -->
 
   <!-- Scripts -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"

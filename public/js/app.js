@@ -52,13 +52,18 @@ const STAKEHOLDER_PROFILES = {
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
-  initAuthSession();
-  initGisMap();
-  loadKpiMetrics();
-  loadProjects();
-  loadStateDistrictMetrics();
-  loadModelHubData();
-  loadAuditLogs();
+  const isDashboard = !!document.getElementById('dashboardAppView');
+  if (isDashboard) {
+    initAuthSession();
+    if (typeof initGisMap === 'function') {
+      initGisMap();
+    }
+    loadKpiMetrics();
+    loadProjects();
+    loadStateDistrictMetrics();
+    loadModelHubData();
+    loadAuditLogs();
+  }
 });
 
 function initTheme() {
@@ -96,7 +101,11 @@ function applyTheme(theme) {
 }
 
 function initAuthSession() {
-  const savedRole = localStorage.getItem('bhuDrishtiActiveRole') || 'COLLECTOR_CALA';
+  const urlParams = new URLSearchParams(window.location.search);
+  const roleFromUrl = urlParams.get('role');
+  const savedRole = (roleFromUrl && STAKEHOLDER_PROFILES[roleFromUrl]) 
+    ? roleFromUrl 
+    : (localStorage.getItem('bhuDrishtiActiveRole') || 'COLLECTOR_CALA');
   applyStakeholderProfile(savedRole, false);
 }
 
@@ -125,12 +134,20 @@ function loginAsStakeholder(roleKey) {
 
 function enterMissionControl(roleKey) {
   if (roleKey && STAKEHOLDER_PROFILES[roleKey]) {
+    localStorage.setItem('bhuDrishtiActiveRole', roleKey);
+  }
+  const dashboard = document.getElementById('dashboardAppView');
+  if (!dashboard) {
+    // We are on index.html landing page -> redirect to dashboard.html
+    const targetUrl = 'dashboard.html' + (roleKey ? `?role=${encodeURIComponent(roleKey)}` : '');
+    window.location.href = targetUrl;
+    return;
+  }
+
+  // Already on dashboard.html
+  if (roleKey && STAKEHOLDER_PROFILES[roleKey]) {
     applyStakeholderProfile(roleKey, true);
   }
-  const landing = document.getElementById('landingPortalView');
-  const dashboard = document.getElementById('dashboardAppView');
-  if (landing) landing.style.display = 'none';
-  if (dashboard) dashboard.style.display = 'block';
 
   // Invalidate GIS map container size for Leaflet
   setTimeout(() => {
@@ -143,11 +160,7 @@ function enterMissionControl(roleKey) {
 }
 
 function showLandingPortal() {
-  const landing = document.getElementById('landingPortalView');
-  const dashboard = document.getElementById('dashboardAppView');
-  if (dashboard) dashboard.style.display = 'none';
-  if (landing) landing.style.display = 'flex';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.location.href = 'index.html';
 }
 
 function applyStakeholderProfile(roleKey, notify) {

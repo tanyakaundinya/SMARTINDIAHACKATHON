@@ -781,12 +781,12 @@
 
   <!-- BHU-BOT Floating AI Assistant Drawer -->
   <div id="bhuBotDrawer" class="glass-panel"
-    style="position: fixed; bottom: 95px; right: 24px; width: 390px; height: 520px; z-index: 3000; display: none; flex-direction: column; box-shadow: 0 20px 50px rgba(0,0,0,0.85); border: 1px solid #6366f1; border-radius: var(--radius-md); overflow: hidden;">
+    style="position: fixed; bottom: 95px; right: 24px; width: 390px; height: 520px; z-index: 3000; display: none; flex-direction: column; box-shadow: 0 20px 50px rgba(0,0,0,0.85); border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius-md); overflow: hidden; background: var(--bg-card);">
     <div
-      style="padding: 14px 18px; background: linear-gradient(135deg, #4f46e5, #3b82f6); display: flex; justify-content: space-between; align-items: center;">
+      style="padding: 14px 18px; background: #14151b; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
       <div>
         <div style="font-size: 13.5px; font-weight: 800; color: #ffffff;">BHU-BOT AI Governance Copilot</div>
-        <div style="font-size: 10.5px; color: #e0e7ff;">Land Acquisition Intelligence Assistant</div>
+        <div style="font-size: 10.5px; color: var(--text-secondary);">Land Acquisition Intelligence Assistant</div>
       </div>
       <button
         style="background: transparent; border: none; color: #ffffff; font-size: 20px; cursor: pointer; line-height: 1;"
@@ -795,7 +795,7 @@
 
     <!-- Quick Chips -->
     <div
-      style="padding: 8px 12px; background: rgba(11,20,38,0.9); border-bottom: 1px solid var(--border-color); display: flex; gap: 6px; overflow-x: auto;">
+      style="padding: 8px 12px; background: #101117; border-bottom: 1px solid var(--border-color); display: flex; gap: 6px; overflow-x: auto;">
       <button class="control-btn" style="white-space: nowrap; font-size: 10.5px;"
         onclick="askBhuBot('Show all packages facing Section 25 lapse')">Sec 25 Lapse</button>
       <button class="control-btn" style="white-space: nowrap; font-size: 10.5px;"
@@ -806,9 +806,9 @@
 
     <!-- Chat Messages Container -->
     <div id="bhuBotMessages"
-      style="flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 12px; background: rgba(6,11,23,0.95);">
+      style="flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 12px; background: #0e0f14;">
       <div
-        style="background: rgba(30,41,59,0.85); padding: 12px; border-radius: 8px; border-left: 3px solid #6366f1; line-height: 1.45;">
+        style="background: #14151b; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); border-left: 3px solid #ffffff; line-height: 1.45; color: #ffffff;">
         Greetings! I am <b>BHU-BOT</b>, your AI Copilot for land acquisition governance. Ask me about high-risk
         corridors, pending court stays, statutory lapse deadlines, or administrative playbooks.
       </div>
@@ -816,7 +816,7 @@
 
     <!-- Chat Input -->
     <div
-      style="padding: 12px; background: rgba(11,20,38,0.95); border-top: 1px solid var(--border-color); display: flex; gap: 8px;">
+      style="padding: 12px; background: #101117; border-top: 1px solid var(--border-color); display: flex; gap: 8px;">
       <input type="text" id="bhuBotInput" class="search-input" style="font-size: 12px;"
         placeholder="Ask BHU-BOT in English / Hindi..." onkeypress="if(event.key==='Enter') sendBhuBotMessage()">
       <button class="btn-primary" style="padding: 6px 14px;" onclick="sendBhuBotMessage()">Send</button>

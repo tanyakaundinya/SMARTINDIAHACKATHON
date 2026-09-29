@@ -29,55 +29,57 @@
   <!-- ==========================================================================
        LANDING GATEWAY PORTAL (Entry View - Reference Layout)
        ========================================================================== -->
+  <!-- ==========================================================================
+       LANDING GATEWAY PORTAL (Entry View - Reference Layout)
+       ========================================================================== -->
   <div id="landingPortalView" class="landing-portal-wrapper">
     
-    <!-- Floating Pill-Shaped Top Navbar (Reference: Poulls / InteriorStudio) -->
-    <div class="landing-nav-wrapper">
-      <header class="landing-floating-navbar">
-        <div class="landing-nav-brand">
-          <span class="landing-brand-logo">🏛️</span>
-          <div class="landing-brand-names">
-            <span class="landing-brand-main">BHU-DRISHTI</span>
-            <span class="landing-brand-sub">भू-दृष्टि &bull; GOVTECH APEX</span>
-          </div>
-        </div>
+    <!-- Full-Width Panoramic Hero Section (100% Width Edge-to-Edge) -->
+    <section class="landing-ref-hero-fullwidth" id="hero-section">
+      <img src="img/green_terrain_hero.jpg" alt="National Infrastructure Terrain Corridor" class="landing-ref-hero-img">
+      <div class="landing-ref-hero-overlay"></div>
 
-        <nav class="landing-nav-links">
-          <a href="#hero-section" class="landing-nav-link active">Home</a>
-          <a href="#overview-section" class="landing-nav-link">Intelligence</a>
-          <a href="#portals-section" class="landing-nav-link">Authority Portals</a>
-          <a href="#process-section" class="landing-nav-link">Statutory Process</a>
-        </nav>
-
-        <div class="landing-nav-right">
-          <!-- Dark / Light Theme Toggle -->
-          <button class="theme-toggle-btn landing-pill-theme" onclick="toggleTheme()" title="Switch Theme" aria-label="Toggle Theme">
-            <span class="theme-icon">☀️</span>
-            <span class="theme-btn-label">LIGHT</span>
-          </button>
-
-          <!-- Language Toggle -->
-          <div class="lang-toggle-box landing-pill-lang">
-            <button class="lang-btn active" onclick="setLanguage('en')">ENG</button>
-            <button class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
+      <!-- Floating Pill-Shaped Top Navbar (Overlaid at top of Hero) -->
+      <div class="landing-nav-wrapper">
+        <header class="landing-floating-navbar">
+          <div class="landing-nav-brand">
+            <span class="landing-brand-logo">🏛️</span>
+            <div class="landing-brand-names">
+              <span class="landing-brand-main">BHU-DRISHTI</span>
+              <span class="landing-brand-sub">भू-दृष्टि &bull; GOVTECH APEX</span>
+            </div>
           </div>
 
-          <!-- Primary Launch Button -->
-          <button class="landing-pill-btn" onclick="enterMissionControl('COLLECTOR_CALA')">
-            <span>🚀 Launch Mission Control</span>
-          </button>
-        </div>
-      </header>
-    </div>
+          <nav class="landing-nav-links">
+            <a href="#hero-section" class="landing-nav-link active">Home</a>
+            <a href="#overview-section" class="landing-nav-link">Intelligence</a>
+            <a href="#portals-section" class="landing-nav-link">Authority Portals</a>
+            <a href="#process-section" class="landing-nav-link">Statutory Process</a>
+          </nav>
 
-    <!-- Main Landing Body -->
-    <main class="landing-body-container" id="hero-section">
-      
-      <!-- Panoramic Hero Section with Left-Aligned Overlay (Reference: Poulls) -->
-      <section class="landing-ref-hero-banner">
-        <img src="img/green_terrain_hero.jpg" alt="National Infrastructure Terrain Corridor" class="landing-ref-hero-img">
-        <div class="landing-ref-hero-overlay"></div>
+          <div class="landing-nav-right">
+            <!-- Dark / Light Theme Toggle -->
+            <button class="theme-toggle-btn landing-pill-theme" onclick="toggleTheme()" title="Switch Theme" aria-label="Toggle Theme">
+              <span class="theme-icon">☀️</span>
+              <span class="theme-btn-label">LIGHT</span>
+            </button>
 
+            <!-- Language Toggle -->
+            <div class="lang-toggle-box landing-pill-lang">
+              <button class="lang-btn active" onclick="setLanguage('en')">ENG</button>
+              <button class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
+            </div>
+
+            <!-- Primary Launch Button -->
+            <button class="landing-pill-btn" onclick="enterMissionControl('COLLECTOR_CALA')">
+              <span>🚀 Launch Mission Control</span>
+            </button>
+          </div>
+        </header>
+      </div>
+
+      <!-- Hero Text Content (Left-Aligned with generous spacing) -->
+      <div class="landing-ref-hero-content-wrap">
         <div class="landing-ref-hero-content">
           <div class="landing-ref-badge">
             <span>🇮🇳 NATIONAL GOVTECH &bull; PM GATISHAKTI 2.0</span>
@@ -100,7 +102,11 @@
             </button>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+
+    <!-- Main Landing Body (Centered Container for rest of sections) -->
+    <main class="landing-body-container">
 
       <!-- Floating Overlapping Quick Gateway Control Bar (Signature Element from Reference 1) -->
       <div class="landing-overlapping-bar-container">

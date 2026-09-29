@@ -6,12 +6,16 @@ function generateOfficialMemo() {
   const projectId = document.getElementById('memoProjectSelect').value;
   if (!projectId) return;
 
+  const activeActor = (typeof STAKEHOLDER_PROFILES !== 'undefined' && STAKEHOLDER_PROFILES[currentRole])
+    ? STAKEHOLDER_PROFILES[currentRole].actorString
+    : 'Joint Secretary (Land Acquisition), Ministry of Road Transport & Highways, New Delhi';
+
   fetch('/api/memos/generate', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       project_id: projectId,
-      actor: 'Joint Secretary (Land Acquisition), Ministry of Road Transport & Highways, New Delhi'
+      actor: activeActor
     })
   })
   .then(res => res.json())
@@ -135,13 +139,21 @@ function generateGazetteNotification() {
 
 function simulateBroadcastAlerts() {
   const projectId = document.getElementById('memoProjectSelect').value;
+  const activeActor = (typeof STAKEHOLDER_PROFILES !== 'undefined' && STAKEHOLDER_PROFILES[currentRole])
+    ? STAKEHOLDER_PROFILES[currentRole].name
+    : 'District Magistrate & CALA';
+  const activeRole = (typeof STAKEHOLDER_PROFILES !== 'undefined' && STAKEHOLDER_PROFILES[currentRole])
+    ? STAKEHOLDER_PROFILES[currentRole].roleTitle
+    : 'District Collector (CALA)';
+
   fetch('/api/alerts/dispatch', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       project_id: projectId,
       channels: ['WHATSAPP_DM', 'SMS_CITIZEN_DBT', 'OFFICER_PUSH_NOTICE'],
-      actor: 'District Magistrate & CALA'
+      actor: activeActor,
+      role: activeRole
     })
   })
   .then(res => res.json())

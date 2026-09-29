@@ -1,5 +1,30 @@
+# Node dependencies
 node_modules/
-.DS_Store
-*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment & local credentials
 .env
-.system_generated/
+.env.local
+.env.*.local
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.ipynb_checkpoints
+.venv
+venv/
+ENV/
+
+# Operating System temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs & build outputs
+logs/
+*.log
+dist/
+build/

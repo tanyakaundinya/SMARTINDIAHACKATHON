@@ -9,30 +9,48 @@ let currentRole = 'COLLECTOR_CALA';
 let currentLang = 'en';
 let batchProjectsData = [];
 
-const i18n = {
-  en: {
-    title: 'BHU-DRISHTI • भू-दृष्टि',
-    subtitle: 'National Land Acquisition Predictive Intelligence & Decision Support System (RFCTLARR Act 2013)',
-    viewAs: 'VIEW AS:',
-    aiStatus: 'AI ENGINE ACTIVE',
-    kpiTotalCap: 'Monitored Infrastructure Capital',
-    kpiRiskCap: 'Capital at High Delay Risk',
-    kpiLapseAlert: 'Sec 25 Statutory Lapse Alerts',
-    kpiVelocity: 'Avg Land Clearance Velocity'
+// Official Government Stakeholder Profiles (PS 25017 Role-Based Access Control)
+const STAKEHOLDER_PROFILES = {
+  'MINISTRY': {
+    roleKey: 'MINISTRY',
+    name: 'Shri Rajesh Kumar, IAS',
+    avatar: 'RK',
+    roleTitle: 'Joint Secretary, MoRTH',
+    level: 'LEVEL 1: NATIONAL APEX',
+    defaultTab: 'tab-command',
+    actorString: 'Joint Secretary (Land Acquisition), MoRTH / PM GatiShakti Apex Authority'
   },
-  hi: {
-    title: 'भू-दृष्टि • BHU-DRISHTI',
-    subtitle: 'राष्ट्रीय भूमि अधिग्रहण भविष्यसूचक विश्लेषण एवं निर्णय समर्थन प्रणाली (RFCTLARR अधिनियम 2013)',
-    viewAs: 'भूमिका:',
-    aiStatus: 'एआई इंजन सक्रिय',
-    kpiTotalCap: 'कुल मॉनिटर किया गया पूंजीगत व्यय',
-    kpiRiskCap: 'उच्च जोखिम में फंसी पूंजी',
-    kpiLapseAlert: 'धारा 25 वैधानिक चेतावनी',
-    kpiVelocity: 'औसत भूमि मंजूरी गति'
+  'STATE_SEC': {
+    roleKey: 'STATE_SEC',
+    name: 'Smt. Ananya Sen, IAS',
+    avatar: 'AS',
+    roleTitle: 'Principal Secretary (Revenue)',
+    level: 'LEVEL 2: STATE REVENUE',
+    defaultTab: 'tab-analytics',
+    actorString: 'Principal Secretary (Department of Land Resources & Revenue)'
+  },
+  'COLLECTOR_CALA': {
+    roleKey: 'COLLECTOR_CALA',
+    name: 'Dr. Vikramaditya Solanki, IAS',
+    avatar: 'VS',
+    roleTitle: 'District Magistrate & CALA',
+    level: 'LEVEL 3: DISTRICT CALA',
+    defaultTab: 'tab-xai',
+    actorString: 'District Collector & Competent Authority for Land Acquisition (CALA)'
+  },
+  'AGENCY_DIRECTOR': {
+    roleKey: 'AGENCY_DIRECTOR',
+    name: 'Er. Amitav Ghosh',
+    avatar: 'AG',
+    roleTitle: 'Chief General Manager, NHAI',
+    level: 'LEVEL 4: EXECUTING AGENCY',
+    defaultTab: 'tab-command',
+    actorString: 'Chief General Manager & Project Director (NHAI / DFCCIL)'
   }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  initAuthSession();
   initGisMap();
   loadKpiMetrics();
   loadProjects();
@@ -40,6 +58,67 @@ document.addEventListener('DOMContentLoaded', () => {
   loadModelHubData();
   loadAuditLogs();
 });
+
+function initAuthSession() {
+  const savedRole = localStorage.getItem('bhuDrishtiActiveRole') || 'COLLECTOR_CALA';
+  applyStakeholderProfile(savedRole, false);
+}
+
+function openAuthModal() {
+  const modal = document.getElementById('authModal');
+  if (modal) {
+    modal.classList.add('active');
+    // Highlight currently active card
+    ['MINISTRY', 'STATE_SEC', 'COLLECTOR_CALA', 'AGENCY_DIRECTOR'].forEach(k => {
+      const card = document.getElementById(`authCard${k}`);
+      if (card) card.classList.toggle('active-role', k === currentRole);
+    });
+  }
+}
+
+function closeAuthModal() {
+  const modal = document.getElementById('authModal');
+  if (modal) modal.classList.remove('active');
+}
+
+function loginAsStakeholder(roleKey) {
+  if (!STAKEHOLDER_PROFILES[roleKey]) return;
+  applyStakeholderProfile(roleKey, true);
+  closeAuthModal();
+}
+
+function applyStakeholderProfile(roleKey, notify) {
+  currentRole = roleKey;
+  localStorage.setItem('bhuDrishtiActiveRole', roleKey);
+  const profile = STAKEHOLDER_PROFILES[roleKey];
+
+  // Update Top Navbar User Widget
+  const avatarEl = document.getElementById('userAvatarBadge');
+  const nameEl = document.getElementById('userProfileName');
+  const roleEl = document.getElementById('userProfileRole');
+
+  if (avatarEl) avatarEl.textContent = profile.avatar;
+  if (nameEl) nameEl.textContent = profile.name;
+  if (roleEl) roleEl.textContent = `${profile.roleTitle} (${profile.level.split(':')[0]})`;
+
+  // Log Authentication into Immutable Audit Trail
+  if (notify) {
+    fetch('/api/alerts/dispatch', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        project_id: 'SYSTEM-AUTH',
+        channels: ['AUDIT_LOG_ONLY'],
+        actor: profile.name,
+        role: profile.roleTitle
+      })
+    }).catch(() => {});
+
+    switchTab(profile.defaultTab);
+  }
+
+  loadProjects();
+}
 
 function setLanguage(lang) {
   currentLang = lang;
@@ -111,27 +190,9 @@ function switchTab(tabId) {
   }
 }
 
-// Role Switcher Handler
+// Role Switcher Handler (called when switching roles)
 function handleRoleChange(newRole) {
-  currentRole = newRole;
-  const roleNames = {
-    'MINISTRY': 'Central Ministry Secretary (MoRTH / Railways)',
-    'STATE_SEC': 'State Revenue Secretary (Infrastructure Cell)',
-    'COLLECTOR_CALA': 'District Collector / Magistrate (CALA)',
-    'AGENCY_DIRECTOR': 'Project Implementing Agency (NHAI / DFCCIL)'
-  };
-
-  alert(`[ROLE SWITCH] Active Authority Tier: ${roleNames[newRole]}\nDashboard KPIs, Playbooks, and Directives aligned.`);
-
-  if (newRole === 'MINISTRY') {
-    switchTab('tab-command');
-  } else if (newRole === 'COLLECTOR_CALA') {
-    switchTab('tab-xai');
-  } else if (newRole === 'STATE_SEC') {
-    switchTab('tab-analytics');
-  }
-
-  loadProjects();
+  loginAsStakeholder(newRole);
 }
 
 // Load KPI Metrics Summary
@@ -239,8 +300,8 @@ function renderProjectList(projects) {
       <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
         <span style="font-size: 10.5px; color: var(--text-muted);">${p.active_court_cases || 0} Litigation Cases</span>
         <div style="display: flex; gap: 6px;">
-          <button class="control-btn" onclick="event.stopPropagation(); focusMapOnProject(${p.lat}, ${p.lng})">Locate</button>
-          <button class="btn-primary" style="padding: 4px 10px; font-size: 11px;" onclick="event.stopPropagation(); openProjectModal('${p.id}')">Deep Dive</button>
+          <button class="control-btn" onclick="event.stopPropagation(); focusMapOnProject(${p.lat}, ${p.lng}, '${p.id}')">Locate</button>
+          <button class="btn-primary" style="padding: 4px 10px; font-size: 11px;" onclick="event.stopPropagation(); inspectProjectGroundLand('${p.id}')">Inspect Ground</button>
         </div>
       </div>
     `;
@@ -248,7 +309,7 @@ function renderProjectList(projects) {
     card.addEventListener('click', () => {
       document.querySelectorAll('.project-card').forEach(c => c.classList.remove('selected'));
       card.classList.add('selected');
-      focusMapOnProject(p.lat, p.lng);
+      focusMapOnProject(p.lat, p.lng, p.id);
       loadXaiForProject(p.id);
       initWhatIfSimulator(p.id);
     });
@@ -472,9 +533,10 @@ function sendBhuBotMessage() {
         3. <b>Expected Outcome</b>: Lowers delay probability from 89% down to 46% (saving 110 days).
       `;
     } else {
+      const highRiskCount = allProjects.filter(p => (p.delay_risk_score || 0) >= 75).length;
       aiMsg.innerHTML = `
         <b>Analysis for "${query}":</b><br>
-        BHU-DRISHTI ML engine monitors <b>15 National Infrastructure Packages (₹56,684 Cr)</b>. 6 projects are flagged High Risk (>75%). To prevent legal lapse, focus on compensation escrow disbursement velocity and Special Revenue Lok Adalats.
+        BHU-DRISHTI ML engine monitors <b>${allProjects.length || 30} National Infrastructure Packages across India</b>. ${highRiskCount} projects are currently flagged as High Delay Risk (&ge;75/100). To prevent statutory lapse under Section 25, focus on escrow compensation disbursement and Special Revenue Lok Adalats.
       `;
     }
 

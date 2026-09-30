@@ -1,5 +1,205 @@
 [
   {
+    "id": "AUD-0029",
+    "timestamp": "2026-09-30T02:53:10.029Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "235c2af1f1726670a399854a6e5e4e87cb1788654ead8a883d779a7c1bfe949b"
+  },
+  {
+    "id": "AUD-9981",
+    "timestamp": "2026-09-30T02:53:09.981Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "ec9b3406b4a1ab2ec378331230313ce6d890f6ae53b076d0ad1dcda3c38960e2"
+  },
+  {
+    "id": "AUD-7165",
+    "timestamp": "2026-09-30T02:53:07.165Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "2b83bfb40d9d226a22035cffe985cdc5602bb971b590bfd5ea1137a9ecbf77b1"
+  },
+  {
+    "id": "AUD-6991",
+    "timestamp": "2026-09-30T02:53:06.991Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "393a496b765147f2c3a356577c45c781a510689c261bca8b89d528bded8a7dcd"
+  },
+  {
+    "id": "AUD-0171",
+    "timestamp": "2026-09-30T02:50:30.171Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "c1ee433b1fcf5275a4cffd1f78ab72acdd7dab008da89a7d6522175ea4fe69d6"
+  },
+  {
+    "id": "AUD-0126",
+    "timestamp": "2026-09-30T02:50:30.126Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "30bc1a009db67b9853008139c8e033040a72e9fda06bdf76b159cb173798230d"
+  },
+  {
+    "id": "AUD-3291",
+    "timestamp": "2026-09-30T02:50:13.290Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "49de65fb13530654ce3a52f7aed7cd26003ecd6c64810697a797a2e9e05d5b56"
+  },
+  {
+    "id": "AUD-3239",
+    "timestamp": "2026-09-30T02:50:13.239Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "9bdcc8636ee0ad4e82e2b099021d21c079a376575b6a11b7d7cb44e2da5d3802"
+  },
+  {
+    "id": "AUD-0494",
+    "timestamp": "2026-09-30T02:50:10.494Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "4c693baeed94ed4d1dfce98b43a94f3aa4b33b35b8ed21f4eab3b471cdc3b6df"
+  },
+  {
+    "id": "AUD-0447",
+    "timestamp": "2026-09-30T02:50:10.446Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "25e845b6024db1688ec997f113d3cb788a94b8eae20ee327af02204a92b7e216"
+  },
+  {
+    "id": "AUD-0175",
+    "timestamp": "2026-09-30T02:49:40.174Z",
+    "actor": "District Collector & Competent Authority for Land Acquisition (CALA)",
+    "role": "Central Ministry",
+    "action": "MEMO_DISPATCH",
+    "details": "Dispatched statutory directive memo GOI-MoRTH/LA-PRED/2026/5723 for Raipur-Visakhapatnam Economic Corridor Package 6 (Sunabeda Stretch)",
+    "ip_address": "::1",
+    "hash": "5b843eb695fea1d1a7c98aaa24d49d8a22a144ec81166531bb7d3ad52ae66050"
+  },
+  {
+    "id": "AUD-1602",
+    "timestamp": "2026-09-30T02:49:21.602Z",
+    "actor": "District Collector & Competent Authority for Land Acquisition (CALA)",
+    "role": "Central Ministry",
+    "action": "MEMO_DISPATCH",
+    "details": "Dispatched statutory directive memo GOI-MoRTH/LA-PRED/2026/2618 for Kolkata Metro East-West Corridor Extension (Howrah Hub)",
+    "ip_address": "::1",
+    "hash": "d1c3f6e76afaaa5f5309811f7c8a3486937f935d5b039a6b59305a21058b748f"
+  },
+  {
+    "id": "AUD-7300",
+    "timestamp": "2026-09-30T02:49:07.299Z",
+    "actor": "District Collector & Competent Authority for Land Acquisition (CALA)",
+    "role": "Central Ministry",
+    "action": "MEMO_DISPATCH",
+    "details": "Dispatched statutory directive memo GOI-MoRTH/LA-PRED/2026/6632 for Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "d15afcd00ad6f27b9d302b26068e14369a9a2eddcaa66f6067724ee0082a5def"
+  },
+  {
+    "id": "AUD-5786",
+    "timestamp": "2026-09-30T02:48:55.785Z",
+    "actor": "District Magistrate / CALA",
+    "role": "District Collector (CALA)",
+    "action": "ALERT_DISPATCH",
+    "details": "Dispatched multi-channel early warning alert (SMS, EMAIL, DASHBOARD_PUSH) for Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "2c8a700fd5f9cd0f8cef41f6f3031df6e73338e53bfc844b5cdffd53e1354cd9"
+  },
+  {
+    "id": "AUD-1331",
+    "timestamp": "2026-09-30T02:46:21.331Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "9a553183a5bb9cbfd59e1e40f9401039738bf9f46ac9a5bb5fb5ddbc80231604"
+  },
+  {
+    "id": "AUD-1301",
+    "timestamp": "2026-09-30T02:46:21.301Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "32c3bb8e9ac0ff4717c07f4c7f41720044884bbf8fa0cfe1f3525a535cf79f9e"
+  },
+  {
+    "id": "AUD-5618",
+    "timestamp": "2026-09-30T02:45:55.617Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "88a46f255c9c697277d916c7302481292129d0734da2fa44344ff9029965ee46"
+  },
+  {
+    "id": "AUD-4154",
+    "timestamp": "2026-09-30T02:45:44.153Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "788e87068029628d63705145dc66106d7751e7e917cb8e8144c8e3b0abce8973"
+  },
+  {
+    "id": "AUD-3193",
+    "timestamp": "2026-09-30T02:45:23.192Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "ed1ba60a4e692d679b2170718d87629694ffa9711dab667c89f85a002b4f1691"
+  },
+  {
+    "id": "AUD-3151",
+    "timestamp": "2026-09-30T02:45:23.151Z",
+    "actor": "District Magistrate / CALA",
+    "role": "Decision Support User",
+    "action": "SIMULATION_EXECUTE",
+    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
+    "ip_address": "::1",
+    "hash": "1eb502dc1cc0d45c655e61f5ca61e0cc622816a8f84a96a05d73919bce2512e7"
+  },
+  {
     "id": "AUD-5054",
     "timestamp": "2026-09-30T02:40:55.054Z",
     "actor": "District Magistrate / CALA",
@@ -298,205 +498,5 @@
     "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
     "ip_address": "::1",
     "hash": "aaf9c9cf3a250159f20b687aa90b8ff20e3ed09572803fb05d97056c41dc5387"
-  },
-  {
-    "id": "AUD-5901",
-    "timestamp": "2026-09-29T20:57:25.901Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "cfdd3cb8b645f9abbad36aaf60aa85a2d1db5e936ccd927b07e81bd1c78d351f"
-  },
-  {
-    "id": "AUD-5886",
-    "timestamp": "2026-09-29T20:57:25.885Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "263b31ba8315c8d984e23a2863f9fd52cfbe2e5a2671968d29ea801d23481c0b"
-  },
-  {
-    "id": "AUD-4155",
-    "timestamp": "2026-09-29T20:57:24.155Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "cebd7e51b96e1611b1b363ee7fdd294dfed88019e6ac41979cd4f22dd9ff7227"
-  },
-  {
-    "id": "AUD-4134",
-    "timestamp": "2026-09-29T20:57:24.133Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "307da70ccc4808ecf36f58034183495ad1c2384fc8e37cb22c9fc731a5400ba6"
-  },
-  {
-    "id": "AUD-3052",
-    "timestamp": "2026-09-29T20:57:23.052Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "108d11b2f3eecefd874e3b7846caafd36e65b0de529c00bc233764f3ddf246cb"
-  },
-  {
-    "id": "AUD-3038",
-    "timestamp": "2026-09-29T20:57:23.038Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "2666eca2a9a2e1c007c21b638949bd16a37644261753cc561d8adb4647e6a48d"
-  },
-  {
-    "id": "AUD-2570",
-    "timestamp": "2026-09-29T20:57:22.570Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "485c8d6bb59295d8d1b8ae1be9b85f5de0270cc92a00ecd86544f01f5245f3f9"
-  },
-  {
-    "id": "AUD-2514",
-    "timestamp": "2026-09-29T20:57:22.514Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "e48516b27d999584ece8ab1c4b05bb9d97308d7384b6c508e4ae24a36a4e4c8e"
-  },
-  {
-    "id": "AUD-2366",
-    "timestamp": "2026-09-29T20:57:12.366Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "84065f773ad5b5846d2d48bd7e35fef165a9087201ef55bbd15e658c08daf1bc"
-  },
-  {
-    "id": "AUD-2337",
-    "timestamp": "2026-09-29T20:57:12.337Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "2aeed55ba37659d0ae64a896aa3ce7729a34232fc6e4aaf451d16c4d7599d3d9"
-  },
-  {
-    "id": "AUD-1403",
-    "timestamp": "2026-09-29T20:57:11.403Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "3b67205c7ffe3e7f03e08a41d29427855b6b08984d1cf3ce6e4627b4d455f8f4"
-  },
-  {
-    "id": "AUD-1375",
-    "timestamp": "2026-09-29T20:57:11.374Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "594aa0228491f2ed3fddf64d1d500c6649daa5e01724061a301fe5aa85635960"
-  },
-  {
-    "id": "AUD-6846",
-    "timestamp": "2026-09-29T20:57:06.846Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "2c21bcc7920a303126981d0e3374a73792d55edf7bd5dffebc1f1a6d237e571e"
-  },
-  {
-    "id": "AUD-6817",
-    "timestamp": "2026-09-29T20:57:06.817Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "a282e6971358f82632f7b7c96dcc5705f5b01634a87ec01fe740f227806bee44"
-  },
-  {
-    "id": "AUD-9343",
-    "timestamp": "2026-09-29T20:56:59.343Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "64dd9d80dae6472e5a961b6ba79bc85d4ed255ae24ed583f215fbdf8d7206328"
-  },
-  {
-    "id": "AUD-9311",
-    "timestamp": "2026-09-29T20:56:59.311Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "bb789b19ead781c502f71ab1563f645dd836d457a0671d7189e5567f8e668264"
-  },
-  {
-    "id": "AUD-2007",
-    "timestamp": "2026-09-29T20:56:52.007Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "2e384e9e9220265c77964ee3427369e2cae66d624128d6e90922e53cd9abe91e"
-  },
-  {
-    "id": "AUD-1977",
-    "timestamp": "2026-09-29T20:56:51.977Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "bdced21d68421dc69584df3497dc93b462a086281482fd599e9323a1c8e7774b"
-  },
-  {
-    "id": "AUD-6258",
-    "timestamp": "2026-09-29T20:56:36.258Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "744dc3c7b8e199f6ace9e602178268dfcca137720049c21b5738d0a60a89fe40"
-  },
-  {
-    "id": "AUD-6246",
-    "timestamp": "2026-09-29T20:56:36.246Z",
-    "actor": "District Magistrate / CALA",
-    "role": "Decision Support User",
-    "action": "SIMULATION_EXECUTE",
-    "details": "Ran policy what-if simulation on Varanasi-Kolkata Expressway Package 4 (Kaimur Section)",
-    "ip_address": "::1",
-    "hash": "981f18c2afca71364ffd7f8e822815c8172b74a5f87d5aa96eeaab5283b19b69"
   }
 ]

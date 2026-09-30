@@ -458,7 +458,7 @@ function renderProjectUpCloseParcels(p) {
       owner: 'State Revenue Department & Forest Reserve',
       area: 8.9,
       status: 'Stage-II Forest Clearance Alignment Check',
-      color: '#38bdf8',
+      color: '#E3EED4',
       disbursement: 'Government Land Transfer',
       coords: [
         [lat + 0.0010, lng + 0.0007],

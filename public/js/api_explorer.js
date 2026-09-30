@@ -53,19 +53,19 @@ function loadAuditLogs() {
         const timeStr = new Date(log.timestamp).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
         const item = document.createElement('div');
-        item.style.background = 'rgba(30, 41, 59, 0.4)';
+        item.style.background = 'rgba(10, 27, 19, 0.75)';
         item.style.padding = '8px 12px';
         item.style.borderRadius = '4px';
-        item.style.border = '1px solid rgba(255,255,255,0.06)';
+        item.style.border = '1px solid rgba(174, 195, 176, 0.12)';
         item.style.fontSize = '11px';
 
         item.innerHTML = `
           <div style="display: flex; justify-content: space-between; margin-bottom: 2px;">
-            <span style="color: #ffffff; font-weight: 600;">${log.action}</span>
-            <span style="color: #64748b;">${timeStr}</span>
+            <span style="color: #E3EED4; font-weight: 600;">${log.action}</span>
+            <span style="color: #AEC3B0;">${timeStr}</span>
           </div>
-          <div style="color: #cbd5e1; margin-bottom: 4px;">${log.details}</div>
-          <div style="display: flex; justify-content: space-between; color: #64748b; font-size: 10px;">
+          <div style="color: #E3EED4; margin-bottom: 4px;">${log.details}</div>
+          <div style="display: flex; justify-content: space-between; color: #6B9071; font-size: 10px;">
             <span>Actor: <b>${log.actor} (${log.role})</b></span>
             <span title="SHA-256 Hash">Hash: ${log.hash.slice(0, 10)}...</span>
           </div>

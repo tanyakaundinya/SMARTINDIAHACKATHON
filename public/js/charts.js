@@ -78,21 +78,21 @@ function renderStageFunnelChart(stageRisks) {
         x: {
           min: 0,
           max: 100,
-          grid: { color: 'rgba(255, 255, 255, 0.06)' },
-          ticks: { color: '#94a3b8', font: { family: 'Plus Jakarta Sans', size: 11 }, callback: val => `${val}%` }
+          grid: { color: 'rgba(174, 195, 176, 0.1)' },
+          ticks: { color: '#AEC3B0', font: { family: 'Plus Jakarta Sans', size: 11 }, callback: val => `${val}%` }
         },
         y: {
           grid: { display: false },
-          ticks: { color: '#f1f5f9', font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' } }
+          ticks: { color: '#E3EED4', font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' } }
         }
       },
       plugins: {
         legend: { display: false },
         tooltip: {
-          backgroundColor: 'rgba(11, 20, 38, 0.95)',
-          titleColor: '#ffffff',
-          bodyColor: '#38bdf8',
-          borderColor: 'rgba(56, 189, 248, 0.3)',
+          backgroundColor: 'rgba(15, 42, 29, 0.96)',
+          titleColor: '#E3EED4',
+          bodyColor: '#AEC3B0',
+          borderColor: 'rgba(107, 144, 113, 0.45)',
           borderWidth: 1,
           padding: 10,
           callbacks: {
@@ -127,8 +127,8 @@ function renderStateAnalyticsCharts(stateMetrics) {
       datasets: [{
         label: 'Avg Clearance Velocity (Months)',
         data: velocities,
-        backgroundColor: velocities.map(v => v > 18 ? 'rgba(244, 63, 94, 0.85)' : (v > 14 ? 'rgba(245, 158, 11, 0.85)' : 'rgba(16, 185, 129, 0.85)')),
-        borderColor: 'rgba(255, 255, 255, 0.2)',
+        backgroundColor: velocities.map(v => v > 18 ? 'rgba(244, 63, 94, 0.85)' : (v > 14 ? 'rgba(245, 158, 11, 0.85)' : 'rgba(52, 211, 153, 0.85)')),
+        borderColor: 'rgba(174, 195, 176, 0.25)',
         borderWidth: 1,
         borderRadius: 6
       }]
@@ -141,21 +141,21 @@ function renderStateAnalyticsCharts(stateMetrics) {
         y: {
           min: 0,
           max: 28,
-          grid: { color: 'rgba(255, 255, 255, 0.06)' },
-          ticks: { color: '#94a3b8', font: { family: 'Plus Jakarta Sans', size: 11 }, callback: v => `${v} Mo` }
+          grid: { color: 'rgba(174, 195, 176, 0.1)' },
+          ticks: { color: '#AEC3B0', font: { family: 'Plus Jakarta Sans', size: 11 }, callback: v => `${v} Mo` }
         },
         x: {
-          ticks: { color: '#cbd5e1', font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' } },
+          ticks: { color: '#E3EED4', font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' } },
           grid: { display: false }
         }
       },
       plugins: {
         legend: { display: false },
         tooltip: {
-          backgroundColor: 'rgba(11, 20, 38, 0.95)',
-          titleColor: '#ffffff',
-          bodyColor: '#38bdf8',
-          borderColor: 'rgba(56, 189, 248, 0.3)',
+          backgroundColor: 'rgba(15, 42, 29, 0.96)',
+          titleColor: '#E3EED4',
+          bodyColor: '#AEC3B0',
+          borderColor: 'rgba(107, 144, 113, 0.45)',
           borderWidth: 1,
           padding: 10
         }
@@ -172,10 +172,10 @@ function renderStateAnalyticsCharts(stateMetrics) {
         {
           label: 'DILRMP Digitization Score (%)',
           data: dilrmpScores,
-          borderColor: '#38bdf8',
-          backgroundColor: 'rgba(56, 189, 248, 0.15)',
+          borderColor: '#E3EED4',
+          backgroundColor: 'rgba(107, 144, 113, 0.2)',
           borderWidth: 2.5,
-          pointBackgroundColor: '#38bdf8',
+          pointBackgroundColor: '#E3EED4',
           pointRadius: 4,
           fill: true,
           tension: 0.35,
@@ -202,8 +202,8 @@ function renderStateAnalyticsCharts(stateMetrics) {
           position: 'left',
           min: 40,
           max: 100,
-          grid: { color: 'rgba(255, 255, 255, 0.06)' },
-          ticks: { color: '#38bdf8', font: { family: 'Plus Jakarta Sans', size: 11 }, callback: v => `${v}%` }
+          grid: { color: 'rgba(174, 195, 176, 0.1)' },
+          ticks: { color: '#E3EED4', font: { family: 'Plus Jakarta Sans', size: 11 }, callback: v => `${v}%` }
         },
         y1: {
           type: 'linear',
@@ -214,17 +214,17 @@ function renderStateAnalyticsCharts(stateMetrics) {
           ticks: { color: '#f43f5e', font: { family: 'Plus Jakarta Sans', size: 11 } }
         },
         x: {
-          ticks: { color: '#cbd5e1', font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' } },
+          ticks: { color: '#E3EED4', font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' } },
           grid: { display: false }
         }
       },
       plugins: {
-        legend: { labels: { color: '#cbd5e1', font: { family: 'Plus Jakarta Sans', size: 11 } } },
+        legend: { labels: { color: '#AEC3B0', font: { family: 'Plus Jakarta Sans', size: 11 } } },
         tooltip: {
-          backgroundColor: 'rgba(11, 20, 38, 0.95)',
-          titleColor: '#ffffff',
-          bodyColor: '#38bdf8',
-          borderColor: 'rgba(56, 189, 248, 0.3)',
+          backgroundColor: 'rgba(15, 42, 29, 0.96)',
+          titleColor: '#E3EED4',
+          bodyColor: '#AEC3B0',
+          borderColor: 'rgba(107, 144, 113, 0.45)',
           borderWidth: 1,
           padding: 10
         }
@@ -259,8 +259,8 @@ function renderSimComparisonChart(baseline, simulated) {
         {
           label: 'With Policy Intervention Plan',
           data: [simulated.risk_score, simulated.predicted_delay_days, simulated.predicted_delay_months * 10],
-          backgroundColor: 'rgba(16, 185, 129, 0.85)',
-          borderColor: 'rgba(16, 185, 129, 1)',
+          backgroundColor: 'rgba(52, 211, 153, 0.85)',
+          borderColor: 'rgba(52, 211, 153, 1)',
           borderWidth: 1,
           borderRadius: 6
         }
@@ -272,21 +272,21 @@ function renderSimComparisonChart(baseline, simulated) {
       animations: BOTTOM_TO_TOP_ANIMATION,
       scales: {
         y: {
-          grid: { color: 'rgba(255, 255, 255, 0.06)' },
-          ticks: { color: '#94a3b8', font: { family: 'Plus Jakarta Sans', size: 11 } }
+          grid: { color: 'rgba(174, 195, 176, 0.1)' },
+          ticks: { color: '#AEC3B0', font: { family: 'Plus Jakarta Sans', size: 11 } }
         },
         x: {
-          ticks: { color: '#cbd5e1', font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' } },
+          ticks: { color: '#E3EED4', font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' } },
           grid: { display: false }
         }
       },
       plugins: {
-        legend: { labels: { color: '#cbd5e1', font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' } } },
+        legend: { labels: { color: '#AEC3B0', font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' } } },
         tooltip: {
-          backgroundColor: 'rgba(11, 20, 38, 0.95)',
-          titleColor: '#ffffff',
-          bodyColor: '#38bdf8',
-          borderColor: 'rgba(56, 189, 248, 0.3)',
+          backgroundColor: 'rgba(15, 42, 29, 0.96)',
+          titleColor: '#E3EED4',
+          bodyColor: '#AEC3B0',
+          borderColor: 'rgba(107, 144, 113, 0.45)',
           borderWidth: 1,
           padding: 10
         }
@@ -317,9 +317,9 @@ function renderModelDriftChart(history) {
         {
           label: 'ROC-AUC Score',
           data: rocAuc,
-          borderColor: '#10b981',
-          backgroundColor: 'rgba(16, 185, 129, 0.15)',
-          pointBackgroundColor: '#10b981',
+          borderColor: '#34d399',
+          backgroundColor: 'rgba(52, 211, 153, 0.15)',
+          pointBackgroundColor: '#34d399',
           pointRadius: 5,
           fill: true,
           tension: 0.3,
@@ -328,9 +328,9 @@ function renderModelDriftChart(history) {
         {
           label: 'Classification Accuracy (%)',
           data: accuracy,
-          borderColor: '#38bdf8',
-          backgroundColor: 'rgba(56, 189, 248, 0.1)',
-          pointBackgroundColor: '#38bdf8',
+          borderColor: '#E3EED4',
+          backgroundColor: 'rgba(107, 144, 113, 0.15)',
+          pointBackgroundColor: '#E3EED4',
           pointRadius: 5,
           tension: 0.3,
           yAxisID: 'y1'
@@ -345,28 +345,28 @@ function renderModelDriftChart(history) {
         y: {
           min: 0.85,
           max: 1.0,
-          grid: { color: 'rgba(255, 255, 255, 0.06)' },
-          ticks: { color: '#10b981', font: { family: 'Plus Jakarta Sans', size: 11 } }
+          grid: { color: 'rgba(174, 195, 176, 0.1)' },
+          ticks: { color: '#34d399', font: { family: 'Plus Jakarta Sans', size: 11 } }
         },
         y1: {
           position: 'right',
           min: 80,
           max: 100,
           grid: { drawOnChartArea: false },
-          ticks: { color: '#38bdf8', font: { family: 'Plus Jakarta Sans', size: 11 }, callback: v => `${v}%` }
+          ticks: { color: '#E3EED4', font: { family: 'Plus Jakarta Sans', size: 11 }, callback: v => `${v}%` }
         },
         x: {
-          ticks: { color: '#cbd5e1', font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' } },
+          ticks: { color: '#E3EED4', font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' } },
           grid: { display: false }
         }
       },
       plugins: {
-        legend: { labels: { color: '#cbd5e1', font: { family: 'Plus Jakarta Sans', size: 11 } } },
+        legend: { labels: { color: '#AEC3B0', font: { family: 'Plus Jakarta Sans', size: 11 } } },
         tooltip: {
-          backgroundColor: 'rgba(11, 20, 38, 0.95)',
-          titleColor: '#ffffff',
-          bodyColor: '#38bdf8',
-          borderColor: 'rgba(56, 189, 248, 0.3)',
+          backgroundColor: 'rgba(15, 42, 29, 0.96)',
+          titleColor: '#E3EED4',
+          bodyColor: '#AEC3B0',
+          borderColor: 'rgba(107, 144, 113, 0.45)',
           borderWidth: 1,
           padding: 10
         }

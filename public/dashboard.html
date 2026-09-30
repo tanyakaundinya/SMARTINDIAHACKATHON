@@ -57,11 +57,7 @@
           <span id="themeText" class="theme-btn-label">LIGHT</span>
         </button>
 
-        <!-- Language Toggle -->
-        <!-- <div class="lang-toggle-box">
-          <button id="langEngBtn" class="lang-btn active" onclick="setLanguage('en')">ENG</button>
-          <button id="langHinBtn" class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
-        </div> -->
+
 
         <!-- Authenticated Stakeholder Identity Widget -->
         <div class="role-badge-container" onclick="openAuthModal()"
@@ -85,7 +81,7 @@
           <div class="kpi-header-row">
             <div class="kpi-title" id="kpiLabelTotalCap">Monitored Infrastructure Capital</div>
             <span
-              style="font-size: 10px; font-weight: 700; color: #ffffff; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); padding: 2px 6px; border-radius: 4px;">PORTFOLIO</span>
+              style="font-size: 10px; font-weight: 700; color: #E3EED4; background: rgba(55,85,52,0.65); border: 1px solid rgba(107,144,113,0.45); padding: 2px 6px; border-radius: 4px;">PORTFOLIO</span>
           </div>
           <div class="kpi-value" id="kpiTotalCapital">₹56,684 <span
               style="font-size: 14px; font-weight: normal; color: var(--text-secondary);">Cr</span></div>
@@ -758,12 +754,12 @@
         <svg class="bhu-bot-doodle-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="botAuraGrad" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#818cf8" stop-opacity="0.35" />
-              <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+              <stop offset="0%" stop-color="#6B9071" stop-opacity="0.45" />
+              <stop offset="100%" stop-color="#0F2A1D" stop-opacity="0" />
             </radialGradient>
             <linearGradient id="botFaceBg" x1="20" y1="20" x2="80" y2="80" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#1e293b" />
-              <stop offset="100%" stop-color="#0f172a" />
+              <stop offset="0%" stop-color="#375534" />
+              <stop offset="100%" stop-color="#0F2A1D" />
             </linearGradient>
           </defs>
 
@@ -771,61 +767,60 @@
           <circle cx="50" cy="50" r="46" fill="url(#botAuraGrad)" />
 
           <!-- Doodle Antenna -->
-          <path d="M50 22 L50 11" stroke="#38bdf8" stroke-width="3.5" stroke-linecap="round" />
-          <circle cx="50" cy="9" r="4.5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5" />
-          <path d="M41 12 Q50 6 59 12" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" fill="none"
+          <path d="M50 22 L50 11" stroke="#6B9071" stroke-width="3.5" stroke-linecap="round" />
+          <circle cx="50" cy="9" r="4.5" fill="#E3EED4" stroke="#375534" stroke-width="1.5" />
+          <path d="M41 12 Q50 6 59 12" stroke="#AEC3B0" stroke-width="2" stroke-linecap="round" fill="none"
             stroke-dasharray="2 2" />
 
           <!-- Doodle Face Contour (Hand-drawn rounded rectangle) -->
-          <rect x="20" y="22" width="60" height="52" rx="18" fill="url(#botFaceBg)" stroke="#818cf8"
-            stroke-width="3.5" />
+          <rect x="20" y="22" width="60" height="52" rx="18" fill="url(#botFaceBg)" stroke="#AEC3B0" stroke-width="3" />
 
           <!-- Headset / Ears Doodles -->
-          <rect x="13" y="38" width="7" height="18" rx="3.5" fill="#6366f1" stroke="#c7d2fe" stroke-width="1.5" />
-          <rect x="80" y="38" width="7" height="18" rx="3.5" fill="#6366f1" stroke="#c7d2fe" stroke-width="1.5" />
-          <path d="M20 38 Q50 18 80 38" stroke="#818cf8" stroke-width="2" fill="none" stroke-linecap="round"
-            opacity="0.4" />
+          <rect x="13" y="38" width="7" height="18" rx="3.5" fill="#375534" stroke="#6B9071" stroke-width="1.5" />
+          <rect x="80" y="38" width="7" height="18" rx="3.5" fill="#375534" stroke="#6B9071" stroke-width="1.5" />
+          <path d="M20 38 Q50 18 80 38" stroke="#6B9071" stroke-width="2" fill="none" stroke-linecap="round"
+            opacity="0.5" />
 
           <!-- Visor / Screen Inner Contour -->
-          <rect x="27" y="30" width="46" height="34" rx="10" fill="#090d16" stroke="#38bdf8" stroke-width="2" />
+          <rect x="27" y="30" width="46" height="34" rx="10" fill="#0A1B13" stroke="#6B9071" stroke-width="2" />
 
           <!-- Expressive Doodle Eyes (Friendly & Cheerful) -->
-          <circle cx="39" cy="44" r="5" fill="#38bdf8" />
-          <circle cx="41" cy="42" r="1.8" fill="#ffffff" />
+          <circle cx="39" cy="44" r="5" fill="#E3EED4" />
+          <circle cx="41" cy="42" r="1.8" fill="#0F2A1D" />
 
-          <circle cx="61" cy="44" r="5" fill="#38bdf8" />
-          <circle cx="63" cy="42" r="1.8" fill="#ffffff" />
+          <circle cx="61" cy="44" r="5" fill="#E3EED4" />
+          <circle cx="63" cy="42" r="1.8" fill="#0F2A1D" />
 
           <!-- Friendly Rosy Cheeks -->
-          <ellipse cx="33" cy="53" rx="3.5" ry="1.8" fill="#f43f5e" fill-opacity="0.6" />
-          <ellipse cx="67" cy="53" rx="3.5" ry="1.8" fill="#f43f5e" fill-opacity="0.6" />
+          <ellipse cx="33" cy="53" rx="3.5" ry="1.8" fill="#6B9071" fill-opacity="0.6" />
+          <ellipse cx="67" cy="53" rx="3.5" ry="1.8" fill="#6B9071" fill-opacity="0.6" />
 
           <!-- Cheerful Smile Doodle Curve -->
-          <path d="M42 53 Q50 61 58 53" stroke="#34d399" stroke-width="3.2" stroke-linecap="round" fill="none" />
+          <path d="M42 53 Q50 61 58 53" stroke="#E3EED4" stroke-width="3" stroke-linecap="round" fill="none" />
 
           <!-- Helpful Sparkle Star Doodle -->
-          <path d="M73 22 L75 18 L77 22 L81 24 L77 26 L75 30 L73 26 L69 24 Z" fill="#fbbf24" />
+          <path d="M73 22 L75 18 L77 22 L81 24 L77 26 L75 30 L73 26 L69 24 Z" fill="#E3EED4" />
         </svg>
       </button>
     </div>
 
     <!-- BHU-BOT Floating AI Assistant Drawer -->
     <div id="bhuBotDrawer" class="glass-panel"
-      style="position: fixed; bottom: 95px; right: 24px; width: 390px; height: 520px; z-index: 3000; display: none; flex-direction: column; box-shadow: 0 20px 50px rgba(0,0,0,0.85); border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius-md); overflow: hidden; background: var(--bg-card);">
+      style="position: fixed; bottom: 95px; right: 24px; width: 390px; height: 520px; z-index: 3000; display: none; flex-direction: column; box-shadow: 0 20px 50px rgba(10,27,19,0.95); border: 1px solid rgba(174,195,176,0.25); border-radius: var(--radius-md); overflow: hidden; background: #0F2A1D;">
       <div
-        style="padding: 14px 18px; background: #14151b; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+        style="padding: 14px 18px; background: #0A1B13; border-bottom: 1px solid rgba(174,195,176,0.18); display: flex; justify-content: space-between; align-items: center;">
         <div>
-          <div style="font-size: 13.5px; font-weight: 800; color: #ffffff;">BHU-BOT AI Governance Copilot</div>
-          <div style="font-size: 10.5px; color: var(--text-secondary);">Land Acquisition Intelligence Assistant</div>
+          <div style="font-size: 13.5px; font-weight: 800; color: #E3EED4;">BHU-BOT AI Governance Copilot</div>
+          <div style="font-size: 10.5px; color: #AEC3B0;">Land Acquisition Intelligence Assistant</div>
         </div>
         <button
-          style="background: transparent; border: none; color: #ffffff; font-size: 20px; cursor: pointer; line-height: 1;"
+          style="background: transparent; border: none; color: #E3EED4; font-size: 20px; cursor: pointer; line-height: 1;"
           onclick="toggleBhuBot()">&times;</button>
       </div>
 
       <!-- Quick Chips -->
       <div
-        style="padding: 8px 12px; background: #101117; border-bottom: 1px solid var(--border-color); display: flex; gap: 6px; overflow-x: auto;">
+        style="padding: 8px 12px; background: #0F2A1D; border-bottom: 1px solid rgba(174,195,176,0.15); display: flex; gap: 6px; overflow-x: auto;">
         <button class="control-btn" style="white-space: nowrap; font-size: 10.5px;"
           onclick="askBhuBot('Show all packages facing Section 25 lapse')">Sec 25 Lapse</button>
         <button class="control-btn" style="white-space: nowrap; font-size: 10.5px;"
@@ -836,9 +831,9 @@
 
       <!-- Chat Messages Container -->
       <div id="bhuBotMessages"
-        style="flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 12px; background: #0e0f14;">
+        style="flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 12px; background: #0A1B13;">
         <div
-          style="background: #14151b; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); border-left: 3px solid #ffffff; line-height: 1.45; color: #ffffff;">
+          style="background: rgba(55, 85, 52, 0.55); padding: 12px; border-radius: 8px; border: 1px solid rgba(107, 144, 113, 0.35); border-left: 3px solid #E3EED4; line-height: 1.45; color: #E3EED4;">
           Greetings! I am <b>BHU-BOT</b>, your AI Copilot for land acquisition governance. Ask me about high-risk
           corridors, pending court stays, statutory lapse deadlines, or administrative playbooks.
         </div>
@@ -846,7 +841,7 @@
 
       <!-- Chat Input -->
       <div
-        style="padding: 12px; background: #101117; border-top: 1px solid var(--border-color); display: flex; gap: 8px;">
+        style="padding: 12px; background: #0F2A1D; border-top: 1px solid rgba(174,195,176,0.15); display: flex; gap: 8px;">
         <input type="text" id="bhuBotInput" class="search-input" style="font-size: 12px;"
           placeholder="Ask BHU-BOT in English / Hindi..." onkeypress="if(event.key==='Enter') sendBhuBotMessage()">
         <button class="btn-primary" style="padding: 6px 14px;" onclick="sendBhuBotMessage()">Send</button>

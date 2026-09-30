@@ -514,13 +514,13 @@ function openProjectModal(projectId) {
           <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px;">Prescriptive Mitigation Action Playbook</div>
           <div style="display: flex; flex-direction: column; gap: 8px;">
             ${(p.prescriptive_recommendations || []).map(r => `
-              <div style="background: rgba(30,41,59,0.55); padding: 12px 14px; border-radius: 8px; border-left: 4px solid #ffffff; font-size: 12px;">
-                <div style="font-weight: 700; color: #fff; display: flex; justify-content: space-between;">
+              <div style="background: rgba(10, 27, 19, 0.75); padding: 12px 14px; border-radius: 8px; border-left: 4px solid #6B9071; font-size: 12px; border: 1px solid rgba(174, 195, 176, 0.12);">
+                <div style="font-weight: 700; color: #E3EED4; display: flex; justify-content: space-between;">
                   <span>${r.title} (Priority: ${r.priority})</span>
                   <span style="color: #34d399; font-weight: 700;">-${r.expected_risk_reduction_pct}% Risk</span>
                 </div>
-                <div style="color: #94a3b8; margin: 4px 0;">${r.description}</div>
-                <div style="color: #ffffff; font-size: 11px;">Statutory Ref: <b>${r.statutory_reference}</b> | Timeline: <b>${r.timeline_days} days</b></div>
+                <div style="color: #AEC3B0; margin: 4px 0;">${r.description}</div>
+                <div style="color: #E3EED4; font-size: 11px;">Statutory Ref: <b>${r.statutory_reference}</b> | Timeline: <b>${r.timeline_days} days</b></div>
               </div>
             `).join('')}
           </div>
@@ -529,7 +529,7 @@ function openProjectModal(projectId) {
         <div style="display: flex; justify-content: flex-end; gap: 10px; border-top: 1px solid var(--border-color); padding-top: 16px;">
           <button class="btn-secondary" onclick="closeProjectModal()">Close</button>
           <button class="btn-primary" onclick="closeProjectModal(); switchTab('tab-xai'); loadXaiForProject('${p.id}');">View Full XAI Waterfall</button>
-          <button class="btn-primary" style="background: #10b981;" onclick="closeProjectModal(); switchTab('tab-whatif'); initWhatIfSimulator('${p.id}');">Open What-If Studio</button>
+          <button class="btn-primary" style="background: #375534; color: #E3EED4; border: 1px solid #6B9071;" onclick="closeProjectModal(); switchTab('tab-whatif'); initWhatIfSimulator('${p.id}');">Open What-If Studio</button>
         </div>
       `;
 
@@ -567,8 +567,9 @@ function sendBhuBotMessage() {
   
   // User bubble
   const userMsg = document.createElement('div');
-  userMsg.style.background = '#2563eb';
-  userMsg.style.color = '#fff';
+  userMsg.style.background = '#E3EED4';
+  userMsg.style.color = '#0F2A1D';
+  userMsg.style.fontWeight = '600';
   userMsg.style.padding = '8px 12px';
   userMsg.style.borderRadius = '8px';
   userMsg.style.alignSelf = 'flex-end';
@@ -580,11 +581,12 @@ function sendBhuBotMessage() {
   // AI thinking response
   setTimeout(() => {
     const aiMsg = document.createElement('div');
-    aiMsg.style.background = 'rgba(30,41,59,0.9)';
-    aiMsg.style.color = '#e2e8f0';
+    aiMsg.style.background = 'rgba(55, 85, 52, 0.65)';
+    aiMsg.style.color = '#E3EED4';
     aiMsg.style.padding = '10px 12px';
     aiMsg.style.borderRadius = '8px';
-    aiMsg.style.borderLeft = '3px solid #6366f1';
+    aiMsg.style.borderLeft = '3px solid #E3EED4';
+    aiMsg.style.border = '1px solid rgba(107, 144, 113, 0.35)';
     aiMsg.style.maxWidth = '90%';
 
     const q = query.toLowerCase();

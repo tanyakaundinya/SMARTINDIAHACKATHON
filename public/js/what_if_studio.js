@@ -87,13 +87,13 @@ function runLiveSimulation() {
     const roiBox = document.getElementById('simFinancialRoiBox');
     if (roiBox) {
       roiBox.innerHTML = `
-        <div style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); padding: 12px; border-radius: 6px; margin-top: 14px;">
-          <div style="font-size: 11px; color: #34d399; font-weight: bold; margin-bottom: 4px;">[ EXCHEQUER SAVINGS & ROI ANALYSIS ]</div>
-          <div style="font-size: 12px; color: #f8fafc; line-height: 1.5;">
+        <div style="background: rgba(55, 85, 52, 0.6); border: 1px solid rgba(107, 144, 113, 0.45); padding: 12px; border-radius: 6px; margin-top: 14px;">
+          <div style="font-size: 11px; color: #E3EED4; font-weight: bold; margin-bottom: 4px;">[ EXCHEQUER SAVINGS & ROI ANALYSIS ]</div>
+          <div style="font-size: 12px; color: #E3EED4; line-height: 1.5;">
             By saving <b>${daysSaved} Days</b>, the National Exchequer averts:<br>
-            • Contractor Idling Claims: <b style="color: #ffffff;">₹${idlingSaved} Cr</b><br>
-            • Interest During Construction (IDC): <b style="color: #ffffff;">₹${idcSaved} Cr</b><br>
-            <span style="font-size: 13px; color: #10b981; font-weight: bold; display: block; margin-top: 4px;">
+            • Contractor Idling Claims: <b style="color: #E3EED4;">₹${idlingSaved} Cr</b><br>
+            • Interest During Construction (IDC): <b style="color: #E3EED4;">₹${idcSaved} Cr</b><br>
+            <span style="font-size: 13px; color: #34d399; font-weight: bold; display: block; margin-top: 4px;">
               Net Public Fund Protected: ₹${totalExchequerBenefit} Crore
             </span>
           </div>

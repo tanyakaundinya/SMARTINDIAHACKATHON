@@ -87,13 +87,13 @@ function runLiveSimulation() {
     const roiBox = document.getElementById('simFinancialRoiBox');
     if (roiBox) {
       roiBox.innerHTML = `
-        <div style="background: rgba(55, 85, 52, 0.6); border: 1px solid rgba(107, 144, 113, 0.45); padding: 12px; border-radius: 6px; margin-top: 14px;">
-          <div style="font-size: 11px; color: #E3EED4; font-weight: bold; margin-bottom: 4px;">[ EXCHEQUER SAVINGS & ROI ANALYSIS ]</div>
-          <div style="font-size: 12px; color: #E3EED4; line-height: 1.5;">
+        <div class="glass-panel" style="border: 1px solid var(--border-color); border-left: 4px solid var(--risk-low); padding: 14px; border-radius: 6px; margin-top: 14px;">
+          <div style="font-size: 11px; color: var(--text-primary); font-weight: 800; letter-spacing: 0.5px; margin-bottom: 6px;">[ EXCHEQUER SAVINGS & ROI ANALYSIS ]</div>
+          <div style="font-size: 12.5px; color: var(--text-primary); line-height: 1.55;">
             By saving <b>${daysSaved} Days</b>, the National Exchequer averts:<br>
-            • Contractor Idling Claims: <b style="color: #E3EED4;">₹${idlingSaved} Cr</b><br>
-            • Interest During Construction (IDC): <b style="color: #E3EED4;">₹${idcSaved} Cr</b><br>
-            <span style="font-size: 13px; color: #34d399; font-weight: bold; display: block; margin-top: 4px;">
+            • Contractor Idling Claims: <b style="color: var(--text-primary);">₹${idlingSaved} Cr</b><br>
+            • Interest During Construction (IDC): <b style="color: var(--text-primary);">₹${idcSaved} Cr</b><br>
+            <span style="font-size: 13.5px; color: var(--risk-low); font-weight: 800; display: block; margin-top: 6px;">
               Net Public Fund Protected: ₹${totalExchequerBenefit} Crore
             </span>
           </div>
@@ -103,9 +103,9 @@ function runLiveSimulation() {
 
     // Color code simulated risk
     const simEl = document.getElementById('simSimulatedRisk');
-    if (res.simulated.risk_score >= 75) simEl.style.color = '#ef4444';
-    else if (res.simulated.risk_score >= 40) simEl.style.color = '#f59e0b';
-    else simEl.style.color = '#10b981';
+    if (res.simulated.risk_score >= 75) simEl.style.color = 'var(--risk-high)';
+    else if (res.simulated.risk_score >= 40) simEl.style.color = 'var(--risk-med)';
+    else simEl.style.color = 'var(--risk-low)';
 
     renderSimComparisonChart(res.baseline, res.simulated);
   })

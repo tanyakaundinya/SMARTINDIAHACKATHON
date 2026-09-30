@@ -81,7 +81,7 @@
           <div class="kpi-header-row">
             <div class="kpi-title" id="kpiLabelTotalCap">Monitored Infrastructure Capital</div>
             <span
-              style="font-size: 10px; font-weight: 700; color: #E3EED4; background: rgba(55,85,52,0.65); border: 1px solid rgba(107,144,113,0.45); padding: 2px 6px; border-radius: 4px;">PORTFOLIO</span>
+              style="font-size: 10px; font-weight: 800; color: var(--text-primary); background: var(--bg-card-hover); border: 1px solid var(--border-color); padding: 2px 6px; border-radius: 4px;">PORTFOLIO</span>
           </div>
           <div class="kpi-value" id="kpiTotalCapital">₹56,684 <span
               style="font-size: 14px; font-weight: normal; color: var(--text-secondary);">Cr</span></div>
@@ -92,7 +92,7 @@
           <div class="kpi-header-row">
             <div class="kpi-title" id="kpiLabelRiskCap">Capital at High Delay Risk</div>
             <span
-              style="font-size: 10px; font-weight: 700; color: #f43f5e; background: rgba(244,63,94,0.12); padding: 2px 6px; border-radius: 4px;">HIGH
+              style="font-size: 10px; font-weight: 800; color: var(--risk-high); background: var(--risk-high-bg); border: 1px solid var(--risk-high-border); padding: 2px 6px; border-radius: 4px;">HIGH
               RISK</span>
           </div>
           <div class="kpi-value" id="kpiCapitalAtRisk">₹25,190 <span
@@ -104,7 +104,7 @@
           <div class="kpi-header-row">
             <div class="kpi-title" id="kpiLabelLapseAlert">Sec 25 Statutory Lapse Alerts</div>
             <span
-              style="font-size: 10px; font-weight: 700; color: #f59e0b; background: rgba(245,158,11,0.12); padding: 2px 6px; border-radius: 4px;">CRITICAL</span>
+              style="font-size: 10px; font-weight: 800; color: var(--risk-med); background: var(--risk-med-bg); border: 1px solid var(--risk-med-border); padding: 2px 6px; border-radius: 4px;">CRITICAL</span>
           </div>
           <div class="kpi-value" id="kpiLapseAlerts">4 <span
               style="font-size: 14px; font-weight: normal; color: var(--text-secondary);">Packages</span></div>
@@ -115,7 +115,7 @@
           <div class="kpi-header-row">
             <div class="kpi-title" id="kpiLabelVelocity">Avg Land Clearance Velocity</div>
             <span
-              style="font-size: 10px; font-weight: 700; color: #10b981; background: rgba(16,185,129,0.12); padding: 2px 6px; border-radius: 4px;">BENCHMARK</span>
+              style="font-size: 10px; font-weight: 800; color: var(--risk-low); background: var(--risk-low-bg); border: 1px solid var(--risk-low-border); padding: 2px 6px; border-radius: 4px;">BENCHMARK</span>
           </div>
           <div class="kpi-value">14.8 <span
               style="font-size: 14px; font-weight: normal; color: var(--text-secondary);">Months</span></div>
@@ -239,7 +239,7 @@
               <div class="section-title">
                 <span>Early Warning Project Risk Triage</span>
               </div>
-              <span style="font-size: 11.5px; color: #ffffff; font-weight: 700;" id="projectCountDisplay">15
+              <span style="font-size: 11.5px; color: var(--text-secondary); font-weight: 700;" id="projectCountDisplay">15
                 Projects Found</span>
             </div>
 
@@ -290,7 +290,7 @@
 
         <!-- Selection Bar -->
         <div class="glass-panel"
-          style="padding: 16px 20px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center; border-left: 4px solid #ffffff;">
+          style="padding: 16px 20px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center; border-left: 4px solid var(--border-highlight);">
           <div>
             <span
               style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Active
@@ -308,38 +308,38 @@
         </div>
 
         <!-- Statutory Timeline Horizon Countdown Card -->
-        <div class="glass-panel" style="padding: 18px 22px; margin-bottom: 20px; border-left: 4px solid #f59e0b;">
+        <div class="glass-panel" style="padding: 18px 22px; margin-bottom: 20px; border-left: 4px solid var(--risk-med);">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
             <div style="font-size: 13.5px; font-weight: 800; color: var(--text-primary);">RFCTLARR Statutory Timeline
               Countdown Horizon (Section 25 Compliance)</div>
             <span id="statutoryCountdownBadge"
-              style="background: rgba(244, 63, 94, 0.18); color: #fda4af; border: 1px solid rgba(244,63,94,0.4); padding: 4px 10px; border-radius: 6px; font-size: 11.5px; font-weight: 800;">
+              style="background: var(--risk-high-bg); color: var(--risk-high); border: 1px solid var(--risk-high-border); padding: 4px 10px; border-radius: 6px; font-size: 11.5px; font-weight: 800;">
               47 Days Remaining Until Sec 25 Lapse
             </span>
           </div>
           <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; font-size: 12px;">
             <div class="glass-panel" style="padding: 10px 14px; border-radius: 6px;">
-              <div style="color: var(--text-secondary); font-size: 11px;">Sec 11 Preliminary Notice:</div>
+              <div style="color: var(--text-secondary); font-size: 11px; font-weight: 600;">Sec 11 Preliminary Notice:</div>
               <div id="statSec11Date"
-                style="font-weight: 700; color: var(--text-primary); margin-top: 3px; font-family: var(--font-mono);">
+                style="font-weight: 800; color: var(--text-primary); margin-top: 3px; font-family: var(--font-mono);">
                 2023-04-10</div>
             </div>
             <div class="glass-panel" style="padding: 10px 14px; border-radius: 6px;">
-              <div style="color: var(--text-secondary); font-size: 11px;">Sec 19 Declaration:</div>
+              <div style="color: var(--text-secondary); font-size: 11px; font-weight: 600;">Sec 19 Declaration:</div>
               <div id="statSec19Date"
-                style="font-weight: 700; color: var(--text-primary); margin-top: 3px; font-family: var(--font-mono);">
+                style="font-weight: 800; color: var(--text-primary); margin-top: 3px; font-family: var(--font-mono);">
                 2023-11-15</div>
             </div>
             <div class="glass-panel" style="padding: 10px 14px; border-radius: 6px;">
-              <div style="color: var(--text-secondary); font-size: 11px;">Sec 25 Mandatory Lapse Date:</div>
+              <div style="color: var(--text-secondary); font-size: 11px; font-weight: 600;">Sec 25 Mandatory Lapse Date:</div>
               <div id="statSec25Date"
-                style="font-weight: 700; color: #f43f5e; margin-top: 3px; font-family: var(--font-mono);">2024-11-14
+                style="font-weight: 800; color: var(--risk-high); margin-top: 3px; font-family: var(--font-mono);">2024-11-14
               </div>
             </div>
             <div class="glass-panel" style="padding: 10px 14px; border-radius: 6px;">
-              <div style="color: var(--text-secondary); font-size: 11px;">Elapsed Time Post-Sec 19:</div>
+              <div style="color: var(--text-secondary); font-size: 11px; font-weight: 600;">Elapsed Time Post-Sec 19:</div>
               <div id="statDaysElapsed"
-                style="font-weight: 700; color: #f59e0b; margin-top: 3px; font-family: var(--font-mono);">318 / 365 Days
+                style="font-weight: 800; color: var(--risk-med); margin-top: 3px; font-family: var(--font-mono);">318 / 365 Days
               </div>
             </div>
           </div>
@@ -360,7 +360,7 @@
               <canvas id="stageFunnelChart"></canvas>
             </div>
             <div id="statutoryLapseAlertBox"
-              style="background: rgba(244, 63, 94, 0.15); border: 1px solid rgba(244, 63, 94, 0.4); padding: 12px; border-radius: var(--radius-sm); font-size: 12px; color: #fda4af;">
+              style="background: var(--risk-high-bg); border: 1px solid var(--risk-high-border); padding: 12px; border-radius: var(--radius-sm); font-size: 12px; color: var(--risk-high); font-weight: 600;">
               <!-- Statutory warning message -->
             </div>
           </div>
@@ -420,7 +420,7 @@
           <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px;">
 
             <!-- Simulation Sliders -->
-            <div class="glass-panel" style="padding: 22px; background: rgba(15, 23, 42, 0.65);">
+            <div class="glass-panel" style="padding: 22px;">
               <div class="section-title" style="margin-bottom: 18px;">Adjust Administrative & Policy Levers</div>
 
               <div class="slider-group">
@@ -460,12 +460,12 @@
 
                 <div style="display: flex; gap: 18px; margin-top: 10px;">
                   <label
-                    style="font-size: 12.5px; color: var(--text-light); display: flex; align-items: center; gap: 7px; cursor: pointer;">
+                    style="font-size: 12.5px; color: var(--text-primary); font-weight: 600; display: flex; align-items: center; gap: 7px; cursor: pointer;">
                     <input type="checkbox" id="checkForestFasttrack" onchange="runLiveSimulation()"> Fast-track SLEC
                     Forest Clearance
                   </label>
                   <label
-                    style="font-size: 12.5px; color: var(--text-light); display: flex; align-items: center; gap: 7px; cursor: pointer;">
+                    style="font-size: 12.5px; color: var(--text-primary); font-weight: 600; display: flex; align-items: center; gap: 7px; cursor: pointer;">
                     <input type="checkbox" id="checkMutationDrive" onchange="runLiveSimulation()"> Special Tehsil
                     Mutation
                     Camp
@@ -488,26 +488,26 @@
                 <div class="simulation-outcome-box">
                   <div class="outcome-item">
                     <div style="font-size: 11px; color: var(--text-secondary); font-weight: 700;">BASELINE RISK</div>
-                    <div id="simBaselineRisk" class="outcome-val" style="color: #fda4af;">84/100</div>
+                    <div id="simBaselineRisk" class="outcome-val" style="color: var(--risk-high);">84/100</div>
                   </div>
                   <div class="outcome-item">
                     <div style="font-size: 11px; color: var(--text-secondary); font-weight: 700;">SIMULATED RISK</div>
-                    <div id="simSimulatedRisk" class="outcome-val" style="color: #34d399;">46/100</div>
+                    <div id="simSimulatedRisk" class="outcome-val" style="color: var(--risk-low);">46/100</div>
                   </div>
                   <div class="outcome-item">
                     <div style="font-size: 11px; color: var(--text-secondary); font-weight: 700;">RISK REDUCTION</div>
-                    <div id="simRiskReduction" class="outcome-val" style="color: #ffffff;">-45%</div>
+                    <div id="simRiskReduction" class="outcome-val" style="color: var(--risk-low); font-weight: 800;">-45%</div>
                   </div>
                 </div>
 
                 <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
                   <div style="display: flex; justify-content: space-between; font-size: 12.5px;">
-                    <span style="color: var(--text-light);">Estimated Delay Days Saved:</span>
-                    <span id="simDaysSaved" style="font-weight: 800; color: #10b981;">110 Days (3.6 Months)</span>
+                    <span style="color: var(--text-primary); font-weight: 600;">Estimated Delay Days Saved:</span>
+                    <span id="simDaysSaved" style="font-weight: 800; color: var(--risk-low);">110 Days (3.6 Months)</span>
                   </div>
                   <div style="display: flex; justify-content: space-between; font-size: 12.5px;">
-                    <span style="color: var(--text-light);">Statutory Compliance Status:</span>
-                    <span id="simComplianceStatus" style="font-weight: 800; color: #ffffff;">Optimal (Sec 25
+                    <span style="color: var(--text-primary); font-weight: 600;">Statutory Compliance Status:</span>
+                    <span id="simComplianceStatus" style="font-weight: 800; color: var(--risk-low);">Optimal (Sec 25
                       Safe)</span>
                   </div>
                 </div>
@@ -674,10 +674,10 @@
                 DM Dispatch Simulator</div>
 
               <div
-                style="background: rgba(15, 23, 42, 0.85); border: 1px solid #10b981; border-radius: var(--radius-sm); padding: 14px; margin-bottom: 14px;">
-                <div style="font-size: 11px; color: #34d399; font-weight: 800; margin-bottom: 4px;">WHATSAPP DIRECTIVE
+                style="background: var(--bg-card); border: 1px solid var(--risk-low-border); border-radius: var(--radius-sm); padding: 14px; margin-bottom: 14px;">
+                <div style="font-size: 11px; color: var(--risk-low); font-weight: 800; margin-bottom: 4px;">WHATSAPP DIRECTIVE
                   DISPATCH (DM / CALA)</div>
-                <div style="font-size: 12px; color: #e2e8f0; line-height: 1.45;">
+                <div style="font-size: 12px; color: var(--text-primary); line-height: 1.45;">
                   <b>[BHU-DRISHTI ALERT]</b>: Project <b>NH-48 Vadodara-Kim</b> has entered HIGH RISK (89% probability).
                   Section 25 lapse window has only 47 days left. Special Revenue Lok Adalat scheduled for 14 disputed
                   Khasra survey numbers.
@@ -685,11 +685,11 @@
               </div>
 
               <div
-                style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: var(--radius-sm); padding: 14px; margin-bottom: 16px;">
-                <div style="font-size: 11px; color: #ffffff; font-weight: 800; margin-bottom: 4px;">CITIZEN SMS
+                style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 14px; margin-bottom: 16px;">
+                <div style="font-size: 11px; color: var(--text-primary); font-weight: 800; margin-bottom: 4px;">CITIZEN SMS
                   (LANDOWNER
                   COMPENSATION NOTICE)</div>
-                <div style="font-size: 12px; color: #e2e8f0; line-height: 1.45;">
+                <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.45;">
                   <b>Govt of India (CALA Office)</b>: Award approved for Survey No. 78-B. ₹1.42 Cr solatium deposited in
                   Treasury Escrow. Submit bank Aadhaar KYC to receive Direct Benefit Transfer within 7 days.
                 </div>
@@ -726,7 +726,7 @@
           </div>
 
           <div class="glass-panel" style="padding: 20px;">
-            <div style="font-size: 13.5px; font-weight: 700; margin-bottom: 14px; color: #ffffff;">
+            <div style="font-size: 13.5px; font-weight: 800; margin-bottom: 14px; color: var(--text-primary);">
               Administrative Action Log (RFCTLARR Act 2013 Statutory Records)
             </div>
 
@@ -870,7 +870,7 @@
       <div class="modal-content" style="max-width: 900px;">
         <div class="modal-header">
           <div>
-            <span style="font-size: 11px; color: #ffffff; font-weight: 800; letter-spacing: 1px;">GOVERNMENT SSO &
+            <span style="font-size: 11px; color: var(--text-secondary); font-weight: 800; letter-spacing: 1px;">GOVERNMENT SSO &
               STAKEHOLDER ACCESS GATEWAY</span>
             <h2 style="font-size: 19px; font-weight: 800; color: var(--text-primary); margin-top: 2px;">Select Authority
               Tier &

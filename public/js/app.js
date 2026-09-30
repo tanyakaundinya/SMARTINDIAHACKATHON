@@ -479,56 +479,56 @@ function openProjectModal(projectId) {
       body.innerHTML = `
         <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px;">
           <div class="glass-panel" style="padding: 14px;">
-            <div style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase;">COMPOSITE RISK SCORE</div>
-            <div style="font-size: 22px; font-weight: 800; color: ${p.delay_risk_score >= 75 ? '#f43f5e' : '#f59e0b'}; margin-top: 4px;">${p.delay_risk_score}/100</div>
+            <div style="font-size: 11px; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">COMPOSITE RISK SCORE</div>
+            <div style="font-size: 22px; font-weight: 800; color: ${p.delay_risk_score >= 75 ? 'var(--risk-high)' : 'var(--risk-med)'}; margin-top: 4px;">${p.delay_risk_score}/100</div>
           </div>
           <div class="glass-panel" style="padding: 14px;">
-            <div style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase;">DELAY PROBABILITY</div>
-            <div style="font-size: 22px; font-weight: 800; color: #ffffff; margin-top: 4px;">${p.delay_probability_pct}%</div>
+            <div style="font-size: 11px; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">DELAY PROBABILITY</div>
+            <div style="font-size: 22px; font-weight: 800; color: var(--text-primary); margin-top: 4px;">${p.delay_probability_pct}%</div>
           </div>
           <div class="glass-panel" style="padding: 14px;">
-            <div style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase;">ESTIMATED DELAY</div>
-            <div style="font-size: 22px; font-weight: 800; color: #f43f5e; margin-top: 4px;">${p.predicted_delay_days} Days</div>
+            <div style="font-size: 11px; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">ESTIMATED DELAY</div>
+            <div style="font-size: 22px; font-weight: 800; color: var(--risk-high); margin-top: 4px;">${p.predicted_delay_days} Days</div>
           </div>
           <div class="glass-panel" style="padding: 14px;">
-            <div style="font-size: 11px; color: var(--text-secondary); text-transform: uppercase;">COMPENSATION PAID</div>
-            <div style="font-size: 22px; font-weight: 800; color: #10b981; margin-top: 4px;">${p.compensation_disbursed_pct}%</div>
+            <div style="font-size: 11px; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">COMPENSATION PAID</div>
+            <div style="font-size: 22px; font-weight: 800; color: var(--risk-low); margin-top: 4px;">${p.compensation_disbursed_pct}%</div>
           </div>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
           <div class="glass-panel" style="padding: 16px;">
-            <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px; color: #ffffff;">Statutory Details (RFCTLARR Act 2013)</div>
-            <div style="font-size: 12px; display: flex; flex-direction: column; gap: 6px; color: #cbd5e1;">
-              <div>Current Milestone: <b>${p.statutory_stage}</b></div>
-              <div>Section 11 Notification: <b>${p.sec11_notification_date}</b></div>
-              <div>Section 19 Declaration: <b>${p.sec19_declaration_date}</b></div>
-              <div>Section 25 Lapse Deadline: <b style="color: #f43f5e;">${p.sec25_lapse_deadline} (${p.days_since_sec19} days elapsed)</b></div>
+            <div style="font-size: 13.5px; font-weight: 800; margin-bottom: 12px; color: var(--text-primary);">Statutory Details (RFCTLARR Act 2013)</div>
+            <div style="font-size: 12px; display: flex; flex-direction: column; gap: 8px; color: var(--text-primary);">
+              <div><span style="color: var(--text-secondary);">Current Milestone:</span> <b>${p.statutory_stage}</b></div>
+              <div><span style="color: var(--text-secondary);">Section 11 Notification:</span> <b>${p.sec11_notification_date}</b></div>
+              <div><span style="color: var(--text-secondary);">Section 19 Declaration:</span> <b>${p.sec19_declaration_date}</b></div>
+              <div><span style="color: var(--text-secondary);">Section 25 Lapse Deadline:</span> <b style="color: var(--risk-high); font-weight: 800;">${p.sec25_lapse_deadline} (${p.days_since_sec19} days elapsed)</b></div>
             </div>
           </div>
 
           <div class="glass-panel" style="padding: 16px;">
-            <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px; color: #34d399;">Land Records & Judicial Profile</div>
-            <div style="font-size: 12px; display: flex; flex-direction: column; gap: 6px; color: #cbd5e1;">
-              <div>DILRMP Digitization Score: <b>${p.dilrmp_digitization_score}%</b></div>
-              <div>Tehsil Mutation Pendency: <b>${p.mutation_pendency_pct}%</b></div>
-              <div>Active Court Cases: <b style="color: #f43f5e;">${p.active_court_cases} (${p.stay_orders_active} Active Stays)</b></div>
-              <div>Forest Clearance: <b>${p.forest_clearance_status}</b></div>
+            <div style="font-size: 13.5px; font-weight: 800; margin-bottom: 12px; color: var(--text-primary);">Land Records & Judicial Profile</div>
+            <div style="font-size: 12px; display: flex; flex-direction: column; gap: 8px; color: var(--text-primary);">
+              <div><span style="color: var(--text-secondary);">DILRMP Digitization Score:</span> <b>${p.dilrmp_digitization_score}%</b></div>
+              <div><span style="color: var(--text-secondary);">Tehsil Mutation Pendency:</span> <b>${p.mutation_pendency_pct}%</b></div>
+              <div><span style="color: var(--text-secondary);">Active Court Cases:</span> <b style="color: var(--risk-high); font-weight: 800;">${p.active_court_cases} (${p.stay_orders_active} Active Stays)</b></div>
+              <div><span style="color: var(--text-secondary);">Forest Clearance:</span> <b>${p.forest_clearance_status}</b></div>
             </div>
           </div>
         </div>
 
         <div style="margin-bottom: 18px;">
-          <div style="font-size: 13px; font-weight: 700; margin-bottom: 10px;">Prescriptive Mitigation Action Playbook</div>
+          <div style="font-size: 13.5px; font-weight: 800; margin-bottom: 10px; color: var(--text-primary);">Prescriptive Mitigation Action Playbook</div>
           <div style="display: flex; flex-direction: column; gap: 8px;">
             ${(p.prescriptive_recommendations || []).map(r => `
-              <div style="background: rgba(10, 27, 19, 0.75); padding: 12px 14px; border-radius: 8px; border-left: 4px solid #6B9071; font-size: 12px; border: 1px solid rgba(174, 195, 176, 0.12);">
-                <div style="font-weight: 700; color: #E3EED4; display: flex; justify-content: space-between;">
+              <div class="glass-panel" style="padding: 12px 14px; border-left: 4px solid var(--border-highlight); font-size: 12px;">
+                <div style="font-weight: 800; color: var(--text-primary); display: flex; justify-content: space-between;">
                   <span>${r.title} (Priority: ${r.priority})</span>
-                  <span style="color: #34d399; font-weight: 700;">-${r.expected_risk_reduction_pct}% Risk</span>
+                  <span style="color: var(--risk-low); font-weight: 800;">-${r.expected_risk_reduction_pct}% Risk</span>
                 </div>
-                <div style="color: #AEC3B0; margin: 4px 0;">${r.description}</div>
-                <div style="color: #E3EED4; font-size: 11px;">Statutory Ref: <b>${r.statutory_reference}</b> | Timeline: <b>${r.timeline_days} days</b></div>
+                <div style="color: var(--text-secondary); margin: 4px 0; line-height: 1.45;">${r.description}</div>
+                <div style="color: var(--text-muted); font-size: 11px;">Statutory Ref: <b style="color: var(--text-primary);">${r.statutory_reference}</b> | Timeline: <b style="color: var(--text-primary);">${r.timeline_days} days</b></div>
               </div>
             `).join('')}
           </div>
@@ -537,7 +537,7 @@ function openProjectModal(projectId) {
         <div style="display: flex; justify-content: flex-end; gap: 10px; border-top: 1px solid var(--border-color); padding-top: 16px;">
           <button class="btn-secondary" onclick="closeProjectModal()">Close</button>
           <button class="btn-primary" onclick="closeProjectModal(); switchTab('tab-xai'); loadXaiForProject('${p.id}');">View Full XAI Waterfall</button>
-          <button class="btn-primary" style="background: #375534; color: #E3EED4; border: 1px solid #6B9071;" onclick="closeProjectModal(); switchTab('tab-whatif'); initWhatIfSimulator('${p.id}');">Open What-If Studio</button>
+          <button class="btn-primary" onclick="closeProjectModal(); switchTab('tab-whatif'); initWhatIfSimulator('${p.id}');">Open What-If Studio</button>
         </div>
       `;
 
@@ -664,9 +664,9 @@ function renderBatchPredictions(data) {
   if (countEl) countEl.textContent = `${data.length} Projects Processed`;
 
   data.forEach(p => {
-    let riskColor = '#34d399';
-    if (p.risk_score >= 75) riskColor = '#fda4af';
-    else if (p.risk_score >= 40) riskColor = '#fde68a';
+    let riskColor = 'var(--risk-low)';
+    if (p.risk_score >= 75) riskColor = 'var(--risk-high)';
+    else if (p.risk_score >= 40) riskColor = 'var(--risk-med)';
 
     const tr = document.createElement('tr');
     tr.innerHTML = `
@@ -675,8 +675,8 @@ function renderBatchPredictions(data) {
       <td>${p.district}, ${p.state}</td>
       <td>${p.comp_pct}%</td>
       <td>${p.court_cases} Cases</td>
-      <td><span style="color: ${riskColor}; font-weight: bold;">${p.risk_score}/100</span></td>
-      <td><span style="color: ${riskColor}; font-weight: bold;">${p.prob}%</span></td>
+      <td><span style="color: ${riskColor}; font-weight: 800;">${p.risk_score}/100</span></td>
+      <td><span style="color: ${riskColor}; font-weight: 800;">${p.prob}%</span></td>
       <td><b>${p.delay_days} Days</b></td>
     `;
     tbody.appendChild(tr);

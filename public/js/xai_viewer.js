@@ -7,7 +7,7 @@ function renderXaiDetails(project) {
 
   // Title
   document.getElementById('xaiSelectedProjectName').innerHTML = `
-    ${project.name} &bull; <span style="color: ${project.delay_risk_score >= 75 ? '#ef4444' : '#f59e0b'};">${project.delay_risk_score}/100 (${project.risk_category})</span>
+    ${project.name} &bull; <span style="color: ${project.delay_risk_score >= 75 ? 'var(--risk-high)' : 'var(--risk-med)'}; font-weight: 800;">${project.delay_risk_score}/100 (${project.risk_category})</span>
   `;
 
   // Executive summary
@@ -22,14 +22,16 @@ function renderXaiDetails(project) {
   const daysRemaining = 365 - (project.days_since_sec19 || 318);
   const badgeEl = document.getElementById('statutoryCountdownBadge');
   if (daysRemaining <= 65 && project.statutory_stage_id <= 4) {
-    badgeEl.style.background = 'rgba(239, 68, 68, 0.2)';
-    badgeEl.style.color = '#f87171';
-    badgeEl.style.borderColor = 'rgba(239, 68, 68, 0.4)';
+    badgeEl.style.background = 'var(--risk-high-bg)';
+    badgeEl.style.color = 'var(--risk-high)';
+    badgeEl.style.borderColor = 'var(--risk-high-border)';
+    badgeEl.style.fontWeight = '800';
     badgeEl.textContent = `CRITICAL ALERT: ${daysRemaining} Days Left Until Sec 25 Mandatory Lapse`;
   } else {
-    badgeEl.style.background = 'rgba(16, 185, 129, 0.2)';
-    badgeEl.style.color = '#34d399';
-    badgeEl.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+    badgeEl.style.background = 'var(--risk-low-bg)';
+    badgeEl.style.color = 'var(--risk-low)';
+    badgeEl.style.borderColor = 'var(--risk-low-border)';
+    badgeEl.style.fontWeight = '800';
     badgeEl.textContent = `STATUTORY BUFFER: ${daysRemaining} Days Remaining`;
   }
 
@@ -54,9 +56,9 @@ function renderXaiDetails(project) {
   const attributions = project.xai_explanation.attributions || [];
 
   attributions.forEach(item => {
-    let barColor = '#3b82f6';
-    if (item.percentage_contribution >= 25) barColor = '#ef4444';
-    else if (item.percentage_contribution >= 15) barColor = '#f59e0b';
+    let barColor = 'var(--accent-sky, #3b82f6)';
+    if (item.percentage_contribution >= 25) barColor = 'var(--risk-high)';
+    else if (item.percentage_contribution >= 15) barColor = 'var(--risk-med)';
 
     const row = document.createElement('div');
     row.className = 'xai-factor-row';
@@ -66,14 +68,14 @@ function renderXaiDetails(project) {
       <div class="xai-factor-info">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
           <span class="xai-factor-title">${item.label}</span>
-          <span style="font-size: 11px; color: #94a3b8; font-weight: 500;">Raw: <b>${item.raw_value}</b></span>
+          <span style="font-size: 11px; color: var(--text-secondary); font-weight: 600;">Raw: <b>${item.raw_value}</b></span>
         </div>
         <div class="xai-factor-desc">${item.description}</div>
-        <div style="width: 100%; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; margin-top: 6px;">
+        <div style="width: 100%; height: 5px; background: var(--border-color); border-radius: 2px; margin-top: 6px;">
           <div style="width: ${item.percentage_contribution}%; height: 100%; background: ${barColor}; border-radius: 2px;"></div>
         </div>
       </div>
-      <div class="xai-factor-val" style="color: ${barColor};">+${item.percentage_contribution}%</div>
+      <div class="xai-factor-val" style="color: ${barColor}; font-weight: 800;">+${item.percentage_contribution}%</div>
     `;
 
     listContainer.appendChild(row);
@@ -86,9 +88,9 @@ function renderXaiDetails(project) {
   const recommendations = project.prescriptive_recommendations || [];
 
   recommendations.forEach(rec => {
-    let priorityBadge = '#ef4444';
-    if (rec.priority === 'High') priorityBadge = '#f59e0b';
-    if (rec.priority === 'Medium') priorityBadge = '#3b82f6';
+    let priorityBadge = 'var(--risk-high)';
+    if (rec.priority === 'High') priorityBadge = 'var(--risk-med)';
+    if (rec.priority === 'Medium') priorityBadge = 'var(--c-sage, #3b82f6)';
 
     const card = document.createElement('div');
     card.className = 'glass-panel';
@@ -97,21 +99,21 @@ function renderXaiDetails(project) {
 
     card.innerHTML = `
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-        <span style="font-size: 10px; font-weight: bold; background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 3px; color: ${priorityBadge};">
+        <span style="font-size: 10px; font-weight: 800; background: var(--bg-card-hover); border: 1px solid var(--border-color); padding: 2px 6px; border-radius: 3px; color: ${priorityBadge};">
           ${rec.priority.toUpperCase()} PRIORITY &bull; ${rec.action_type}
         </span>
-        <span style="font-size: 11px; color: #34d399; font-weight: 600;">-${rec.expected_risk_reduction_pct}% Risk Impact</span>
+        <span style="font-size: 11px; color: var(--risk-low); font-weight: 800;">-${rec.expected_risk_reduction_pct}% Risk Impact</span>
       </div>
 
-      <h4 style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px;">${rec.title}</h4>
-      <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.4;">${rec.description}</p>
+      <h4 style="font-size: 13.5px; font-weight: 800; color: var(--text-primary); margin-bottom: 6px;">${rec.title}</h4>
+      <p style="font-size: 11.5px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.45;">${rec.description}</p>
 
-      <div style="font-size: 10px; color: #64748b; margin-bottom: 10px;">
+      <div style="font-size: 10.5px; color: var(--text-muted); margin-bottom: 10px;">
         <b>Statutory Authority:</b> ${rec.statutory_reference} | <b>Target Role:</b> ${rec.target_role}
       </div>
 
       <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-size: 11px; color: #ffffff;">Timeline: <b>${rec.timeline_days} Days</b></span>
+        <span style="font-size: 11px; color: var(--text-primary); font-weight: 600;">Timeline: <b>${rec.timeline_days} Days</b></span>
         <button class="btn-primary" style="padding: 4px 10px; font-size: 11px;" onclick="dispatchPlaybookAction('${project.id}', '${rec.id}')">
           Issue Directive
         </button>

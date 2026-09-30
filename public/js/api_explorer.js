@@ -53,20 +53,19 @@ function loadAuditLogs() {
         const timeStr = new Date(log.timestamp).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
         const item = document.createElement('div');
-        item.style.background = 'rgba(10, 27, 19, 0.75)';
-        item.style.padding = '8px 12px';
-        item.style.borderRadius = '4px';
-        item.style.border = '1px solid rgba(174, 195, 176, 0.12)';
-        item.style.fontSize = '11px';
+        item.className = 'glass-panel';
+        item.style.padding = '10px 14px';
+        item.style.borderRadius = '6px';
+        item.style.fontSize = '11.5px';
 
         item.innerHTML = `
-          <div style="display: flex; justify-content: space-between; margin-bottom: 2px;">
-            <span style="color: #E3EED4; font-weight: 600;">${log.action}</span>
-            <span style="color: #AEC3B0;">${timeStr}</span>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
+            <span style="color: var(--text-primary); font-weight: 800;">${log.action}</span>
+            <span style="color: var(--text-secondary); font-weight: 600;">${timeStr}</span>
           </div>
-          <div style="color: #E3EED4; margin-bottom: 4px;">${log.details}</div>
-          <div style="display: flex; justify-content: space-between; color: #6B9071; font-size: 10px;">
-            <span>Actor: <b>${log.actor} (${log.role})</b></span>
+          <div style="color: var(--text-primary); margin-bottom: 4px; line-height: 1.4;">${log.details}</div>
+          <div style="display: flex; justify-content: space-between; color: var(--text-muted); font-size: 10.5px;">
+            <span>Actor: <b style="color: var(--text-primary);">${log.actor} (${log.role})</b></span>
             <span title="SHA-256 Hash">Hash: ${log.hash.slice(0, 10)}...</span>
           </div>
         `;

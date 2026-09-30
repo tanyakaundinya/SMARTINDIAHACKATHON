@@ -436,16 +436,19 @@ function loadStateDistrictMetrics() {
 
       tbody.innerHTML = '';
       (data.districts || []).forEach(d => {
-        let badgeClass = 'rgba(16, 185, 129, 0.2)';
-        let badgeColor = '#34d399';
+        let badgeClass = 'var(--risk-low-bg)';
+        let badgeColor = 'var(--risk-low)';
+        let badgeBorder = 'var(--risk-low-border)';
         let tierLabel = 'Tier 1: High Velocity';
         if (d.status === 'Critical') {
-          badgeClass = 'rgba(244, 63, 94, 0.2)';
-          badgeColor = '#fda4af';
+          badgeClass = 'var(--risk-high-bg)';
+          badgeColor = 'var(--risk-high)';
+          badgeBorder = 'var(--risk-high-border)';
           tierLabel = 'Tier 3: Critical Lag';
         } else if (d.status === 'Watch' || d.status === 'Moderate') {
-          badgeClass = 'rgba(245, 158, 11, 0.2)';
-          badgeColor = '#fde68a';
+          badgeClass = 'var(--risk-med-bg)';
+          badgeColor = 'var(--risk-med)';
+          badgeBorder = 'var(--risk-med-border)';
           tierLabel = 'Tier 2: Moderate Risk';
         }
 
@@ -455,8 +458,8 @@ function loadStateDistrictMetrics() {
           <td>${d.state}</td>
           <td><b>${d.risk_index}/100</b></td>
           <td>${d.avg_months} Months</td>
-          <td><span style="color: #ffffff; font-weight: bold;">${d.dilrmp}%</span></td>
-          <td><span style="background: ${badgeClass}; color: ${badgeColor}; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 11px;">${tierLabel}</span></td>
+          <td><span style="color: var(--text-primary); font-weight: 800;">${d.dilrmp}%</span></td>
+          <td><span style="background: ${badgeClass}; color: ${badgeColor}; border: 1px solid ${badgeBorder}; padding: 3px 8px; border-radius: 4px; font-weight: 800; font-size: 11px;">${tierLabel}</span></td>
         `;
         tbody.appendChild(tr);
       });

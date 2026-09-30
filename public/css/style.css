@@ -42,20 +42,20 @@
   --accent-purple: #E3EED4;
 
   /* Statutory Delay Risk Palette */
-  --risk-high: #f43f5e;
-  --risk-high-bg: rgba(244, 63, 94, 0.14);
-  --risk-high-border: rgba(244, 63, 94, 0.45);
-  --risk-high-glow: 0 0 16px rgba(244, 63, 94, 0.3);
+  --risk-high: #ff4d6d;
+  --risk-high-bg: rgba(244, 63, 94, 0.2);
+  --risk-high-border: rgba(244, 63, 94, 0.6);
+  --risk-high-glow: 0 0 16px rgba(244, 63, 94, 0.4);
 
-  --risk-med: #f59e0b;
-  --risk-med-bg: rgba(245, 158, 11, 0.14);
-  --risk-med-border: rgba(245, 158, 11, 0.45);
-  --risk-med-glow: 0 0 16px rgba(245, 158, 11, 0.3);
+  --risk-med: #fbbf24;
+  --risk-med-bg: rgba(245, 158, 11, 0.2);
+  --risk-med-border: rgba(245, 158, 11, 0.6);
+  --risk-med-glow: 0 0 16px rgba(245, 158, 11, 0.4);
 
   --risk-low: #34d399;
-  --risk-low-bg: rgba(107, 144, 113, 0.2);
-  --risk-low-border: rgba(107, 144, 113, 0.5);
-  --risk-low-glow: 0 0 16px rgba(107, 144, 113, 0.3);
+  --risk-low-bg: rgba(16, 185, 129, 0.2);
+  --risk-low-border: rgba(16, 185, 129, 0.6);
+  --risk-low-glow: 0 0 16px rgba(16, 185, 129, 0.4);
 
   /* Elevation & Borders */
   --radius-xs: 4px;
@@ -74,15 +74,15 @@
    Light Mode Theme Overrides & Color Palette
    ========================================================================== */
 [data-theme="light"] {
-  --bg-primary: #F4F9EE;
+  --bg-primary: #F2F7ED;
   --bg-secondary: #E3EED4;
   --bg-card: rgba(255, 255, 255, 0.95);
-  --bg-card-hover: rgba(235, 245, 225, 1);
-  --bg-card-active: #AEC3B0;
+  --bg-card-hover: #EBF3E4;
+  --bg-card-active: #DDE8D2;
   
-  --border-color: rgba(55, 85, 52, 0.15);
+  --border-color: rgba(55, 85, 52, 0.16);
   --border-subtle: rgba(55, 85, 52, 0.08);
-  --border-highlight: #375534;
+  --border-highlight: #6B9071;
   --border-glow: rgba(55, 85, 52, 0.2);
 
   --text-primary: #0F2A1D;
@@ -96,25 +96,25 @@
   --accent-indigo: #375534;
   --accent-purple: #0F2A1D;
 
-  --risk-high: #e11d48;
-  --risk-high-bg: rgba(225, 29, 72, 0.08);
-  --risk-high-border: rgba(225, 29, 72, 0.35);
-  --risk-high-glow: 0 0 12px rgba(225, 29, 72, 0.15);
+  --risk-high: #991b1b;
+  --risk-high-bg: #fee2e2;
+  --risk-high-border: #f87171;
+  --risk-high-glow: 0 0 12px rgba(153, 27, 27, 0.2);
 
-  --risk-med: #d97706;
-  --risk-med-bg: rgba(217, 119, 6, 0.08);
-  --risk-med-border: rgba(217, 119, 6, 0.35);
-  --risk-med-glow: 0 0 12px rgba(217, 119, 6, 0.15);
+  --risk-med: #92400e;
+  --risk-med-bg: #fef3c7;
+  --risk-med-border: #fbbf24;
+  --risk-med-glow: 0 0 12px rgba(146, 64, 14, 0.2);
 
-  --risk-low: #059669;
-  --risk-low-bg: rgba(5, 150, 105, 0.08);
-  --risk-low-border: rgba(5, 150, 105, 0.35);
-  --risk-low-glow: 0 0 12px rgba(5, 150, 105, 0.15);
+  --risk-low: #065f46;
+  --risk-low-bg: #d1fae5;
+  --risk-low-border: #34d399;
+  --risk-low-glow: 0 0 12px rgba(6, 95, 70, 0.2);
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.07);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.09);
-  --shadow-glow: 0 0 18px rgba(55, 85, 52, 0.1);
+  --shadow-sm: 0 2px 6px rgba(15, 42, 29, 0.05);
+  --shadow-md: 0 6px 20px rgba(15, 42, 29, 0.07);
+  --shadow-lg: 0 14px 36px rgba(15, 42, 29, 0.09);
+  --shadow-glow: 0 0 20px rgba(107, 144, 113, 0.15);
 }
 
 /* Base Reset & Global Styles */
@@ -678,13 +678,44 @@ body {
 }
 
 .guide-chip {
-  background: #0F2A1D;
-  border: 1px solid rgba(174, 195, 176, 0.2);
-  padding: 3px 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
   border-radius: var(--radius-xs);
   font-size: 11px;
-  font-weight: 600;
-  color: #AEC3B0;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chip-high-risk {
+  background: var(--risk-high-bg) !important;
+  color: var(--risk-high) !important;
+  border: 1px solid var(--risk-high-border) !important;
+  font-weight: 800 !important;
+}
+
+.chip-med-risk {
+  background: var(--risk-med-bg) !important;
+  color: var(--risk-med) !important;
+  border: 1px solid var(--risk-med-border) !important;
+  font-weight: 800 !important;
+}
+
+.chip-low-risk {
+  background: var(--risk-low-bg) !important;
+  color: var(--risk-low) !important;
+  border: 1px solid var(--risk-low-border) !important;
+  font-weight: 800 !important;
+}
+
+.chip-horizon {
+  background: var(--bg-card-hover) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-highlight) !important;
+  font-weight: 800 !important;
 }
 
 /* ==========================================================================
@@ -1037,19 +1068,19 @@ body {
 
 .risk-tag.red {
   background: var(--risk-high-bg);
-  color: #fda4af;
+  color: var(--risk-high);
   border: 1px solid var(--risk-high-border);
 }
 
 .risk-tag.amber {
   background: var(--risk-med-bg);
-  color: #fde68a;
+  color: var(--risk-med);
   border: 1px solid var(--risk-med-border);
 }
 
 .risk-tag.green {
   background: var(--risk-low-bg);
-  color: #a7f3d0;
+  color: var(--risk-low);
   border: 1px solid var(--risk-low-border);
 }
 
